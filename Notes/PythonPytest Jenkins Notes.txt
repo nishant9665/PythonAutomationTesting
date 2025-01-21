@@ -1,0 +1,59 @@
+1.Pytest , if you are added the dependency only and run any test then like below code then output will be--
+just need to convert into pytest format code
+----------------
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.delete_all_cookies()
+driver.get("https://practicetestautomation.com/")
+driver.implicitly_wait(30)
+
+-----------
+
+(.venv) PS C:\Nishant_Study\PythonJenkinsPytest> cd .\Operations\
+(.venv) PS C:\Nishant_Study\PythonJenkinsPytest\Operations> pytest -v -s .\test_Login.py
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0 -- C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Nishant_Study\PythonJenkinsPytest\Operations
+collecting ...
+DevTools listening on ws://127.0.0.1:56231/devtools/browser/43a2a991-ff9e-44c7-ba71-b405b75629ab
+collected 0 items
+-------------------------------------------------------------------------
+
+How to setup allure report in local system
+
+1. download the allure report zip from this URL (https://github.com/allure-framework/allure2/releases)
+2.extract the zip set the path on user variable and system variable.(C:\Nishant_Study\allure-2.32.0\bin)
+3.run allure --version in cmd:
+  C:\Users\user>allure --version
+  2.32.0
+
+4.go to Pycharm or Intelligent , add the dependency like - allure-pytest
+5.add this code in our script - as example.
+     try:
+       assert "username" in  userIDInvalid.text
+    finally:
+        if(AssertionError):
+            allure.attach(driver.get_screenshot_as_png(), name="Invalid Credentials",attachment_type=allure.attachment_type.PNG)
+7.Create the reports folder manually run the below command
+6.How to run the code via cmd
+(.venv) PS C:\Nishant_Study\PythonJenkinsPytest\Operations> pytest -v -s --alluredir="C:\Nishant_Study\PythonJenkinsPytest\Operations\allure-reports" .\test_Login.py
+
+
+7. for report opening type below cmd
+ go to cmd and flow the below step :allure serve allure-reports
+
+ C:\Users\user>allure serve C:\Nishant_Study\PythonJenkinsPytest\Operations\allure-results
+Generating report to temp directory...
+
+clean the old report and generate the new report
+(.venv) PS C:\Nishant_Study\PythonJenkinsPytest\Operations> python -m pytest --alluredir allure-results --clean-alluredir .\test_Login.py
+
+python -m pytest --alluredir allure-results --clean-alluredir .\test_calculator.py
+
+cd - pytest -v -s .\test_calculator.py --alluredir="C:\ProgramData\Jenkins\.jenkins\workspace\Dec08_1\testcases\allure-results"
+
+------------------------------------
+Allure report jenkins configuration--

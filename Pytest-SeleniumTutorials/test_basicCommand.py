@@ -1,0 +1,16 @@
+from selenium import webdriver
+def test_basicCommand():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print("This is title :",driver.title)
+        print("This is current URL",driver.current_url)
+        print("This is driver name :",driver.name)
+        print("This is windows handle :",driver.current_window_handle)
+        print("This is driver log type :",driver.log_types)
+        print("This is dialog: ",driver.dialog)
+        #print("This is page source: ",driver.page_source)
+        print("this is cookies : ",driver.get_cookies())
+        #print("this is network conditions : ",driver.get_network_conditions())
+        print("this is windows size conditions : ", driver.get_window_size())
+        driver.quit()

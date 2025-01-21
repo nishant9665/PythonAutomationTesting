@@ -1,0 +1,375 @@
+map function - every element is present in given sequence apply some functionality and generate the new element with required modification.
+for this requirement we should go for map function.
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+    if var %2==0:
+        return var
+
+l= map(evenNumber,a)
+print(list(l))
+-------C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+[2, None, 4, None, 6, None]
+
+Process finished with exit code 0
+--------------
+1 star multiplication:
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+        return var*2
+
+l= map(evenNumber,a)
+print(list(l))
+--------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+[4, 6, 8, 10, 12, 14]
+
+Process finished with exit code 0
+2 star:
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+        return var**2
+
+l= map(evenNumber,a)
+print(list(l))
+-------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+[4, 9, 16, 25, 36, 49]
+
+Process finished with exit code 0
+3 star is not allowed:
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+        return var***2
+
+l= map(evenNumber,a)
+print(list(l))
+--------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+  File "C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py", line 4
+    return var***2
+                ^
+SyntaxError: invalid syntax
+
+Process finished with exit code 1
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+        return var**3
+
+l= map(evenNumber,a)
+print(list(l)) # convert into list
+
+l2= map(evenNumber,a)
+print(tuple(l2)) #convert into tuple
+
+l3= map(evenNumber,a)
+print(set(l3)) #convert into set
+---------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+[8, 27, 64, 125, 216, 343]
+(8, 27, 64, 125, 216, 343)
+{64, 8, 343, 216, 27, 125}
+
+Process finished with exit code 0
+This is difference between map and filter :
+a=[2,3,4,5,6,7]
+
+def evenNumber(var):
+        if var%2==0:
+            return var
+
+l= filter(evenNumber,a)
+print("This is used for filter :",list(l)) # convert into list
+
+l2= map(evenNumber,a)
+print("This is used for map function ",list(l2)) #convert into tuple
+-----------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+This is used for filter : [2, 4, 6]
+This is used for map function  [2, None, 4, None, 6, None]
+
+Process finished with exit code 0
+reduce and accumulate difference :
+
+
+from functools import *
+from itertools import accumulate
+
+a=[1,2,4,5,6,6,7]
+
+def add(a,b):
+    sum =a+b
+    return sum
+
+l1 = reduce(add,a)   #function: A function that takes two arguments and performs an operation on them.
+                     #Useful when only the final result is needed.
+print("This is reduce operation :",l1)
+
+# accumulate:
+res = accumulate(a, add)
+print("This is accumulate function :",list(res)) # [1, 3, 7, 12, 18, 24, 31]
+                #Useful when tracking cumulative steps.
+
+
+-----------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+This is reduce operation : 31
+This is accumulate function : [1, 3, 7, 12, 18, 24, 31]
+
+Process finished with exit code 0
+Key Differences
+Feature	reduce()	accumulate()
+Return Value	A single final value (e.g., 15).	Intermediate results (e.g., [1, 3, 6, 10, 15]).
+Output Type	Returns a single value.	Returns an iterator.
+Use Case	Useful when only the final result is needed.	Useful when tracking cumulative steps.
+Import	From functools.	From itertools.
+
+-----------------------------
+lambda function : it is not function , it's anonymous function which are used for some basing operation like add ,sub etc
+ a = lambda x:x**2
+#print(a) , without passing the parameter the result is <<function <lambda> at 0x000001CAD1C44AE0>>
+
+print(a(10)) #100
+------------------
+s1="nishant"
+s2 = lambda func:func.upper()
+print(s2(s1))
+--------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+NISHANT
+
+Process finished with exit code 0
+---------------
+example 2:
+s2 = lambda x:"positive" if x >0 else "Negative" if x<0 else "minus" if x==0 else "zero"
+print("This is positive number :",s2(7))
+print("This is negative number :",s2(-4))
+print("This is zero number ",s2(0))
+---------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+This is positive number : positive
+This is negative number : Negative
+This is zero number  minus
+
+Process finished with exit code 0
+--------------------------------------
+op = lambda x: 'even'if x%2==0 else 'odd'
+print(op(4))
+---------------------
+even
+
+=== Code Execution Successful ===
+
+from functools import *
+a=[1,2,4,5,6,7,78,8]
+op = lambda x,y:x+y
+print(reduce(op,a))
+-----------------------
+111
+
+=== Code Execution Successful ===
+a=[1,2,3,4,5]
+l1 = map(lambda x : x**2,a)
+print(list(l1)) #[1, 4, 9, 16, 25]
+
+a=[1,2,3,4,5]
+l1 = map(lambda x : 2**x,a)
+print(list(l1)) #[2, 4, 8, 16, 32]
+
+a=[1,2,3,4,5]
+l1 = map(lambda x : x*2,a)
+print(list(l1)) #[2, 4, 6, 8, 10]
+---------------------------------------
+[1, 4, 9, 16, 25]
+[2, 4, 8, 16, 32]
+[2, 4, 6, 8, 10]
+
+=== Code Execution Successful ===
+a =10
+def f1():
+   global a
+   a=15 # global variable
+   print("This is global variable:",a)
+
+def f2():
+    print("This is global variable:",a)
+
+f1()
+f2()
+
+------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+This is global variable: 15
+This is global variable: 15
+
+Process finished with exit code 0
+--------------------------------------
+a =10
+def f1():
+   global a
+   a=15 # global variable
+   print("This is global variable:",a)
+
+def f2():
+    print("This is global variable:",a)
+
+f1()
+f2()
+
+---------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+This is global variable: 15
+This is global variable: 15
+
+Process finished with exit code 0
+----------------------------------------------------
+Handle try catch block:
+try:
+   a = 18+"nishant"
+   print(a)
+
+except TypeError :
+    print("facing the type error in code")
+
+
+---------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+facing the type error in code
+
+Process finished with exit code 0
+----------------------------------------
+try:
+   a= 10/0
+
+except ZeroDivisionError :
+    print("facing the type error try block")
+
+
+---------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+facing the type error in code
+
+Process finished with exit code 0
+-----------------------------------------------
+try:
+   a= 10/0
+
+except ZeroDivisionError :
+    print(" Except Block - facing the issue in try block")
+else:
+    print(" Else block -----I have only executed when try is working good")
+finally:
+    print("Finally Block-- I have always executed ...................")
+---------------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+ Except Block - facing the issue in try block
+Finally Block-- I have always executed ...................
+
+Process finished with exit code 0
+-----------------------------------
+try:
+   a= 10
+
+except ZeroDivisionError :
+    print("Except Block - facing the issue in try block")
+else:
+    print("Else block -----I have only executed when try is working good")
+finally:
+    print("Finally Block-- I have always executed ...................")
+-------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+Else block -----I have only executed when try is working good
+Finally Block-- I have always executed ...................
+
+Process finished with exit code 0
+----------------------------------------------------------------------------
+create the customized exception ---
+
+class ToYoungException(Exception):
+    def __init__(self,msg):
+        self.msg=msg
+
+
+age=int(input("Please enter the age :"))
+if age<= 18:
+    raise ToYoungException("You are not eligible for vote")
+else:
+    print("Your eligible for vote !!!!!!! ")
+
+---------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+Please enter the age :12
+Traceback (most recent call last):
+  File "C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py", line 8, in <module>
+    raise ToYoungException("You are not eligible for vote")
+ToYoungException: You are not eligible for vote
+
+Process finished with exit code 1
+------------------------------------------------------------
+class ToYoungException(Exception):
+    def __init__(self,msg):
+        self.msg=msg
+
+
+age = int(input("Enter the age :"))
+
+if age<18:
+    raise ToYoungException("Person is too young , Not eligibale for vote")
+else:
+    print("Eligible for vote !!!!!!!!!!!")
+--------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+Please enter the age :12
+Traceback (most recent call last):
+  File "C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py", line 8, in <module>
+    raise ToYoungException("You are not eligible for vote")
+ToYoungException: You are not eligible for vote
+
+Process finished with exit code 1
+def gen():
+    for i in range(5):
+        print(i)
+    print("---------------")
+    yield 'A'
+    yield 'B'
+    yield 'C'
+
+g = gen()
+print(next(g))
+print(next(g))
+print(next(g))
+---------------------
+0
+1
+2
+3
+4
+---------------
+A
+B
+C
+
+=== Code Execution Successful ===
+a = (x*x for x in range(1000000000000000000))
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+
+print("----------------------")
+l1 = [x*x for x in range(100)]
+print(l1[0])
+-------------------------
+0
+1
+4
+9
+----------------------
+0
+
+=== Code Execution Successful ===
+

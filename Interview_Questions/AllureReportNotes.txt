@@ -1,0 +1,9 @@
+1.all the annotation in the testcase a per need.
+2.run the file by using the command like -  pytest -v -s --alluredir="C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Interview_Questions\report" .\test_allureReport.pyt_Study\nopcommerce\nopcommerceAdmin\Interview_Questions>
+3.allure report generate for particular folder
+4.set the allure in windows
+5.check the allure.bat file present then run report by using below command
+6.open the cmd go to bat file folder or any folder ,
+7.Run the below command - allure serve C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Interview_Questions\report
+Generating report to temp directory...
+8.Report will be generated.

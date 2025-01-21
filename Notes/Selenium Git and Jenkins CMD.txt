@@ -1,0 +1,74 @@
+create a new repository on the command line
+echo "# TestNGMavenGitJenkins_Test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nishant9665/TestNGMavenGitJenkins_Test.git
+git push -u origin main
+
+--------------
+…or push an existing repository from the command line
+git remote add origin https://github.com/nishant9665/TestNGMavenGitJenkins_Test.git
+git branch -M main
+git push -u origin main
+
+-------------
+New changes push on remote
+
+git add.
+git commit -m "message"
+git push -u origin master
+
+------------------
+Selenium hybrid framework
+Step1:
+Python selenium pytest pageObject model ,HTML report
+1.Selenium install selenium library
+2.pytest python unit test framework
+3.pytest-html :Pytest html reports
+4.pytest-xdist-->run tests parallel
+5.openpyxl: MS excel support
+6.Allure-pytest : to generate allure reports
+
+Step2:
+create the folder structure
+
+Project Name
+  ^
+  |
+
+pageObjects(Package)
+|
+testcases(Packages)
+|
+utitlities(Packages)
+|
+testData(folder)
+|
+configuration(folder)
+|
+Logs(Folder)
+|
+ScreenShot(Folder)
+|
+Reports
+|
+Run.bat
+
+----------
+Conftest.py file code
+from selenium import webdriver
+
+@pytest.fixture
+def setUp():
+    driver=webdriver.Chrome()
+    return driver
+
+------------------
+
+
+Part 1: Selenium with Python | Hybrid Framework Design from scratch | PyTest, POM & HTML Reports
+------------------------------
+
+Part 2: Selenium with Python | Hybrid Framework Design from scratch | PyTest, POM & HTML Reports

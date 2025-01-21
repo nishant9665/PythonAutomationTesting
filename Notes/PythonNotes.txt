@@ -1,0 +1,308 @@
+class and variable
+
+simple method with talk:
+
+class Stduent:
+    def __init__(self,name,rollno,city):
+        self.name = name
+        self.rollno= rollno
+        self.city =city
+
+    def talk(self):
+        print("My name is", self.name)
+        print("roll numbe is ", self.rollno)
+        print("City is ", self.city)
+
+s1 = Stduent("nishant",123,"Nanded")
+s1.talk()
+------------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+My name is nishant
+roll numbe is  123
+City is  Nanded
+
+Process finished with exit code 0
+
+--------------------------------------------
+class Test:
+    def __init__(self):
+        print("This is default constructor")
+
+t1 = Test # <class 'type'>
+print(type(t1))
+
+t2 = Test() #<class '__main__.Test'> means object
+print(type(t2))
+------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+<class 'type'>
+This is default constructor
+<class '__main__.Test'>
+
+Process finished with exit code 0
+
+-----------------------------------------------------------
+
+
+
+# Inside Constructor by using self variable:
+class Emp:
+    def __init__(self):
+        self.name="nishant"
+        self.roll =102
+        self.mark = 56.78
+
+e1 = Emp()
+print(e1) #<__main__.Emp object at 0x0000022183AA82F0> , Object created
+print(e1.__dict__) #{'name': 'nishant', 'roll': 102, 'mark': 56.78}
+print(type(e1.__dict__)) #<class 'dict'>
+----------------------------------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+<__main__.Emp object at 0x0000016946B598B0>
+{'name': 'nishant', 'roll': 102, 'mark': 56.78}
+<class 'dict'>
+
+Process finished with exit code 0
+-------------------------------------------------------
+
+# out side of the class by using object reference variable:
+# . Outside of the class by using object reference variable:
+
+class Test:
+    def __init__(self):
+        self.city = None
+        self.name = "nishant"
+        self.mark = 87
+
+    def m1(self):
+        self.city = "pune"
+
+t1= Test()
+t1.m1()
+print(t1.__dict__) #{'city': 'pune', 'name': 'nishant', 'mark': 87}
+t1.d=88
+print(t1.__dict__) #{'city': 'pune', 'name': 'nishant', 'mark': 87, 'd': 88}
+
+ -----------------------------
+ C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+{'city': 'pune', 'name': 'nishant', 'mark': 87}
+{'city': 'pune', 'name': 'nishant', 'mark': 87, 'd': 88}
+
+Process finished with exit code 0
+------------------------------------------------
+static variable:
+class Test:
+    x = 50
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def m1(self):
+        self.c = 30
+
+t1 = Test()
+
+print(t1.__dict__) #{'a': 10, 'b': 20}
+t1.m1()
+print(t1.__dict__) # {'a': 10, 'b': 20, 'c': 30}
+print(t1.x) #50
+print(Test.x) # 50
+
+print("t1",t1.x,t1.a,t1.b) #t1 50 10 20
+
+Test.x = 100
+t1.a = 500
+print("t1",t1.x,t1.a,t1.b) #t1 100 500 20
+t2 =Test()
+print("t2",t2.x,t2.a,t2.b) #t2 100 10 20
+
+
+
+-------------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+{'a': 10, 'b': 20}
+{'a': 10, 'b': 20, 'c': 30}
+50
+50
+t1 50 10 20
+t1 100 500 20
+t2 100 10 20
+
+Process finished with exit code 0
+static variable and instance variable:
+
+class Test:
+    x = 50
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def m1(self):
+        self.c = 30
+
+t1 = Test()
+
+print(t1.__dict__) #{'a': 10, 'b': 20}
+t1.m1()
+print(t1.__dict__) # {'a': 10, 'b': 20, 'c': 30}
+print(t1.x) #50
+print(Test.x) # 50
+
+print("t1",t1.x,t1.a,t1.b) #t1 50 10 20
+
+Test.x = 100
+t1.a = 500
+print("t1",t1.x,t1.a,t1.b) #t1 100 500 20 # static value changed
+t2 =Test()
+print("t2",t2.x,t2.a,t2.b) #t2 100 10 20 # static value constant , instance variable changed
+---------------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+{'a': 10, 'b': 20}
+{'a': 10, 'b': 20, 'c': 30}
+50
+50
+t1 50 10 20
+t1 100 500 20
+t2 100 10 20
+
+Process finished with exit code 0
+-------------------------------------------------------
+class Test:
+    x = 50
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def m1(self):
+        self.c = 30
+
+    @classmethod
+    def m2(cls):
+        cls.c=44
+        Test.d = 33
+
+    @staticmethod
+    def m3():
+        Test.d=77
+
+t1 = Test()
+print(t1.__dict__) #{'a': 10, 'b': 20}
+print("t1-static variable :",Test.x) #t1-static variable : 50
+print("Instance variable :", t1.a,t1.b) #Instance variable : 10 20
+t1.m1()
+print("Instance variable :", t1.a,t1.b,t1.c) #Instance variable : 10 20 30
+t1.m2()
+print("Instance + static variable :", t1.a,t1.b,t1.c,Test.d) #Instance + static variable : 10 20 30 33
+t1.m3()
+print(Test.d) #77
+print(t1.__dict__) #{'a': 10, 'b': 20, 'c': 30}
+
+--------------------------------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+{'a': 10, 'b': 20}
+t1-static variable : 50
+Instance variable : 10 20
+Instance variable : 10 20 30
+Instance + static variable : 10 20 30 33
+77
+{'a': 10, 'b': 20, 'c': 30}
+
+Process finished with exit code 0
+------------------------------------------------------------------------------
+
+Filter function
+
+def isEven(x):
+    if x %2 ==0:
+        return True
+    else:
+        return False
+
+l1 = [2,3,44,13,23,2,5,8,9,7,17]
+
+l2 = list(filter(isEven,l1))
+print(l2)
+----------------
+C:\Nishant_Study\PythonJenkinsPytest\.venv\Scripts\python.exe C:\Nishant_Study\PythonJenkinsPytest\pythonConcept\tp.py
+[2, 44, 2, 8]
+
+Process finished with exit code 0
+---------------------------------
+Nested Functions:
+def outerfunction():
+    print("this is outer function")
+    def innerfunction():
+        print("this is inner function")
+    print("outer function calling inner function")
+    innerfunction()
+outerfunction()
+-------------------------------------
+decorator:
+def decoratorx(func):
+    def wrapper():
+        print("transaction is starting")
+        func()
+        print("transaction is completed")
+    return wrapper()
+
+@decoratorx
+def hello():
+    print("transaction process is going on")
+
+
+hello
+-------------------------------------
+generator:
+
+f = open("C:\\Nishant_Study\\PythonJenkinsPytest\\files\\abcd.txt",'a')
+f.write("Software\n")
+f.write("Nishant Narwade nanded \n")
+
+f2 = open("C:\\Nishant_Study\\PythonJenkinsPytest\\files\\abcd.txt",'r')
+
+print(f2.read())
+lines=f2.readlines()
+print("----------------------")
+print(lines)
+print(type(lines))
+---------------------
+l1= [10,20,30,40]
+l2=[30,40,50,60]
+
+l3= [x for x in l1 if x not in l2]
+print(l3)
+
+l3= [x for x in l1 if x in l2]
+print(l3)
+------------------------
+s1 = "nishant"
+
+d1={}
+
+for x in s1:
+    d1[x]= d1.get(x,0)+1
+
+for k, v in d1.items():
+    print(k,"-------",v)
+    -------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

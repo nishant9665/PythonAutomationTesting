@@ -1,0 +1,2635 @@
+Patter1:
+num = int(input("Enter any number: "))
+for i in range(num):  # range start with 0 and end with num-1.
+    for j in range(1,i+1):
+        print(i,end="")
+    print("")
+----------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter any number: 6
+
+1
+22
+333
+4444
+55555
+
+Process finished with exit code 0
+
+------------------------------------------------------
+Q.Let’s see how to print the following half pyramid pattern of numbers?
+num = int(input("Enter any number: "))
+for i in range(num):  # range start with 0 and end with num-1.
+    for j in range(1,i+1):
+        print(j,end="")
+    print("")
+
+--------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter any number: 6
+
+1
+12
+123
+1234
+12345
+
+Process finished with exit code 0
+---------------------------------
+Q.Inverted pyramid pattern of numbers
+num = int(input("Enter any number: "))
+for i in range(1,num+1):  # range start with 0 and end with num-1.
+    for j in range(num-i):
+        print(i,end="")
+    print("")
+----------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter any number: 6
+11111
+2222
+333
+44
+5
+
+
+Process finished with exit code 0
+---------------------------------
+Inverted Pyramid pattern with the same digit
+num = int(input("Enter the number :"))
+for i in range(1,num+1):
+    for j in range(num-i):
+        print(num, end="")
+    print("")
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :5
+5555
+555
+55
+5
+
+
+Process finished with exit code 0
+---------------------------------
+Another inverted half pyramid pattern with number
+num = int(input("Enter the number :"))
+for i in range(num):
+    for j in range(num-i):
+        print(j, end="")
+    print("")
+
+----------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :6
+012345
+01234
+0123
+012
+01
+0
+
+Process finished with exit code 0
+---------------------------------
+Q. Alternate numbers pattern using for loop
+num = int(input("Enter the number :"))
+for i in range(1, num + 1):
+    for j in range(1, i + 1):
+        if i % 2 != 0:
+            print(i, end="")
+    print("")
+
+-----
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :5
+1
+
+333
+
+55555
+
+Process finished with exit code 0
+---------------------------------
+Reverse number pattern
+num = int(input("Enter the number :"))
+for i in range(1,num+1):
+    for j in range(num-i):
+        print(num-i,end="")
+    print("")
+
+-----------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :6
+55555
+4444
+333
+22
+1
+
+
+Process finished with exit code 0
+---------------------------------
+Reverse Pyramid of Numbers
+num = int(input("Enter the number :"))
+for i in range(num):
+    for j in range(i+1):
+        print(i+1-j,end="")
+    print("")
+
+----------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :6
+1
+21
+321
+4321
+54321
+654321
+
+Process finished with exit code 0
+---------------------------------
+Another reverse number pattern
+num = int(input("Enter the number :"))
+for i in range(num):
+    for j in range(num-i):
+        print(num-j,end="")
+    print("")
+
+--------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number :5
+54321
+5432
+543
+54
+5
+
+Process finished with exit code 0
+
+---------------------------------
+Pattern - 1: Simple pyramid pattern
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    for j in range(i+1):
+        print("*",end="")
+    print("")
+
+
+------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :5
+*
+**
+***
+****
+*****
+
+Process finished with exit code 0
+---------------------------------
+Pattren - 2:To print square pattern with * symbols
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print("* " * n)
+
+
+--------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :3
+* * *
+* * *
+* * *
+
+Process finished with exit code 0
+---------------------------------
+Pattren - 3: square pattern with provided fixed digit
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print((str(n)+" ") * n)
+
+
+---------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+4 4 4 4
+4 4 4 4
+4 4 4 4
+4 4 4 4
+
+Process finished with exit code 0
+----------------------------------
+Pattren - 4:square pattern with provided fixed digit in every row:
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print((str(i)+" ") * n)
+
+
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+0 0 0 0
+1 1 1 1
+2 2 2 2
+3 3 3 3
+
+Process finished with exit code 0
+---------------------------------
+Pattren - 5: || To print square pattern with fixed alphabet symbol
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print((str('A')+" ") * n)
+
+
+----------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+A A A A
+A A A A
+A A A A
+A A A A
+
+Process finished with exit code 0
+----------------------------------
+15: Right Angle Triangle pattern with fixed alphabet symbol
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print((chr(65+i)+" ") * (i+1))
+
+
+----------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :5
+A
+B B
+C C C
+D D D D
+E E E E E
+
+Process finished with exit code 0
+---------------------------------
+Pattern -20: Inverted Right Angle Triangle pattern with * symbols
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print((str('*')+" ") * (n-i))
+
+
+-----------------------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :5
+* * * * *
+* * * *
+* * *
+* *
+*
+
+Process finished with exit code 0
+----------------------------------
+num = 8
+for i in range(1,num):
+    for j in range(1,i+1):
+        print(str(i*j)+" ",end="")
+    print()
+--------------------
+1
+2 4
+3 6 9
+4 8 12 16
+5 10 15 20 25
+6 12 18 24 30 36
+7 14 21 28 35 42 49
+
+=== Code Execution Successful ===
+num = 8
+for i in range(0,num):
+    for j in range(0,i+1):
+        print(chr(65+i+j)+" ",end="")
+    print()
+----------------
+A
+B C
+C D E
+D E F G
+E F G H I
+F G H I J K
+G H I J K L M
+H I J K L M N O
+
+=== Code Execution Successful ===
+ Pattern -30: To print Pyramid pattern with fixed digit in every row
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print(' '*(n-i-1)+(str(i+1)+' ')*(i+1))
+
+
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :5
+    1
+   2 2
+  3 3 3
+ 4 4 4 4
+5 5 5 5 5
+
+Process finished with exit code 0
+----------------------------------------
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print(' '*(n-i-1),end='')
+    for j in range(i+1):
+        print(chr(64+n-j),end=' ')
+    print()
+
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+   D
+  D C
+ D C B
+D C B A
+
+Process finished with exit code 0
+---------------------------------
+Right Half Diamond Pattern with alphabet symbols in dictionary order
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    for j in range(i+1):
+        print(chr(65+j),end=' ')
+    print()
+for i in range(n-1):
+    for j in range(n-1-i):
+        print(chr(65+j),end=' ')
+    print()
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+A
+A B
+A B C
+A B C D
+A B C
+A B
+A
+
+Process finished with exit code 0
+-------------------------------
+To print Inverted Pyramid Pattern with alphabet symbols in dictionary order
+n = int(input("Enter the number of rows :"))
+for i in range(n):
+    print(' ' * i,end='')
+    for j in range(n - i):
+        print(chr(65 + j), end=" ")
+    print()
+-----------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Enter the number of rows :4
+A B C D
+ A B C
+  A B
+   A
+
+Process finished with exit code 0
+---------------------------------------
+Q2. Write a Program To REVERSE content of the given String by using reversed function
+s = "durga"
+print("Before convert the string is :",s)
+r = reversed(s)
+output = ''.join(r)
+print("After convert the string is :",output)
+---------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Before convert the string is : durga
+After convert the string is : agrud
+
+Process finished with exit code 0
+---------------------------------
+
+s1="nishant"
+empt=""
+for i in range(len(s1)-1,-1,-1):
+    empt=empt+''.join(s1[i])
+print(empt)
+-------------------------------
+tnahsin
+
+=== Code Execution Successful ===
+----------------------------------
+Q3. Write a Program To REVERSE content of the given String by using while loop
+s = "durga"
+print("Before convert the string is :", s)
+output = ""
+i = len(s) - 1
+while i >= 0:
+    output = output + s[i]
+    i = i - 1
+print("After convert the string is :",output)
+------------
+
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Before convert the string is : durga
+After convert the string is : agrud
+
+Process finished with exit code 0
+---------------------------------
+Q4. Write a Program To REVERSE order of words present in the given string
+words = "Nishant Narwade Nanded"
+print("Before convert the string is :", words)
+
+li = words.split()
+reli = li[::-1]
+revWord = ' '.join(reli)
+print("After convert the string is :", revWord)
+
+--------------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Before convert the string is : Nishant Narwade Nanded
+After convert the string is : Nanded Narwade Nishant
+
+Process finished with exit code 0
+---------------------------------
+ Q5. Write a Program To REVERSE internal content of each word?
+words = "Nishant Narwade Nanded"
+print("Before convert the string is :", words)
+
+li = words.split()
+empt = []
+for i in li:
+    empt.append(i[::-1])
+output = ' '.join(empt)
+print("After convert the string is :", output)
+
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Before convert the string is : Nishant Narwade Nanded
+After convert the string is : tnahsiN edawraN dednaN
+
+Process finishe
+d with exit code 0
+---------------------------------
+Q6. Write a Program To REVERSE internal content of every second word present in the given string?
+words = "one two three four five six"
+print("Before convert the string is :", words)
+li = words.split()
+print(li)
+emptarr = []
+for i in range(len(li)):
+    if i % 2 == 0:
+        emptarr.append(li[i])
+    else:
+        emptarr.append(li[i][::-1])
+
+output = ' '.join(emptarr)
+print("After convert the string is :", output)
+-------------------------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Before convert the string is : one two three four five six
+['one', 'two', 'three', 'four', 'five', 'six']
+After convert the string is : one owt three ruof five xis
+
+Process finished with exit code 0
+---------------------------------
+Q7. This is wrong program ,need to change the code Wrt Prog to print the characters present at even index and odd index?
+words = "Nishant"
+
+print("Char print for EVEN index")
+for i in range(0,len(words)):
+    print(words[i])
+    i = i + 2
+
+print("Char print for ODD index")
+for j in range(1, len(words)):
+    print(words[j])
+    j = j + 2
+------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Char print for EVEN index
+N
+i
+s
+h
+a
+n
+t
+Char print for ODD index
+i
+s
+h
+a
+n
+t
+
+Process finished with exit code 0
+--------------------------------
+Q8. Wrt a prog to merge characters of 2 strings into a single string by taking characters altern
+s1 = "Nishant"
+s2 = "bablu"
+output = ''
+i, j = 0, 0
+while i < len(s1) or j < len(s2):
+    if i < len(s1):
+        output = output + s1[i]
+        i = i + 1
+
+    if j < len(s2):
+        output = output + s2[j]
+        j = j + 1
+
+print(output)
+--------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Nbiasbhlaunt
+
+Process finished with exit code 0
+----------------------------------
+Q9. Program to sort characters of the string, first alphabet symbols followed by digits
+ip = 'B4A2D3'
+print("This is input :",ip)
+alphabets = []
+digit = []
+for i in ip:
+    if i.isalpha():
+        alphabets.append(i)
+    else:
+        digit.append(i)
+
+output = ''.join(sorted(alphabets)+sorted(digit))
+print("This is expected output :",output)
+----------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+This is input : B4A2D3
+This is expected output : ABD234
+
+Process finished with exit code 0
+-----------------------------------
+ Q10 .Program for the requirement,input: a4b3c2 and expected output: aaaabbbcc
+s = 'A4B3C4D7'
+output = ''
+for ch in s:
+    if ch.isalpha():
+        x = ch
+    else:
+        di = int(ch)
+        output = output + x * di
+
+print(output)
+
+---------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+AAAABBBCCCCDDDDDDD
+
+Process finished with exit code 0
+---------------------------------
+
+# check number is prime or not
+
+num = input("enter the number : ")
+num = int(num)
+for i in range(2,num):
+  if num % i == 0:
+    print("This is not a prime number")
+    break
+else:
+    print("This is prime number")
+
+-------------------
+#INTERVIEW QUESTION - Count the frequency of words appearing in a string Using Python
+
+s1 = "abc xyz mnop abc xyz xyz"
+
+l1 =  s1.split()
+for i in range(0,len(l1)):
+    count=1
+    for j in range (i+1,len(l1)):
+        if l1[i]==l1[j]:
+            count = count+1
+            l1[j] = "0"
+    if count>=1 and l1[i] !="0":
+        print("Char : ",l1[i], "count",count)
+
+
+---------------------------------------------------
+# duplicate char and count in string
+
+s1 = "nishant"
+l1 =  list(s1)
+
+for i in range(0,len(l1)):
+    count=1
+    for j in range (i+1,len(l1)):
+        if l1[i]==l1[j]:
+            count = count+1
+            l1[j] = "0"
+    if count>=1 and l1[i] !="0":
+        print("Char : ",l1[i], "count",count)
+
+-------------------------------------------------------
+
+
+rever string :
+s1 = "nishant"
+size = len(s1)
+emp = ""
+for i in range(-1,-len(s1)-1,-1):
+    emp= emp+s1[i]
+print(emp)
+---------------------------------------
+
+l1 = list(s1)
+charempty=""
+numempty=""
+
+for i in l1:
+    if i.isalpha():
+        charempty=charempty+i
+    else:
+        numempty=numempty+i
+
+charsort = sorted(charempty)
+r1= ''.join(charsort)
+numsort = sorted(numempty)
+r2=''.join(numsort)
+
+resultf = r1+r2
+print(resultf)
+--------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+ABCD1347
+
+Process finished with exit code 0
+-------------------------------------------------------------------
+# Q7. Write a program for the following requirement
+# input: a4b3c2
+# output: aaaabbbcc
+s1 = "a4b3c2"
+totalchar = ""
+previouschar = ""
+multchar = ""
+for i in s1:
+    if i.isalpha():
+        previouschar = previouschar + i
+    else:
+        multchar = previouschar * int(i)
+        totalchar = totalchar + ''.join(multchar)
+        previouschar = ""
+print(totalchar)
+--------------------
+C:\Users\user\Desktop\Rajratan\python.exe -X pycache_prefix=C:\Users\user\AppData\Local\JetBrains\PyCharmCE2024.2\cpython-cache "C:/Users/user/Desktop/Rajratan/Library/man/man1/PyCharm Community Edition 2024.2.2/plugins/python-ce/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 56588 --file C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+Connected to pydev debugger (build 242.22855.92)
+aaaabbbcc
+
+Process finished with exit code 0
+----------------------------------------------------------------
+#Q9. Write a program to remove duplicate characters from the given input string?
+#input: ABCDABBCDABBBCCCDDEEEF
+#output: ABCDEF
+s="abcabcd"
+l=[]
+output=""
+for x in s:
+    if x not in l:
+        l.append(x)
+output=''.join(l)
+print(output)
+-----------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+abcd
+
+Process finished with exit code 0
+
+-----------------------------------------
+# print the vowles in console from given string
+s="programming"
+l=['a','e','i','o','u']
+empt=""
+for x in s:
+    if x not in l:
+        pass
+    else:
+        empt=empt+''.join(x)
+print(list(empt))
+--------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+['o', 'a', 'i']
+
+Process finished with exit code 0
+---------------------------------------------------------------------
+#Q10. Write a program to find the number of occurrences of each character present in the
+#given String?
+#input: ABCABCABBCDE
+#output: A-3,B-4,C-3,D-1,E-1
+
+s1 = "abcdabcabca"
+
+l1=list(s1)
+
+for i in range(0,len(l1)):
+    count=1
+    for j in range(i+1,len(l1)):
+        if l1[i]==l1[j]:
+            count =count+1
+            l1[j]="0"
+    if count>=1 and l1[i] !='0':
+        print("Char is ",l1[i],"count is :",count)
+
+---------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+Char is  a count is : 4
+Char is  b count is : 3
+Char is  c count is : 3
+Char is  d count is : 1
+
+Process finished with exit code 0
+----------------------------------------------------------------
+# found a number which are division by 7 and not multiple by 5 range is 1 to 100
+
+l1 = []
+for i in range(1,100):
+    if i % 7 == 0  and i % 5 != 0:
+        l1.append(i)
+print(l1)
+----------------------------
+# found a number which are division by 7 and not multiple by 5 range is 1 to 100
+
+l1 = []
+for i in range(1,100):
+    if i % 7 == 0  and i % 5 != 0:
+        l1.append(i)
+print(l1)
+
+l2 = [i for i in range(1,100) if i % 7 == 0  and i % 5 != 0]
+print(l2)
+-------------------------------------------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Programming_Question\tp.py
+[7, 14, 21, 28, 42, 49, 56, 63, 77, 84, 91, 98]
+[7, 14, 21, 28, 42, 49, 56, 63, 77, 84, 91, 98]
+
+Process finished with exit code 0
+-----------------------------------------------------------------------------------
+# removing element from list
+
+list = [1, 4, 6, 3, 77, 45, 12]
+print("Before removing the items: ", list)
+
+list.remove(45)
+print("After removing the items: ", list)
+print("This is max number from list :", max(list))
+print("This is min number from list :", min(list))
+print("This is min number from list :", sum(list))
+
+
+--------------
+# removing duplicate element from list
+
+list = [1, 4, 6, 3, 77,43,32,2,2,4,4,6, 45, 12]
+
+l2=[]
+for i in list:
+    if i not in l2:
+        l2.append(i)
+
+print(l2)
+
+
+-------------
+Check Even or Odd Number
+print("Enter the number :")
+num = int(input())
+
+if num % 2 == 0:
+    print(num, ": is even number")
+else:
+    print(num, ": is odd number")
+
+-----------------
+def CheckEvenOdd(num):
+    if num % 2 == 0:
+        print(num, ": is even number")
+    else:
+        print(num, ": is odd number")
+
+
+print("Enter the number :")
+num = int(input())
+
+CheckEvenOdd(num)
+-------------
+class CheckNum:
+    def CheckEvenOdd(self,num):
+        if num % 2 == 0:
+            print(num, ": is even number")
+        else:
+            print(num, ": is odd number")
+
+
+print("Enter the number :")
+num = int(input())
+
+obj =CheckNum()
+obj.CheckEvenOdd(num)
+
+-----------------------
+# prime Number
+
+print("Enter the number :", end="")
+num = int(input())
+
+p = 0
+for i in range(2, num):
+    if num % i == 0:
+        p = 1
+        break
+if p == 0:
+    print(num, "is a prime number")
+else:
+    print(num, "is not a prime number")
+
+--------
+D:\PythonSept-26\venv\Scripts\python.exe D:/PythonSept-26/python_Study/tp.py
+Enter the number :13
+13 is a prime number
+
+Process finished with exit code 0
+
+---------------------
+def checkPrime(num):
+    p = 0
+    for i in range(2, num):
+        if num % i == 0:
+            p = 1
+            break
+
+    if p == 0:
+        print(num, "is a prime number")
+    else:
+        print(num, "is not a prime number")
+
+
+print("Enter the number :", end="")
+num = int(input())
+checkPrime(num)
+
+----------------
+class CheckPrimeNumber:
+    def CheckPrime(num):
+        p = 0
+        for i in range(2, num):
+            if num % i == 0:
+                p = 1
+                break
+
+        if p == 0:
+            print(num, "is a prime number")
+        else:
+            print(num, "is not a prime number")
+
+
+print("Enter the number :", end="")
+num = int(input())
+obj = CheckPrimeNumber
+
+obj.CheckPrime(num)
+
+------------------------------
+print("Enter the char : ", end="")
+c = input()
+if c >= 'a' and c <= 'z':
+    print(c, ": is char which is present from a to z")
+elif c >= 'A' and c <= 'Z':
+    print(c, ": is char which is present from A to Z")
+else:
+    print(c, " : is not a char !!!!!!!!!!!!")
+
+--------
+def checkChar(c):
+    if c >= 'a' and c <= 'z':
+        print(c, ": is char which is present from a to z")
+    elif c >= 'A' and c <= 'Z':
+        print(c, ": is char which is present from A to Z")
+    else:
+        print(c, " : is not a char !!!!!!!!!!!!")
+
+
+print("Enter the char : ", end="")
+c = input()
+checkChar(c)
+
+-----------
+print("Enter the char : ", end="")
+
+c = input()
+list = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+for i in list:
+    if i == c:
+        print(c, "This is vowels")
+        break
+else:
+    print(c, "This is constant")
+
+------------------
+print("Enter the number : ", end="")
+
+num = int(input())
+original = num
+rev = 0
+
+while num > 0:
+    rem = num % 10
+    rev = rem + (rev * 10)
+    num = int(num / 10)
+
+if original == rev:
+    print("This is number and rev number are matched")
+else:
+    print("This is number has not matched")
+
+---------------
+print("Enter the Number: ", end="")
+num = int(input())
+
+temp = num
+noOfDigit = len(str(num))
+res = 0
+while num > 0:
+    rem = num % 10
+    res = res + (rem ** noOfDigit)
+    num = int(num / 10)
+
+if res == temp:
+    print("\n" + str(temp) + " is an Armstrong Number")  #153
+else:
+    print("\n" + str(temp) + " is not an Armstrong Number")
+
+---------------------
+print("Enter the Number: ", end="")
+num = int(input())
+
+temp = num
+noOfDigit = len(str(num))
+res = 0
+while num > 0:
+    rem = num % 10
+    res = res + (rem ** noOfDigit)
+    num = int(num / 10)
+
+if res == temp:
+    print("\n" + str(temp) + " is an Armstrong Number")
+else:
+    print("\n" + str(temp) + " is not an Armstrong Number")
+------------------
+list = [10, 15, 2, 4, 7, 55, 33, 12, 45]
+
+max = list[0]
+for i in list:
+    if i > max:
+        max = i
+
+print(max)
+
+min = list[0]
+
+for j in list:
+    if j<min:
+        min= j
+
+print(min)
+--------------------------
+list = [10, 15, 2, 4, 7, 55, 33, 12, 45]
+
+sum =0
+for i in list:
+    sum =sum+i
+print(sum)
+
+------------------
+Q. Print on pdf file by using end with functionality
+
+list = ["abc.pdf", "def.xml", "xyx.pdf", "had.txt", "pqr.txt", "abc.png"]
+for i in range(len(list)):
+    str = list[i]
+    pdfFile = str.endswith(".pdf")
+    if pdfFile:
+        print(list[i])
+
+--------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+abc.pdf
+xyx.pdf
+
+Process finished with exit code 0
+
+-------------
+
+Q.Print on pdf file by using start with functionality
+
+listx = ["test_abc.pdf", "def.xml", "xyx.pdf", "had.txt", "test_pqr.txt", "test_xyz.png", "test_0000bang.json"]
+for i in range(len(listx)):
+    str = listx[i]
+    pdfFile = str.startswith("test_")
+    if pdfFile:
+        print(listx[i])
+
+----------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+test_abc.pdf
+test_pqr.txt
+test_xyz.png
+test_0000bang.json
+
+Process finished with exit code 0
+
+----------------------------------
+
+word = 'geeks for geeks'
+
+# returns first occurrence of Substring
+result = word.find('geeks')
+print("Substring 'geeks' found at index:", result)
+
+result = word.find('for')
+print("Substring 'for ' found at index:", result)
+
+# How to use find()
+if word.find('pawan') != -1:
+    print("Contains given substring ")
+else:
+    print("Doesn't contains given substring")
+-----------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+Substring 'geeks' found at index: 0
+Substring 'for ' found at index: 6
+Doesn't contains given substring
+
+Process finished with exit code 0
+
+-----------------------------
+
+Q. reverse string by user input
+
+print("Enter the name :", end="")
+st = input()
+for i in range(len(st)):
+    print(st[i])  # kadak
+
+# Approach-1
+stx = ""
+for j in st:
+    stx = stx + j
+print("This is reverse string -Approach-1 :", stx)
+
+# Approach-2
+stx2 = st[::-1]
+print("This is reverse string -Approach-2 :", stx2)
+
+# Approach-3
+stx3 = "".join(reversed(st))
+print("This is reverse string -Approach-2 :", stx3)
+--------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+Enter the name :kadak
+k
+a
+d
+a
+k
+This is reverse string -Approach-1 : kadak
+This is reverse string -Approach-2 : kadak
+This is reverse string -Approach-2 : kadak
+
+Process finished with exit code 0
+---------------------------------------------
+Q. write a py to find out common letter between two strings?
+ex. 1. NAINA
+    2. REENE
+approch-->use set then compare the two list
+
+#
+and is a Logical AND that returns True if both the operands are true whereas ‘&’ is a bitwise operator in Python that acts on bits and performs bit by bit operation.
+value of letters: https://www.eso.org/~ndelmott/ascii.html
+------------------
+def common_letters():
+    str1 = input("Enter 1st string name : ")
+    str2 = input("Enter 2nd string name :")
+    s1 = set(str1)
+    s2 = set(str2)
+    lst = s1 & s2
+    print(lst)
+
+
+common_letters()
+---------------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Enter 1st string name : nishant
+Enter 2nd string name :narwade
+{'n', 'a'}
+
+Process finished with exit code 0
+-----------------------------------------------------------
+Write a py program to count the frequency of words appearing in string.
+A2:
+stx = "nishant narwade nishant tarwade prashant kkc"
+li = stx.split(" ")
+for i in range(len(li)):
+    count = 0
+    for j in range(i + 1):
+        if li[i] == li[j]:
+            count = count + 1
+    if count >= 1:
+        print(li[i], "count is ", count)
+--------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+nishant count is  1
+narwade count is  1
+nishant count is  2
+tarwade count is  1
+prashant count is  1
+kkc count is  1
+
+Process finished with exit code 0
+----------------------------------------
+A1:
+def freq_word():
+    st = input("Enter the string :")
+    li = st.split()
+    d = {}
+
+    for i in li:
+        if i not in d.keys():
+            d[i] = 0
+        d[i] = d[i] + 1
+
+    print(d)
+
+
+freq_word()
+-----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Enter the string :nishant narwade nishant nisha pranjali prana khuna prana
+{'nishant': 2, 'narwade': 1, 'nisha': 1, 'pranjali': 1, 'prana': 2, 'khuna': 1}
+
+Process finished with exit code 0
+------------------------------
+program:2
+def find_word():
+    st = "hello team how are you , team hello hello , how are you"
+    li = st.split()
+    li2 = []
+    count = 0
+    for i in li:
+        if i not in li2:
+            li2.append(i)
+
+    for j in range(len(li2)):
+        print("This is word name :",li[j], ": count is :",li.count(li2[j]))
+
+
+find_word()
+------------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+This is word name : hello : count is : 3
+This is word name : team : count is : 2
+This is word name : how : count is : 2
+This is word name : are : count is : 2
+This is word name : you : count is : 2
+This is word name : , : count is : 2
+
+Process finished with exit code 0
+--------------------------------------------------------
+def find_word():
+    st = "nishant"
+    li = st
+    li2 = []
+    count = 0
+    for i in li:
+        if i not in li2:
+            li2.append(i)
+
+    for j in range(len(li2)):
+        print("This is word name :",li2[j], ": count is :",li.count(li2[j]))
+
+
+find_word()
+--------------------
+D:\Python-NOV15\venv\Scripts\python.exe D:/Python-NOV15/Python_Study/CharRepted_String.py
+This is word name : n : count is : 2
+This is word name : i : count is : 1
+This is word name : s : count is : 1
+This is word name : h : count is : 1
+This is word name : a : count is : 1
+This is word name : t : count is : 1
+
+Process finished with exit code 0
+
+--------------------------------------------------------
+li2 = 'nishant'
+st1 = list(li2)
+for i in range(len(st1)):
+    count = 1
+    for j in range(i + 1, len(st1)):
+
+        if st1[i] == st1[j]:
+            count = count + 1
+            st1[j] = "-"
+    if count >= 1 and st1[i] != "-":
+        print(st1[i], count)
+-------------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+n 2
+i 1
+s 1
+h 1
+a 1
+t 1
+
+Process finished with exit code 0
+----------------------------------
+
+Conversion of two list into Dictionary Using Python
+def list_to_dict():
+    keys = [1, 2, 3]
+    values = ["one", "two", "three"]
+    result = dict(zip(keys, values))
+    print(result)
+
+
+list_to_dict()
+------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+{1: 'one', 2: 'two', 3: 'three'}
+
+Process finished with exit code 0
+---------------------------------------------
+How to create dict using 2 lists
+def list_to_dict():
+    keys = [1, 2, 3]
+    values = ["one", "two", "three"]
+    result = dict(zip(keys, values))
+    print(result)
+
+
+list_to_dict()
+-------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+{1: 'one', 2: 'two', 3: 'three'}
+
+Process finished with exit code 0
+---------------------------------------------------------------------
+
+Frequently Asked Python Program 1: How To Swap 2 Numbers
+
+num1 = input("Enter the first number :")
+num2 = input("Enter the 2nd number :")
+
+print("Before swapping 1st number is :", num1)
+print("Before swapping 2nd  number is :", num2)
+
+temp = num1
+num1 = num2
+num2 = temp
+
+print("After swapping 1st number is :", num1)
+print("after swapping 2nd  number is :", num2)
+
+print("Approach2-------------------------")
+num1, num2 = num1,num2
+
+print(" Approach2 : After swapping 1st number is :", num1)
+print("Approach2 :after swapping 2nd  number is :", num2)
+
+--------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Enter the first number :45
+Enter the 2nd number :75
+Before swapping 1st number is : 45
+Before swapping 2nd  number is : 75
+After swapping 1st number is : 75
+after swapping 2nd  number is : 45
+Approach2-------------------------
+ Approach2 : After swapping 1st number is : 75
+Approach2 :after swapping 2nd  number is : 45
+
+Process finished with exit code 0
+---------------------------------------------
+Frequently Asked Python Program 2: How To Check A Number is Prime Or Not
+
+num = int(input("Enter the any number : "))
+count = 0
+
+for i in range(1, num + 1):
+    if num % i == 0:
+        count = count + 1
+if count == 2:
+    print("this is prime number : ", num)
+else:
+    print("This is not a prime number :", num)
+-------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Enter the any number : 7
+this is prime number :  7
+
+Process finished with exit code 0
+---------------------------------------------------------
+Frequently Asked Python Program 3: How To Find Factorial of A Number
+num = int(input("Enter any number : "))
+factorial = 1
+
+if num < 0:
+    print("factorial of negative not calculated")
+elif num == 0:
+    print("factorial of 0 is 1")
+else:
+    for i in range(1, num + 1):
+        factorial = factorial * i
+    print("This is factorial number :", factorial)
+----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Enter any number : 5
+This is factorial number : 120
+
+Process finished with exit code 0
+------------------------------------------------------
+Frequently Asked Python Program 4: Print Fibonacci Series
+n1 = 0
+n2 = 1
+print(n1)
+print(n2)
+for i in range(1, 10):
+    sum = n1 + n2
+    print(sum)
+    n1 = n2
+    n2 = sum
+
+-------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+
+Process finished with exit code 0
+----------------------------------------------
+Frequently Asked Python Program 5: Find Sum Of Elements in an Array
+arr = [1,4,6,7,3]
+print(sum(arr))
+
+sumx = 0
+
+for i in range(len(arr)):
+    sumx= sumx+arr[i]
+
+print(sumx)
+
+----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+21
+21
+
+Process finished with exit code 0
+----------------------------------------------------
+Frequently Asked Python Program 6: Find Maximum & Minimum Elements in an Array
+arr = [1, 4, 6, 7, 33, 22, 221, 111, 3]
+max = arr[0]
+for i in range(1, len(arr)):
+    if arr[i] > max:
+        max = arr[i]
+print(max)
+
+print("-------------minimum-----------------")
+arr2 = [1, 4, 6, 7, 33, 22, 221, 111, 3]
+min = arr[0]
+for i in range(1, len(arr)):
+    if arr[i] < min:
+        min = arr[i]
+print(min)
+----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+221
+-------------minimum-----------------
+1
+
+Process finished with exit code 0
+-------------------------------------------------------
+Frequently Asked Python Program 7: How To Find Length of a List | Number of Elements in a List
+arr = [1, 4, 6, 7, 33, 22, 221, 111, 3]
+count = 0
+for i in arr:
+    count = count + 1
+
+print("This is length :",count)
+print("This is 2nd Approach :",len(arr))
+------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+This is length : 9
+This is 2nd Approach : 9
+
+Process finished with exit code 0
+------------------------------------------
+Frequently Asked Python Program 8: How To Swap First & Last Elements of a List
+arr = [1, 4, 6, 7, 33, 22, 221, 111, 3]
+print("Before action the arrays is ", arr)
+temp = arr[0]
+arr[0] = arr[len(arr) - 1]
+arr[len(arr) - 1] = temp
+print(arr)
+
+# Approach 2:
+arr[0], arr[-1] = arr[0], arr[-1]
+print(arr)
+
+# App by using tuple
+get = (arr[-1], arr[0])
+arr[0], arr[-1] = get
+print(arr)
+
+# * operator
+arr2 = [33, 34, 54, 111, 3]
+
+start, *middle, last = arr
+arr = [last, *middle, start]
+print("This is approach 4 : ", arr2)
+
+arr5 = [7, 34, 54, 111, 73]
+first = arr5.pop(0)
+last = arr5.pop(-1)
+
+arr5.insert(0,last)
+arr5.append(first)
+print(arr5)
+
+----------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before action the arrays is  [1, 4, 6, 7, 33, 22, 221, 111, 3]
+[3, 4, 6, 7, 33, 22, 221, 111, 1]
+[3, 4, 6, 7, 33, 22, 221, 111, 1]
+[1, 4, 6, 7, 33, 22, 221, 111, 3]
+This is approach 4 :  [33, 34, 54, 111, 3]
+[73, 34, 54, 111, 7]
+
+Process finished with exit code 0
+--------------------------------------------
+Frequently Asked Python Program 10: How To Remove Nth occurrence of the word from a List
+
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+print(mylist)
+word = "RCB"
+n = 2
+count = 1
+
+for i in range(0, len(mylist) - 1):
+    if mylist[i] == word:
+        count = count + 1
+        if count == n:
+            del mylist[i]
+
+print(mylist)
+------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+['kkc', 'skb', 'IPL', 'IPL', 'skb', 'nmn']
+
+Process finished with exit code 0
+
+-----------------------------------------------
+Frequently Asked Python Program 11: How To Search an Element in a List
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+for i in range(len(mylist)):
+    print(mylist[i])
+print("--------------------------list approach-2-----------------------")
+
+flag = 0
+ele = "skb"
+for i in mylist:
+    if i == ele:
+        print("element is found",i)
+        flag = 1
+        break
+
+if flag == 0:
+    print("Element is not found",i)
+
+print("--------------------------list approach-3-----------------------")
+mylist2 = [1, 2, 4, 7, 99]
+for i in mylist2:
+    print(i)
+---------------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+kkc
+skb
+IPL
+RCB
+IPL
+skb
+nmn
+--------------------------list approach-2-----------------------
+element is found skb
+--------------------------list approach-3-----------------------
+1
+2
+4
+7
+99
+
+Process finished with exit code 0
+-----------------------------------------------
+Frequently Asked Python Program 12: How To Clear a List
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+print("Before the clear the list is :",mylist)
+mylist.clear()
+print("After the clear the list is :",mylist)
+
+# Approach-2 , by using []
+mylist = ["kkc", "skb", "IPL", "nmn","PMP"]
+print("Before the clear the list is :",mylist)
+mylist = []
+print("After the clear the list is :",mylist)
+
+# Approach-3 by using * operator
+mylist = ["kkc", "skb", "IPL", "nmn","PMP"]
+print("Before the clear the list is :",mylist)
+mylist *= 0
+print("After the clear the list is :",mylist)
+
+# Approach-4 by using [:] operator
+mylistx = ["kkc", "skb", "IPL", "nmn","PMP"]
+print("Before the clear the list is :",mylistx)
+del mylistx[:]
+print("After the clear the list is :",mylistx)
+-------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+After the clear the list is : []
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'nmn', 'PMP']
+After the clear the list is : []
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'nmn', 'PMP']
+After the clear the list is : []
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'nmn', 'PMP']
+After the clear the list is : []
+
+Process finished with exit code 0
+
+-------------------------------------------
+Frequently Asked Python Program 13: How To Reverse a List
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+print("Before the clear the list is :",mylist)
+mylist.reverse()
+print("After the clear the list is :",mylist)
+
+------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+After the clear the list is : ['nmn', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'kkc']
+
+Process finished with exit code 0
+
+--------------------------------------------------
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+print("Before the clear the list is :",mylist)
+mylist.reverse()
+print("After the clear the list is :",mylist)
+
+# Approach 2:
+mylist2 = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+mylist2 = list[::-1]
+print("After the clear the list is :",mylist2)
+
+
+
+---------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+After the clear the list is : ['nmn', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'kkc']
+After the clear the list is : list[slice(None, None, -1)]
+
+Process finished with exit code 0
+-------------------------------------------------
+Frequently Asked Python Program 14:How To Clone or Copy a List
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn"]
+print("Before the clear the list is :", mylist)
+
+# Approach1
+mylist_copy = mylist[:]
+print("Approach1", mylist_copy)
+
+# Approach2
+mylist2_Copy = []
+mylist2 = ["kkc", "skb", "nmn"]
+mylist2_Copy.extend(mylist2)
+print("Approach2", mylist2_Copy)
+
+# Approach3
+mylist3_Copy = []
+mylist3 = ["kkc", "skb", "nmn"]
+mylist3_Copy = list(mylist2)
+print("Approach3", mylist3_Copy)
+
+# Approach4
+mylist4_Copy = []
+mylist4 = ["kkc", "skb", "nmn"]
+mylist4_Copy = mylist4.copy()
+print("Approach3", mylist4_Copy)
+
+# Approach5
+mylist5 = [1,22,31,4]
+mylist_copy5=[i for i in mylist5]
+print(mylist_copy5)
+------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+Approach1 ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn']
+Approach2 ['kkc', 'skb', 'nmn']
+Approach3 ['kkc', 'skb', 'nmn']
+Approach3 ['kkc', 'skb', 'nmn']
+[1, 22, 31, 4]
+
+Process finished with exit code 0
+---------------------------------------------------------------------------------
+Frequently Asked Python Program 15: Count Occurrences of an element in a list
+mylist = ["kkc", "skb", "IPL", "RCB", "IPL", "skb", "nmn", "skb"]
+print("Before the clear the list is :", mylist)
+
+# Approach1
+count = 0
+ele = "skb"
+
+for i in mylist:
+    if i == ele:
+        count = count + 1
+
+if count > 1:
+    print("This is element :", ele, "And count is :", count)
+
+-----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Before the clear the list is : ['kkc', 'skb', 'IPL', 'RCB', 'IPL', 'skb', 'nmn', 'skb']
+This is element : skb And count is : 3
+
+Process finished with exit code 0
+
+--------------------
+Frequently Asked Python Program 19:Find 2nd Largest Number in a List
+mylist = [1, 4, 2, 66, 44, 33, 22, 9, 2, 22, 33, 45, 65, 78]
+mylist.sort()
+print("first largest number ", mylist[-1])
+print("Second largest number ", mylist[-2])
+
+my_list2 = [2, 3, 6, 56, 78]
+mylist_set = set(my_list2)
+print(mylist_set)
+mylist_set.remove(max(mylist_set))
+print(max(mylist_set))
+
+---------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+first largest number  78
+Second largest number  66
+{2, 3, 6, 78, 56}
+56
+
+Process finished with exit code 0
+
+----------------------------------
+Frequently Asked Python Program 21:How To Reverse Words in a String
+stx = "My name is nishant"
+words = stx.split(" ")
+print(words)
+
+words = words[::-1]
+print(words)
+
+-----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+['My', 'name', 'is', 'nishant']
+['nishant', 'is', 'name', 'My']
+
+Process finished with exit code 0
+
+---------------------------------------
+Frequently Asked Python Program 22:Find Sub string Presence in a String
+stx = "My name is nishant"
+substring = "is"
+if stx.find(substring):
+    print("found")
+else:
+    print("Not found")
+
+-----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+found
+
+Process finished with exit code 0
+
+---------------------
+Frequently Asked Python Program 24:Check if a string contains any special character
+# initializing bad_chars_list
+bad_chars = ['@', '!', '#']
+
+# initializing test string
+test_string = "My @@@name is### nishant !!!"
+
+# printing original string
+print("Original String : " + test_string)
+
+# using replace() to
+# remove bad_chars
+for i in bad_chars:
+    test_string = test_string.replace(i, '')
+
+# printing resultant string
+print("Resultant list is : " + str(test_string))
+----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Original String : My @@@name is### nishant !!!
+Resultant list is : My name is nishant
+
+Process finished with exit code 0
+
+-------------------
+Pattern :1
+print("Enter the number for pattern :",end="")
+num = int(input())
+for i in range(num):
+    for j in range(i + 1):
+        print("*", end="")
+    print()
+---------------------------------------------------
+import copy
+
+# In deep deepcopy concept , original list work as Adhard card ,then can't change
+# In deep copy any changes to copy of object do not reflect the original object
+li = [1, 3, 7, 4, 22]
+
+
+de_li = copy.deepcopy(li)
+print("1D_status of deep copy li is :", de_li)
+print("1D_status of Original list- li is :", li)
+de_li[1] = 200
+print("1D_status of deep copy li is for update :", de_li)
+print("1D_status of Original list- li is for update :", li)
+
+de_li.append([32, 23, 55])
+print("1D_status of deep copy li is for appending :", de_li)
+print("1D_status of Original list- li is for appending :", li)
+
+li2 = [[20, 40, 50], [11, 55, 33]]
+de_li2 = copy.deepcopy(li2)
+print("2D_status of deep copy li2 is :", de_li2)
+print("2D_status of Original list- li2 is :", li2)
+
+de_li2[1][1]=77
+print("2D_status of deep copy li2 is for update :", de_li2)
+print("2D_status of Original list- li2 is for update :", li2)
+de_li2.append([32, 23, 55])
+print("2D_status of deep copy li2 is for appending :", de_li2)
+print("2D_status of Original list- li2 is for appending :", li2)
+
+------------
+output:
+D:\Python-NOV15\venv\Scripts\python.exe D:/Python-NOV15/Python_Study/test.py
+1D_status of deep copy li is : [1, 3, 7, 4, 22]
+1D_status of Original list- li is : [1, 3, 7, 4, 22]
+1D_status of deep copy li is for update : [1, 200, 7, 4, 22]
+1D_status of Original list- li is for update : [1, 3, 7, 4, 22]
+1D_status of deep copy li is for appending : [1, 200, 7, 4, 22, [32, 23, 55]]
+1D_status of Original list- li is for appending : [1, 3, 7, 4, 22]
+2D_status of deep copy li2 is : [[20, 40, 50], [11, 55, 33]]
+2D_status of Original list- li2 is : [[20, 40, 50], [11, 55, 33]]
+2D_status of deep copy li2 is for update : [[20, 40, 50], [11, 77, 33]]
+2D_status of Original list- li2 is for update : [[20, 40, 50], [11, 55, 33]]
+2D_status of deep copy li2 is for appending : [[20, 40, 50], [11, 77, 33], [32, 23, 55]]
+2D_status of Original list- li2 is for appending : [[20, 40, 50], [11, 55, 33]]
+
+Process finished with exit code 0
+---------------------------------------------------
+
+convert int to string:
+n = 25
+# check  and print type of num variable
+print(type(n))
+print(n)
+
+# convert the num into string
+con_num = str(n)
+
+# check  and print type converted_num variable
+print(type(con_num))
+print(con_num)
+----------------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+<class 'int'>
+25
+<class 'str'>
+25
+
+Process finished with exit code 0
+---------------------------------
+How to Remove an Element from a List in Python
+li = ["abhi", "kkc", "nishant"]
+print("Before removing the list is :",li)
+li.remove("kkc")
+print("After removing the list is :",li)
+---------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+Before removing the list is : ['abhi', 'kkc', 'nishant']
+After removing the list is : ['abhi', 'nishant']
+
+Process finished with exit code 0
+---------------------------------
+Add two list into empt list:
+li1 = [10, 20, 30]
+li2 = [40, 50, 60]
+print("Before removing the list is :",li1,li2)
+
+empt = []
+for i in range(len(li1)):
+    empt.append(li1[i]+li2[i])
+print(empt)
+
+---
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+Before removing the list is : [10, 20, 30] [40, 50, 60]
+[50, 70, 90]
+
+Process finished with exit code 0
+---------------------------------
+by using list compression:
+
+# initialize the Python lists
+lt1 = [2, 4, 6, 8, 10, 30]
+lt2 = [2, 4, 6, 8, 10, 12]
+
+# print the original list element
+print ( " Python list 1 : " + str (lt1))
+print ( "Python list 2 : " + str (lt2))
+
+# use list comprehension to add two lists.
+res_lt = [ lt1[x] + lt2[x] for x in range (len (lt1))]
+
+
+# Display the sum of two list in Python
+print ( " Addition of the list lt1 and lt2 is: " + str (res_lt))
+--------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+ Python list 1 : [2, 4, 6, 8, 10, 30]
+Python list 2 : [2, 4, 6, 8, 10, 12]
+ Addition of the list lt1 and lt2 is: [4, 8, 12, 16, 20, 42]
+
+Process finished with exit code 0
+---------------------------------
+converting to list to set:
+# Creating a list of ten data elements
+the_names = ["George", "Josh", "James", "Mark", "Carlo", "James", "Andy", "Sara", "Andy", "Victor"]
+
+# Converting the above list to the set
+the_unique_names = set( the_names)
+
+# Printing the set to the users
+print( the_unique_names)
+------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+{'Sara', 'Carlo', 'James', 'Mark', 'Andy', 'Victor', 'Josh', 'George'}
+
+Process finished with exit code 0
+---------------------------------
+Converting to list to string:
+# Python program to convert a list to a string by using the join() method
+
+# Creating a list with elements of string data type
+a_list = ["Python", "Convert", "List", "String", "Method"]
+
+# Converting to string
+string = " ".join( a_list ) # this is read as join elements of a_list with a separator (" ")
+
+# Printing the string
+print (string)
+print (type(string))
+----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+Python Convert List String Method
+<class 'str'>
+
+Process finished with exit code 0
+---------------------------------
+How to sort a dictionary in Python
+names = {1: 'Alice', 2: 'John', 4: 'Peter', 3: 'Andrew', 6: 'Ruffalo', 5: 'Chris'}
+# print a sorted list of the keys
+print(sorted(names.keys()))
+# print the sorted list with items.
+print(sorted(names.items()))
+# print the sorted list with values
+print(sorted(names.keys()))
+
+--------------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+[1, 2, 3, 4, 5, 6]
+[(1, 'Alice'), (2, 'John'), (3, 'Andrew'), (4, 'Peter'), (5, 'Chris'), (6, 'Ruffalo')]
+[1, 2, 3, 4, 5, 6]
+
+Process finished with exit code 0
+---------------------------------
+How to add two dict into single dict:
+dict1 = {"AdharNumber": 12345, "Job_City": "Pune"}
+dict2 = {"Licence_Number": 2389, "Licence_City": "Pune"}
+
+dict3 = dict1.copy()
+
+for keys, values in dict2.items():
+    dict3[keys] = values
+
+print(dict3)
+----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+{'AdharNumber': 12345, 'Job_City': 'Pune', 'Licence_Number': 2389, 'Licence_City': 'Pune'}
+
+Process finished with exit code 0
+---------------------------------
+fabinous serise:
+a = 0
+b = 1
+print(a,end=" ")
+print(b,end=" ")
+for i in range(10):
+    c = a + b
+    print(c,end=" ")
+    a = b
+    b = c
+----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Basic-Code/Test2.py
+0 1 1 2 3 5 8 13 21 34 55 89
+Process finished with exit code 0
+---------------------------------
+---------------------------------
+l1 =[[col1, col2, col3], [row1_col1, row1_col2, row1_col3],[row2_col1, row2_col2, row2_col3],[row3_col1, row3_col2, row3_col3]]
+
+l2 =[]
+for i in range(len(l1)):
+
+-----------------------------
+
+Check Even or Odd Number
+print("Enter the number :")
+num = int(input())
+
+if num % 2 == 0:
+    print(num, ": is even number")
+else:
+    print(num, ": is odd number")
+
+-----------------
+def CheckEvenOdd(num):
+    if num % 2 == 0:
+        print(num, ": is even number")
+    else:
+        print(num, ": is odd number")
+
+
+print("Enter the number :")
+num = int(input())
+
+CheckEvenOdd(num)
+-------------
+class CheckNum:
+    def CheckEvenOdd(self,num):
+        if num % 2 == 0:
+            print(num, ": is even number")
+        else:
+            print(num, ": is odd number")
+
+
+print("Enter the number :")
+num = int(input())
+
+obj =CheckNum()
+obj.CheckEvenOdd(num)
+
+-----------------------
+my_list2 = [2, 3, 6, 56, 78]
+mylist_set = set(my_list2)
+print(mylist_set)
+mylist_set.remove(max(mylist_set))
+print(max(mylist_set))
+
+---------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+first largest number  78
+Second largest number  66
+{2, 3, 6, 78, 56}
+56
+
+Process finished with exit code 0
+
+-
+Frequently Asked Python Program 24:Check if a string contains any special character
+# initializing bad_chars_list
+bad_chars = ['@', '!', '#']
+
+# initializing test string
+test_string = "My @@@name is### nishant !!!"
+
+# printing original string
+print("Original String : " + test_string)
+
+# using replace() to
+# remove bad_chars
+for i in bad_chars:
+    test_string = test_string.replace(i, '')
+
+# printing resultant string
+print("Resultant list is : " + str(test_string))
+----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+Original String : My @@@name is### nishant !!!
+Resultant list is : My name is nishant
+
+Process finished with exit code 0
+
+-------------------
+Pattern :1
+print("Enter the number for pattern :",end="")
+num = int(input())
+for i in range(num):
+    for j in range(i + 1):
+        print("*", end="")
+    print()
+-------
+
+s1 = "1,2,3,4,5,100"
+
+size = len(s1)
+l1 =list(s1)
+l2=[]
+op=""
+size = len(l1)
+for i in range(-1,-size-1,-1):
+    l2.append(l1[i])
+    op=''.join(l2)
+print(op)
+
+for i in range(-6,-1,-1):
+    print(i)
+
+
+
+------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Python_Study\test.py
+001,5,4,3,2,1
+
+Process finished with exit code 0
+-----------------------------
+num = int(input("Enter the number :"))
+p = 1
+for i in range(2,num):
+    if num % i == 0:
+        p = 0
+        break
+if p == 1:
+    print("This is prime number",num)
+else:
+    print("This is not a prime number",num)
+--------------------
+li = [2, 34, 5, 6, 2, 7, 2, 7, 5, 4, 9, 0, 1]
+eli = []
+for i in li:
+    if i not in eli:
+        eli.append(i)
+
+print(eli)
+
+
+--------------
+li = [2, 34, 5, 6, 2, 7, 2, 7, 5, 4, 9, 0, 1]
+eli = []
+for i in li:
+    if i%2 == 0:
+        print("This is even number :",i)
+    else:
+        print("This is odd number :",i)
+
+
+---------------
+input_ch = input("Enter the char :")
+li = ['a', 'e', 'i', 'o', 'u']
+flag = False
+for i in li:
+    if i == input_ch:
+        flag = True
+
+
+if flag:
+    print("This is vowels :", input_ch)
+else:
+    print("This is not vowels :", input_ch)
+-----------------------
+num = int(input("Enter the number :"))
+
+res = 0
+rev = 0
+ldigit = len(str(num))
+
+while num > 0:
+    res = num % 10
+    rev = rev + (res ** ldigit)
+    num = int(num / 10)
+print(rev)
+------------------
+num = int(input("Enter the number :"))
+
+res = 0
+rem = 0
+ldigit = len(str(num))
+
+while num > 0:
+    res = num % 10
+    rem = res + (rem*10)
+    num = int(num / 10)
+print(rem)
+----------------------------
+li = [2, 4, 1, 6, 4, 7, 33, 22, 11, 34, 8, 9]
+
+max = li[0]
+min = li[0]
+for i in li:
+    if i > max:
+        max = i
+print(max)
+
+for j in li:
+    if j > min:
+        min = i
+print(min)
+----------------------------
+li = ["abc.pdf", "xyz.txt", "aws.pdf", "rnm.png"]
+for i in li:
+    if i.endswith(".pdf"):
+        print(i)
+-------------------------
+str1 = "ram"
+s1 = set(str1)
+str2 = "shyam"
+s2 = set(str2)
+lst = s1 & s2
+print(lst)
+---------------------------
+st = "kkc skb rcb csk mi xip skb kkc nmn"
+li = st.split(" ")
+print(li)
+
+for i in range(len(li)):
+    count = 1
+    for j in range(i + 1, len(li)):
+        if li[i] == li[j]:
+            count = count + 1
+            li[j] = "-"
+    if count >= 1 and li[i] != "-":
+        print(li[i], count)
+--------------------
+s1='B4A2D3'
+s2=[]
+s3=[]
+st2=""
+for i in s1:
+    if i.isalpha():
+        s2.append(i)
+    else:
+        s3.append(i)
+
+s4=sorted(s2)+sorted(s3)
+for i in range (len(s4)):
+    st2=st2+''.join(s4[i])
+
+print(st2)
+------------------------
+v1 = ['a','e','i','o','u']
+s1="nishant"
+s2=[]
+for i in s1:
+    if i in v1:
+        s2.append(i)
+print(s2)
+
+---------------
+['i', 'a']
+
+=== Code Execution Successful ===
+------------------------------------------
+st1 = "nishant narwade"
+print("This is input :",st1)
+l1 =list(st1)
+for i in range(len(l1)):
+    count=1
+    for j in range(i+1,len(l1)):
+        if l1[i]==l1[j]:
+           l1[i]=count
+           l1[j]=count+1
+        elif str(l1[j]).isspace():
+                break
+st2="".join(str(x) for x in l1)
+print("This is output ",st2)
+
+
+--------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is input : nishant narwade
+This is output  1isha2t n1rw2de
+
+Process finished with exit code 0
+st1 ="This is a tree"
+print("This is input string ::",st1)
+st2 =st1.split(" ")
+output=""
+for i in range(len(st2)-1,-1,-1):
+    output=output+"".join(st2[i])+" "
+print("This is output string: ",output)
+
+-------------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is input string :: This is a tree
+This is output string:  tree a is This
+
+Process finished with exit code 0
+-----------------------
+s = "aaabbbccddeeff"
+# out = 3a3b2c2d2e2f
+output = ""
+l1 = list(s)
+for i in range(len(l1)):
+    count=1
+    for j in range(i+1,len(l1)):
+       if l1[i]==l1[j]:
+           count=count+1
+           l1[j]='0'
+    if count>1 and l1[i]!='0':
+        output= output+''.join(str(count)+l1[i])
+
+print(output)
+---------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+3a3b2c2d2e2f
+
+Process finished with exit code 0
+
+---------------------
+Copy concept:
+Shallow copy:
+1.changes in new copy effected to the old copy.
+2.it's not good approach for copy.
+3.It's created the new object
+
+
+----------
+# shallow copy:
+import copy
+
+mylist=[[1,2,3],[4,5],[6,7]]
+print("This is original list:",mylist)
+new_list = copy.copy(mylist)
+print("This is new list:",new_list)
+new_list[0][1]=200
+print("After changes then original list is:",mylist)
+print("After changes the New Copy is :",new_list)
+------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is original list: [[1, 2, 3], [4, 5], [6, 7]]
+This is new list: [[1, 2, 3], [4, 5], [6, 7]]
+After changes then original list is: [[1, 200, 3], [4, 5], [6, 7]]
+After changes the New Copy is : [[1, 200, 3], [4, 5], [6, 7]]
+
+Process finished with exit code 0
+---------------------------------
+
+DeepCopy -
+1.changes in new copy not effected to the original copy.
+2.every element present in list created the separate object id
+3.Nested list cases created the separate object id for each element
+-----------------
+# shallow copy:
+import copy
+
+mylist=[[1,2,3],[4,5],[6,7]]
+print("This is original list:",mylist)
+new_list = copy.deepcopy(mylist)
+print("This is new list:",new_list)
+new_list[0][1]=200
+print("After changes then original list is:",mylist)
+print("After changes the New Copy is :",new_list)
+--------------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is original list: [[1, 2, 3], [4, 5], [6, 7]]
+This is new list: [[1, 2, 3], [4, 5], [6, 7]]
+After changes then original list is: [[1, 2, 3], [4, 5], [6, 7]]
+After changes the New Copy is : [[1, 200, 3], [4, 5], [6, 7]]
+
+Process finished with exit code 0
+----------------------------------------------
+Given two lists of numbers, write a Python code to create a new list such that the latest list should contain odd numbers from the first list and even numbers from the second list.
+list1 = [10, 20, 25, 30, 35]
+list2 = [40, 45, 60, 75, 90]
+l3=[]
+for i in list1:
+    if i%2!=0:
+        l3.append(i)
+
+for j in list2:
+    if j%2==0:
+        l3.append(j)
+
+print(l3)
+-----------------------
+[25, 35, 40, 60, 90]
+
+=== Code Execution Successful ===
+#Get each digit from a number in the reverse order.
+num = 7536
+l1=list(str(num))
+#output shall be “6 3 5 7“
+output=""
+for i in range(len(l1)-1,-1,-1):
+    output=output+' '.join(l1[i]+" ")
+
+print(output)
+-----------------------------
+6  3  5  7
+
+=== Code Execution Successful ===
+#Print multiplication table from 1 to 10
+num=10
+for i in range(1,num+1):
+    for j in range(1,num+1):
+        print(i*j , end=" ")
+    print()
+-------------------
+1 2 3 4 5 6 7 8 9 10
+2 4 6 8 10 12 14 16 18 20
+3 6 9 12 15 18 21 24 27 30
+4 8 12 16 20 24 28 32 36 40
+5 10 15 20 25 30 35 40 45 50
+6 12 18 24 30 36 42 48 54 60
+7 14 21 28 35 42 49 56 63 70
+8 16 24 32 40 48 56 64 72 80
+9 18 27 36 45 54 63 72 81 90
+10 20 30 40 50 60 70 80 90 100
+
+=== Code Execution Successful ===
+#3. Get string of first and last 2 chars.
+st='w3resource'
+print(st[:2]+st[-2:])
+
+--------------
+w3ce
+
+=== Code Execution Successful ===
+#Sample String : 'abc', 'xyz'
+#Expected Result : 'xyc abz'
+st1="abc"
+st2="xyz"
+st3=""
+
+newStr=st1[:2]+st2[2:]
+print(newStr)
+
+newStr2=st2[:2]+st1[2:]
+print(newStr2)
+print(newStr+","+newStr2)
+-----------------------------
+abz
+xyc
+abz,xyc
+
+=== Code Execution Successful ===
+st1="The lyrics is not that poor"
+l1=st1.split()
+st2=""
+count=1
+for i in range(len(l1)-1):
+    if l1[i]=="not":
+        count=count+1
+        l1.remove(l1[i])
+    elif count==2:
+        l1.remove(l1[i])
+    else:
+        st2=st2+''.join(l1[i])+" "
+print(st2+"good")
+------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+The lyrics is good
+
+Process finished with exit code 0
+# find the longest word form array list
+l1 = ["PHP", "Exercises", "Backend"]
+
+word=""
+max=len(l1[0])
+for i in range(len(l1)):
+    for j in range(i+1,len(l1)):
+        scount=len(l1[j])
+        if scount>max:
+            max=scount
+            word=l1[j]
+
+print("This is word",word ,"count is ",max)
+-------------------------------------------
+This is word---> Exercises count is--> 9
+
+=== Code Execution Successful ===
+#Remove nth character from a string
+st="python"
+# remove 'h'
+l1=list(st)
+st2=""
+
+for i in st:
+    if i=="h":
+        l1.remove('h')
+    else:
+        st2=st2+''.join(i)
+print(st2)
+------------------
+pyton
+
+=== Code Execution Successful ===
+#Swap first and last chars of a string.
+st="nishant"
+st2=""
+l1=list(st)
+first=l1[0]
+last=l1[len(l1)-1]
+for i in range(1,len(l1)-1):
+    st2=st2+''.join(l1[i])
+print(last+st2+first)
+------------------------------
+tishann
+
+=== Code Execution Successful ===
+str1 = '\nPython Exercises\n'
+str1.strip()
+print("This is remove right and left side strip :",str1)
+This is remove right and left side strip :
+Python Exercises
+
+
+=== Code Execution Successful ===
+# Define a variable 'string' and assign it the value "w3resource.com".
+string = "w3resource.com"
+
+# Use the startswith() method to check if the string 'string' starts with the substring "w3r".
+# The result is a boolean value, which is printed.
+print(string.startswith("w3r"))
+-------------------------
+True
+
+=== Code Execution Successful ===
+
+st="{[()]}{{}"
+def checkTheParanthesis(st):
+    ans=False
+    count=0
+    if len(st)%2==0:
+        for i in st:
+            if i=='{' or i=='[' or i=='(':
+                count+=1
+            elif i=='}' or i==']' or i==')':
+                count-=1
+            if count<0:
+                return ans
+            if count==0:
+                return not ans
+    else:
+        return ans
+
+print(checkTheParanthesis("{[()]}}{"))
+---------------------------------------------
+True
+
+=== Code Execution Successful ===
+s = "{[]}"
+st = []
+for c in s:
+
+    # Push opening brackets onto the stack
+    if c in '({[':
+        st.append(c)
+    # Check for matching closing bracket
+    elif c in ')}]':
+        if not st:
+            print(False)  # Mismatched bracket
+            break
+        elif c == ')' and st[-1] != '(':
+            print(st[-1])
+            print(False)  # Mismatched bracket
+            break
+        elif c == '}' and st[-1] != '{':
+            print(st[-1])
+            print(False)  # Mismatched bracket
+            break
+        elif c == ']' and st[-1] != '[':
+            print(st[-1])
+            print(False)  # Mismatched bracket
+            break
+        st.pop()  # Pop matched opening bracket
+
+else:
+    print(True if not st else False)  # Balanced if stack is empty
+    ---------------------------------
+    C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+True
+
+Process finished with exit code 0
+from pandas.core.roperator import rtruediv
+from selenium.webdriver.support.expected_conditions import element_selection_state_to_be
+
+def checkPar(st):
+    s=st
+    count=0
+    ans=False
+    size=len(s)
+    if size%2==0:
+        for c in s:
+            if c=='{' or c=='[' or c=='(':
+                count+=1
+            elif c=='}' or c==']' or c==')':
+                count-=1
+    else:
+        return ans
+    if count<0:
+        return ans
+    elif count==0:
+        return not ans
+
+print(checkPar("{[]}}"))
+
+----------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Notes\tp.py
+False
+
+Process finished with exit code 0
+st="nishant narwade nanded"
+
+s=st.split()
+l2=[]
+st2=""
+for i in s:
+    word=i
+    for j in range(len(word)-1,-1,-1):
+        l2.append(word[j])
+    l2.append(" ")
+st2=''.join(l2)
+print(st2)
+------------------------
+tnahsin edawran dednan
+
+=== Code Execution Successful ===
+s1="nishant"
+s2="narwade"
+output=""
+i,j=0,0
+while i<len(s1) or j<len(s2):
+    if i<len(s1):
+        output=output+s1[i]
+        i=i+1
+    if j<len(s2):
+        output=output+s2[j]
+        j=j+1
+print(output)
+
+=======================
+nniasrhwaandte
+
+=== Code Execution Successful ===
+s="a3b5b6p9"
+s1=[]
+s2=[]
+output=""
+for i in s:
+    if i.isalpha():
+        s1.append(i)
+    else:
+        s2.append(i)
+s3=sorted(s1)+sorted(s2)
+output=''.join(s3)
+print(output)
+
+=----------------------
+abbp3569
+
+=== Code Execution Successful ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

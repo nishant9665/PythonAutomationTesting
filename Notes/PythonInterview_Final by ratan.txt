@@ -1,0 +1,4743 @@
+How to check keyword in python ?
+import keyword
+print(keyword.kwlist)
+output->
+keyword in python->
+    ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def',
+     'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+     'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+how to check the type of data type?
+eid=111
+ename="ratan"
+esal=10000.344
+
+print(type(eid))
+print(type(ename))
+print(type(esal))
+
+output->
+<class 'int'>
+<class 'str'>
+<class 'float'>
+
+#########################
+is it possible to make single line of code in python?
+#single line of code
+example-1
+
+eid,ename,esal=122,"nishant",387832.387
+
+print(type(eid))
+print(type(ename))
+print(type(esal))
+outout->
+<class 'int'>
+<class 'str'>
+<class 'float'>
+
+Example-2
+a,b,c =10,20,30
+print(a+b+c)
+output->60
+
+a=b=c=10
+print(a+b+c)
+Output->30
+----------function---------
+Case1:
+passing parametre to functions:
+def disp2(name):
+    print("good morning", name)
+
+
+disp2("Nishant")
+**********
+good morning
+
+Case2:by using global varible
+
+#varible accessing the functions
+x,y=100,200
+def disp2(a,b):
+    print("Addtions-local varible",a+b)
+    print("global varible :",x+y)
+
+def mul(a,b):
+    print("Addtions-local varible",a*b)
+    print("global varible :",x*y)
+
+
+disp2(24,76)
+mul(22,44)
+
+*********
+Addtions-local varible 100
+global varible : 300
+Addtions-local varible 968
+global varible : 20000
+   
+*****************************
+Function argument
+1.default argument
+2.require argument
+3.keyword argument
+4.var -argument 
+
+example 1:default argument
+##########
+def disp(eid=111,ename="kkc",esal=2343.43224):
+    print(eid,ename,esal)
+disp()
+
+**********
+111 kkc 2343.43224
+
+
+Ex-2#########
+def disp(eid=111,ename="kkc",esal=2343.43224):
+    print(eid,ename,esal)
+disp()
+disp(222)
+disp(2,"pune",8799.89809)
+
+**********
+111 kkc 2343.43224
+222 kkc 2343.43224
+2 pune 8799.89809
+
+
+###########
+requirement arguments type:
+#mendotry pass three value in requirement argument.
+def disp(eid,ename,esal):
+    print(eid,ename,esal)
+disp(2,"pune",8799.89809)
+
+********
+2 pune 8799.89809
+
+####################
+
+default and requirement arguments:::::::::::::
+
+def disp(eid,ename="kkc",esal=7687687.8798):
+    print(eid,ename,esal)
+disp("nishant")
+
+******
+nishant kkc 7687687.8798
+################
+def disp(eid=23,ename="kkc",esal):#SyntaxError: non-default argument follows default argument
+    print(eid,ename,esal)
+disp(2,8799.89809)
+
+*********
+D:\PythonSelenium_Study\venv\Scripts\python.exe D:/PythonSelenium_Study/testcases2/tp.py
+  File "D:/PythonSelenium_Study/testcases2/tp.py", line 1
+    def disp(eid=23,ename="kkc",esal):#SyntaxError: non-default argument follows default argument
+             ^
+SyntaxError: non-default argument follows default argument
+
+
+#when default start next all argument should be default consider by python
+############
+
+keyword argument :name of the varible
+###############
+def disp(eid,ename,esal):
+    print(eid,ename,esal)
+disp(eid=34,ename="pune",esal=2348798798.89798987)
+
+
+************
+34 pune 2348798798.8979897
+###############
+ones the keyword argument next start next argument argument must be keyword types
+def disp(eid,ename,esal):
+    print(eid,ename,esal)
+disp(eid=34,ename="pune",768768.87987)
+
+*********
+D:\PythonSelenium_Study\venv\Scripts\python.exe D:/PythonSelenium_Study/testcases2/tp.py
+  File "D:/PythonSelenium_Study/testcases2/tp.py", line 3
+    disp(eid=34,ename="pune",768768.87987)
+                             ^
+SyntaxError: positional argument follows keyword argument
+
+
+############
+varible argument type:
+case-1
+def disp(*a):
+    for x in a:
+        print(x)
+disp(10)
+
+
+**********
+10
+########
+def disp(*a):
+    for x in a:
+        print(x)
+disp(10)
+disp(40,20,30)
+
+
+******
+10
+40
+20
+30
+
+############
+
+mixing both default and requirement argument
+def disp(name,*a):
+    print(name)
+    for x in a:
+        print(x)
+disp("aaaa",10)
+disp("@@@@@",40,20)
+
+*********
+aaaa
+10
+@@@@@
+40
+20
+
+#########
+
+defult value pass to argument
+def disp(name="pune",*a):
+    print(name)
+    for x in a:
+        print(x)
+disp("aaaa",10)
+disp("@@@@@",40,20)
+
+*********
+aaaa
+10
+@@@@@
+40
+20
+
+###############
+
+def disp(*a,name):
+    print(name)
+    for x in a:
+        print(x)
+disp(10,name="skb")
+disp(40,20,name="xyz")
+
+**********
+skb
+10
+xyz
+40
+20
+
+##########################################################################
+function type video-10
+
+function retrun type:
+case1:
+def disp():
+    print("good morning")
+    return 10
+x=disp()  # function calling
+print("return value is :",x)
+print(disp())
+
+**********
+good morning
+return value is : 10
+good morning
+10
+
+####################
+case2:
+def disp():
+    print("good morning")
+    return 10
+    return 20 # ignore
+    print("2nd time hellow") # ignore
+x=disp()  # function calling
+print("return value is :",x)
+print(disp())
+
+*****
+good morning
+return value is : 10
+good morning
+10
+##################
+case3:
+def disp():
+    print("good morning")
+    if 10>20:
+     return "nishant"
+    else:
+      return "kkc"
+x=disp()  # function calling
+print("return value is :",x)
+print(disp())
+
+*****
+good morning
+return value is : kkc
+good morning
+kkc
+###################
+case4:
+def disp():
+    print("good morning")
+x=disp()  # function calling
+print("return value is :",x)
+print(disp())
+**********
+good morning
+return value is : None
+good morning
+None
+##################
+inner function calling 
+
+def outer():
+    name="kkc"
+    print("the  outer function name is:",name)
+
+
+    def inner():
+        name="skb"
+        print("the inner function name is :",name)
+    inner()
+outer()
+
+**********
+the  outer function name is: kkc
+the inner function name is : skb
+##################
+ones your using outer function varible inside with the same name ,we can not declare local varible.
+error mesager:unbounded local varible:
+
+case4:
+nonlocal/global/general
+def outer():
+    name1="kkc"
+    def inner1():
+        name1="skb"
+        print("the inner1 function name is :",name1) # skb
+    def inner2():
+        nonlocal name1
+        name1="nishant"
+        print("the inner2 function name is :",name1) # nishant
+    def inner3():
+        global name1
+        name1="techCaves"
+        print("the inner3 function name is :",name1) # techcaves
+
+    #outer function code
+    print(name1)
+    inner1()
+    print(name1)
+    inner2()
+    print(name1)
+    inner3()
+    print(name1)
+
+outer()
+print(name1)
+
+********
+kkc
+the inner1 function name is : skb
+kkc
+the inner2 function name is : nishant
+nishant
+the inner3 function name is : techCaves
+nishant
+########################
+local and gloabl varible
+
+s = "anu"
+
+
+def disp():
+    # print(s) #UnboundLocalError: local variable 's' referenced before assignment
+    s = "ratan"
+    print(s)
+
+
+disp()
+print(s)
+
+
+output>>
+D:\PythonSelenium_Study\venv\Scripts\python.exe D:/PythonSelenium_Study/testcases2/tp.py
+ratan
+anu
+##################
+
+def outer():
+    name1 = "ratan"
+
+    def inner():
+        nonlocal name1
+        name1 = "kkc"
+
+    print(name1)
+    inner()
+    print(name1)
+outer()
+
+
+output>>
+D:\PythonSelenium_Study\venv\Scripts\python.exe D:/PythonSelenium_Study/testcases2/tp.py
+ratan
+kkc
+
+#####################
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video class no -12(List)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+List data type:
+1.represent group of object : homogenoues & hetro
+2.index :forwrd and backword
+3.duplicate object allowd
+4.insertion order is preserver
+5.[]
+6.modification is allowed
+
+ex 1 :
+
+# homogeneous data
+L1 = [10, 20, 30, 40]
+print(L1)
+print(type(L1))
+
+# heterogeneous data
+L2 = ["kkc", 34, 555, 656]
+print(L2)
+
+# empty list
+
+l3 = []
+print(l3)
+
+l4 = list()
+print(l4)
+
+l5 = list("ratan")
+print(l5)
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+[10, 20, 30, 40]
+<class 'list'>
+['kkc', 34, 555, 656]
+[]
+[]
+['r', 'a', 't', 'a', 'n']
+
+#################
+ex 2:
+#    -5  -4 -3 -2 -1
+l1 = [10, 20, 30, 40, 50]
+#     0  1  2  3  4    5
+
+print(l1[3])
+print(l1[1:3])
+print(l1[1:])
+print(l1[:2])
+print(l1[:])
+print(l1[1:4:2])  # increment by 2
+print(l1[20])  #IndexError: list index out of range
+
+
+print(l1[-2])
+print(l1[-4:-2])
+print(l1[-10]) #IndexError: list index out of range
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 11, in <module>
+    print(l1[20])
+IndexError: list index out of range
+40
+[20, 30]
+[20, 30, 40, 50]
+[10, 20]
+[10, 20, 30, 40, 50]
+[20, 40]
+
+Process finished with exit code 1
+########################
+ex 3 :
+id :print the id
+is ,is not:memory comparision
+in not in : checking data
+== ,!= :data comp
+
+l1 = [10, 20, 30]
+l2 = [40, 50, 60]
+l3 = l1
+
+print(id(l1))
+print(id(l2))
+print(id(l3))
+
+print(l1 is l2)  # memory comp
+print(l1 is l3)
+print(l1 is not l3)
+
+print("double equal operators:", l1 == l2)  # data comp
+print(l1 == l3)  # data comp
+
+print("not operator use:", l1 != l3)
+print(10 in l1 ,":in keyword use")
+print(100 not in l3,":not in keyword use")
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+16965224
+17130728
+16965224
+False
+True
+False
+double equal operators: False
+True
+not operator use: False
+True :in keyword use
+True :not in keyword use
+
+Process finished with exit code 0
+#############################
+
+ex4:unpacking
+#unpacking
+l1=[10,10.4,"ratan"]
+a,b,c=l1
+print(a,b,c)
+print(type(a),type(b),type(c))
+l2=[102,344,434]
+a,b=l2
+print(type(a),type(c))#ValueError: too many values to unpack (expected 2)
+
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+10 10.4 ratan
+<class 'int'> <class 'float'> <class 'str'>
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 7, in <module>
+    a,b=l2
+ValueError: too many values to unpack (expected 2)
+
+Process finished with exit code 1
+
+##################
+
+ex5:
+# declare list into another list is know nested list
+# list inside list is know as nested list
+
+#     0        1
+l1=[[10,20],[30,40]]
+
+print(l1[0])
+print(l1[1])
+print(l1[0][1])
+print(l1[1][1])
+print(l1[1][0])
+
+
+l2=[[10,20,30],["kkc","abc","xyz"]]
+a,b=l2
+print(type(a),type(b))
+x,y,z=a
+print(a)
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+[10, 20]
+[30, 40]
+20
+40
+30
+<class 'list'> <class 'list'>
+[10, 20, 30]
+
+Process finished with exit code 0
+###########################
+ex6:
+
+l1 = [10, 20, 30]
+for x in l1:
+    print(x)
+
+for y in l1[0:2]:
+    print(y)
+
+
+l2=[[1,2,3],["kkc","anu","abc"]]
+for x,y,z in l2:
+    print(x,y,z)
+
+
+for z in l1[2]:  # TypeError: 'int' object is not iterable
+    print(z)
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 14, in <module>
+    for z in l1[2]:  # TypeError: 'int' object is not iterable
+TypeError: 'int' object is not iterable
+10
+20
+30
+10
+20
+1 2 3
+kkc anu abc
+
+Process finished with exit code 1
+#####################################################
+ex7:
+l1 = [x for x in range(10)]
+print(l1)
+
+l1 = [y*2 for y in range(10,20)]
+print(l1)
+
+output->
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
+
+Process finished with exit code 0
+
+#####################################################
+
+List data type video class -2
+
+ex : 8 mutable :modification are allowed :adding the data
+
+#concat
+
+l1=[10,20,30]
+l2=[40,50,60]
+l3=l1+l2
+print(l3)#[10, 20, 30, 40, 50, 60]
+
+#replication
+l1=[10,20,30]
+l2=l1*2
+print(l2)#[10, 20, 30, 10, 20, 30]
+
+# copy
+l1=[10,20,30]
+l2=l1.copy()
+print(l2) # [10, 20, 30]
+
+#extend
+l1=[10,20,30]
+l2=[40,50,60]
+
+
+# extend
+l1 = [10, 20, 30]
+l2 = [40, 50, 60, 70]
+l1.extend(l2)
+print(l1)  # [10, 20, 30, 40, 50, 60, 70]
+
+
+# remove operations
+
+l1 = [10, 20, 30]
+l1.remove(10)
+print(l1)
+l1.remove(100)  # ValueError: list.remove(x): x not in list
+
+# pop operation: index based operations 
+  by defult pop is delete the last index data
+l1 = ["ratan", "durga", 10, 20, 30]
+l1.pop()
+l1.pop(1)
+l1.pop(10)
+print(l1)  # IndexError: pop index out of range
+
+# del keyword
+l1 = [10, 20, 30, 40,50,60 ]
+del l1[2]
+print(l1)  # [10, 20, 40, 50, 60]
+del l1[:2]  # [40, 50, 60]
+print(l1)
+del l1[:]
+print(l1) #[]
+
+# clear operation
+l1 = [10, 22, 98, 66]
+l1.clear()
+print(l1)  # []
+
+ex 10:Assignment 
+l1 = [[1, 2], ["kkc", "Nishant"]]
+l3 = []
+l4 = []
+for x, y in l1:
+    l3.append(x)
+    l4.append(y)
+
+print(l3)
+print(l4)
+
+
+ex11:sorting the data
+l1 = [10, 40, 20, 30]
+l1.sort()
+print(l1)  # [10, 20, 30, 40 ]
+
+l1.sort(reverse=True)  # this is used for descending order
+print(l1)  # [40, 30, 20, 10]
+
+l2 = ["Pune", "hyd", "Nanded"]
+l2.sort()
+print(l2)  # ['Nanded', 'Pune', 'hyd']
+
+l2.sort(reverse=True)  # this is used for descending order
+print(l2)  # ['hyd', 'Pune', 'Nanded']
+
+# it is possible to sorting a data with same data type
+l3=[10,"Nishant",10.4]
+l3.sort()
+print(l3) # TypeError: '<' not supported between instances of 'str' and 'int'
+
+ex 12: index,lenth,count
+
+#index
+l1=["Nishant","kkc","skb","abhi","kkc","sony","kkc"]
+print(l1.index("skb")) # 2
+print(l1.index("kkc",2)) # how many time occurrence in list # 4
+print(l1.index("kkc",2,6)) # 4 # how many time kkc occurrence in range of index 2 to 4 
+
+
+# count,len,reverse
+l1=[10,20,30]
+l1.reverse() # this is reverse method use
+print(l1) # [30, 20, 10]
+
+l1=[10,20,30,40,10,20,20]
+print(l1.count(20)) #3
+
+l1=[10,20,30,40,10,20,20,"Pune","hyd"]
+print(len(l1)) # 9
+
+ex 13: Max ,min
+
+l1 = [10, 202, 334, 664, 77, 22]
+print(max(l1))
+print(min(l1))
+
+l2 = ["pune", "hyd", "mumbai", "nanded"]
+print(max(l2))
+print(min(l2))
+
+l3 = ["ned", "hyd", 22, 300, 849.879]
+print(max(l3))  # TypeError: '>' not supported between instances of 'int' and 'str'
+print(min(l3))  # same error ,all data is in homogeneous mandatory
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video class no -14 -tuple<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+1.groups of object : homo & hetro
+2.insertion order is preserved
+3.duplicates are allowed
+4.index : forward and backword
+5.list :mutable tuple :immutable(Main differance)
+6.list define [] and tuple : ()
+7.modification is not allowed in tuple.
+
+ex 1:
+# this is different way to implement tuple
+
+t1 = (10, 20, 30)
+print(t1)  # (10, 20, 30)
+
+t2 = (22, "pune", 389839.76537)
+print(t2)  # (22, 'pune', 389839.76537) :heterogeneous data
+
+t3 = (10)
+print(type(t3))  # <class 'int'>
+
+t5 = (10,)  # must place by common
+print(type(t5))  # <class 'tuple'>
+
+t6 = ()
+print(t6)  # ()
+
+t7 = tuple()
+print(t7)  # ()
+
+t8 = tuple("ratan")
+print(t8)  # ('r', 'a', 't', 'a', 'n')
+
+ex2:indexing
+# 0 1  2   3  4  5   6  7
+t1 = (10, 20, 30, 40, 505, 33, 66, 784)
+# -8 -7  -6  -5   -4   -3  -2   -1
+print(t1)  # (10, 20, 30, 40, 505, 33, 66, 784)
+print(t1[0])  # 10
+print(t1[1:])  # (20, 30, 40, 505, 33, 66, 784)
+print(t1[:7])  # (10, 20, 30, 40, 505, 33, 66)
+print(t1[2:4])  # (30, 40)
+print(t1[:])  # (10, 20, 30, 40, 505, 33, 66, 784)
+
+# negative index format
+print(t1[-1])  # 784
+print(t1[-2:])  # (66, 784)
+print(t1[:-1])  # (10, 20, 30, 40, 505, 33, 66)
+print(t1[:-9])  # ()
+print(t1[-2:0])  # ()
+
+ex3: unpacking
+
+this is example of unpacking in tuple
+t = (10, 20, 44.22, "Pune")
+print(t)  # (10, 20, 44.22, 'Pune')
+a, b, c, d = t
+print(a, b, c, d)  # 10 20 44.22 Pune
+print(type(a), type(b), type(c), type(d))  # <class 'int'> <class 'int'> <class 'float'> <class 'str'>
+
+
+t1=(10,20,30)
+a,b=t1
+print(a,b)       # ValueError: too many values to unpack (expected 2)
+
+ex 4 :
+#        0         1
+t = ((10, 20), (30, 40, 50))
+#     0 ,1      0 1 2
+print(t[0])  # (10, 20)
+print(t[1])  # (30, 40, 50)
+print(t[1][1])  # 40
+print(t[0][1])  # 20
+
+# unpacking the data
+a, b = t
+print(type(a))  # <class 'tuple'>
+print(type(b))  # <class 'tuple'>
+
+x, y = a
+print(type(x), type(y))  # <class 'int'> <class 'int'>
+
+
+ex 5:
+t1 = (10, 20, 30)
+for x in t1:
+    print(x)  # 10,20,30
+
+for x in t1[1:3]:
+    print(x)  # 20 30
+
+for x in t1[2]:
+    print(x)  # TypeError: 'int' object is not iterable
+
+for x in t1[1:2]:
+    print(x)          # 30
+
+
+
+ex 5:for loop in range used in python (list,tuple)
+     adding multiplr data in tuple
+
+l = [x for x in range(10)]
+print(l)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+l = [x * 2 for x in range(10)]
+print(l)  # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+t = tuple(x for x in range(10))
+print(t)  # (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+t = tuple(x * 2 for x in range(10))
+print(t)  # (0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
+
+
+ex 7:
+id: print memory address
+
+is isnot : memory comparison
+
+== != :data comparison
+
+in not in :data contains or not
+
+t1 = (10, 20, 30, 40)
+t2 = (50, 60, 70, 80)
+t3 = t1
+
+print(id(t1))  # 46967976
+print(id(t2))  # 46968136
+print(id(t3))  # 46967976
+
+print(t1 is t2)  # False
+print(t2 is t3)  # False
+print(t1 is t3)  # True
+
+print(t1 is not t2)  # True
+print(t1 is not t3)  # False
+
+print(t1 == t2)  # False
+print(t1 == t3)  # True
+print(t1 != t3)  # False
+
+print(10 in t1)  # True
+print(3333 not in t3)  # True
+
+#ex 8 : concat and replications
+
+
+t1=(10,20,30)
+t2=(50,40,60)
+t3=t1+t2
+print(t3)  #(10, 20, 30, 50, 40, 60)
+
+t4 = t1 *3
+print(t4)     #(10, 20, 30, 10, 20, 30, 10, 20, 30)
+
+t1=(10,20,30)
+t2=(50,40,60)
+t1=t1+t2       #just refernce pointed to current object
+print(t1)     #(10, 20, 30, 50, 40, 60)
+
+ex 9:
+conversion process
+# initial : we have tuple convert tuple into list do the modifiactions
+# convert tuple into list and modifications can take places
+t1 = (10, 20, 30)
+l = list(t1)
+l.append(40)
+l.insert(2, 66)
+print(l)  # [10, 20, 66, 30, 40]
+
+ex 10: count,index,len
+
+t = (10, 20, 30, 40, 50, 30, 20, 44, 77, 32)
+print(t)
+print(len(t))  # 10
+print(t.count(20))  # 2
+
+print(t.index(50))  # 4
+print(t.index(20, 2))  # 6 where is send index check and print
+
+# sorting
+
+# sort :present in only list
+sorted(): present in only list and tuple
+
+t2 = (88, 22, 44, 66, 97)
+# print(t.sort)          this method is not present for tuple the convert into tuple
+t2 = list(t2)
+t2.sort()
+print(t2)  # [22, 44, 66, 88, 97]
+
+t2.sort(reverse=True)
+t4 = tuple(t2)
+print(t4)  # (97, 88, 66, 44, 22)
+
+ex 11:
+min,max 
+
+
+ex12:
+l1=[10,20,30,40,50,60,70]
+l2=[]
+l3=[]
+for x in l1:
+    if x<=30:
+        l2.append(x)
+    if x>30:
+        l3.append(x)
+print(l2)
+print(l3)
+
+[10, 20, 30]
+[40, 50, 60, 70]
+
+ex12 :assignment 3
+t1=((22,44),("pune","Nanded"),(22.33,445.66))
+l1=[]
+l2=[]
+for x,y in t1:
+    l1.append(x)
+    l2.append(y)
+
+
+print(l1)
+print(l2)
+
+output>>
+[22, 'pune', 22.33]
+[44, 'Nanded', 445.66]
+
+ex13:sorted
+
+this function used for generate report with sort order.
+
+t1 = (10, 20, 30, 44, 4, 77, 13)
+print(sorted(t1))  # [4, 10, 13, 20, 30, 44, 77]
+
+
+>>>>>>>>>>>>>>>>>>>>>>>...python video class -16 set data type<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+list 
+tuple
+
+set:
+
+1.group of object :homo and hetro
+2.duplicates are not allowed
+3.insertion order not preserved(their is no indexing concept )
+4.no index:forwrd and backword
+6.declare by {}
+7.mutuable :allowed modifications
+
+
+ex1:
+s1 = {10, 20, 30, 40, 50}
+print(s1)  # {40, 10, 50, 20, 30}
+print(type(s1))  # <class 'set'>
+
+s2 = {20, 30, "Pune", 233.433}
+print(s2)  # {'Pune', 20, 233.433, 30}
+
+s4 = {}
+print(s4)
+print(type(s4))  # <class 'dict'>
+
+s5 = set()
+print(s5)                  #set()
+print(type(s5))            #<class 'set'>
+
+ex2:
+set is mutable data type trying to add imutable data example
+s1 = {10, "kkc", (10, 20)}
+print(s1)
+
+s2 = {[1, 2], {10, 20}}
+# print(s2)        #TypeError: unhashable type: 'list'
+
+s3 = {{10, 20}}
+print(s3)
+
+ex3:set mutable we can do some modifications:
+s1={10,20,30,40}
+s1.add(50)
+print(s1)  #{40, 10, 50, 20, 30}
+
+
+ex3:Doing modifications,update(multiple element added)
+s1 = {10, 20, 30, 40}
+s1.add(50)
+print(s1)
+
+s1.update([1, 2, 4])
+print(s1)  # {1, 2, 4, 40, 10, 50, 20, 30}
+
+# s1.update(100)
+# print(s1)  # TypeError: 'int' object is not iterable ,we can add one than one data
+
+s2 = [s1.copy()]
+print(s2)  # [{1, 2, 4, 40, 10, 50, 20, 30}]
+
+
+ex4:concate and repilcations
+s1 = {10, 20, 30}
+s2 = {40, 50, 60}
+s3 = s1 + s2
+print(s3)  # TypeError: unsupported operand type(s) for +: 'set' and 'set'
+
+s4 = s1 * 2
+print(s4)  # TypeError: unsupported operand type(s) for *: 'set' and 'int'
+
+ex5:
+
+printing the data by using for loop
+s1 = {10,20,30,22,33,11}
+for x in s1:
+    print(x)
+
+ex6:
+id(): to print memory address
+is is not :memory comparision
+== != :data comp
+in not in :check the data is avaible or not
+
+
+ex6:
+
+s1 = {10,20,30,40}
+s2={50,60,70,80}
+s3=s1
+
+
+print(id(s1))  # 46967976
+print(id(s2))  # 46968136
+print(id(s3))  # 46967976
+
+print(s1 is s2)  # False
+print(s2 is s3)  # False
+print(s1 is s3)  # True
+
+print(s1 is not s2)  # True
+print(s1 is not s3)  # False
+
+print(s1 == s2)  # False
+print(s1 == s3)  # True
+print(s1 != s3)  # False
+
+print(10 in s1)  # True
+print(3333 not in s3)  # True
+
+ex 7 :set used with operator
+a = set("Pune")
+print(a)
+b = set("nanded")
+print(b)
+
+print(b - a)
+print(a | b)
+print(a & b)
+print(a ^ b)
+
+basket1 = {'orange', 'apple', 'pear', 'bananan'}
+basket2 = {'mango', 'apple', 'pear', 'bananan'}
+
+print(basket1 - basket2)
+print(basket1 | basket2)
+print(basket1 & basket2)
+print(basket1 | basket2)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+{'n', 'e', 'P', 'u'}
+{'n', 'a', 'e', 'd'}
+{'a', 'd'}
+{'u', 'e', 'P', 'd', 'n', 'a'}
+{'n', 'e'}
+{'P', 'd', 'a', 'u'}
+{'orange'}
+{'orange', 'apple', 'bananan', 'pear', 'mango'}
+{'apple', 'bananan', 'pear'}
+{'orange', 'apple', 'bananan', 'pear', 'mango'}
+
+Process finished with exit code 0
+
+ex 8 :multiple element in set
+s1 = {x for x in range(10)}
+print(s1)      #{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+s2 = {x*4 for x in range(3,10,4)}
+print(s2)         #{12, 28}
+
+
+ex 9 :set :mutuable :remove the data
+remove() pop() discard(),remove()
+
+
+ex 9:
+s1 = {10,20,30}                     
+s1.remove(10)     #{20, 30}         
+print(s1)                           
+                                    
+s1.remove(100)                      
+print(s1)            #KeyError: 100 
+
+
+#pop data        
+                 
+s2 = {10,20,30}  
+s2.pop()         
+s2.pop()         
+print(s2)  #{30} 
+
+#discard
+
+s1 = {10,20,30}
+s1.discard(10)
+print(s1)       #{20, 30}
+s1.discard(100)
+print(s1)       #{20, 30}
+
+# clear functions
+
+s1={10,20,30}
+s1.clear()
+print(s1)            #set()
+
+
+
+ex 10: conversion of set to list and list to set
+l1 = [10, 20, 4, 56, 77, 77, 11, 10, 23, 49, 66, 843, 11]
+print(l1)  # [10, 20, 4, 56, 77, 77, 11, 10, 23, 49, 66, 843, 11]
+
+s = set(l1)
+print(s)  # {66, 4, 10, 11, 843, 77, 49, 20, 23, 56}
+
+newList = list(s)
+print(newList)  # [66, 4, 10, 11, 843, 77, 49, 20, 23, 56]
+
+ex 11 :unpacking the data
+s1 = {10, 20, 30}
+print(s1)  # {10,20,30}
+
+a, b, c = s1
+print(type(a), type(b), type(c))  # <class 'int'> <class 'int'> <class 'int'>
+
+s2 = {10, 20, 30}
+a, b = s2
+print(type(a))  # ValueError: too many values to unpack (expected 2)
+
+ex12:sort the data in set
+s1 = {10, 3, 44, 32, 22, 13}
+print(sorted(s1))  # [3, 10, 13, 22, 32, 44]
+print(sorted(s1, reverse=True))  # [44, 32, 22, 13, 10, 3]
+print(len(s1))  # 6
+
+s2 = {10, 30, 40, 22, "ratan"}
+print(sorted(s2))  # TypeError: '<' not supported between instances of 'str' and 'int'
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video class -17 dict data type<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+dict:
+
+1.key:value key:obj value =object :iteam>>>>>>>.key,value= object
+2.keys:unique values:duplicated
+3.mutable :it allowed modifications
+
+ex1:key is unique but added duplicate value
+
+d1 = {111: "nishant", 222: "pune", 333: "mumbai"}
+print(d1)  # {111: 'nishant', 222: 'pune', 333: 'mumbai'}
+
+d2 = {111: "nishant", 222: "pune", 333: "mumbai", 111: "kkc"}
+print(d2)  # {111: 'kkc', 222: 'pune', 333: 'mumbai'}
+
+print(type(d1))  # <class 'dict'>
+print(type(d2))  # <class 'dict'>
+
+d3 = {}
+print(type(d3))
+d3[111] = "Pune"
+d3[222] = "Nagpur"
+d3[333] = "nanded"
+print(d3)  # {111: 'Pune', 222: 'Nagpur', 333: 'nanded'}
+
+ex2 :key,values and iteam print in differnt data type
+d1 = {111: "nishant", 222: "pune", 333: "mumbai"}
+print(d1)  # {111: 'nishant', 222: 'pune', 333: 'mumbai'}
+print(d1.keys())  # dict_keys([111, 222, 333])
+print(d1.values())  # dict_values(['nishant', 'pune', 'mumbai'])
+print(d1.items())  # dict_items([(111, 'nishant'), (222, 'pune'), (333, 'mumbai')])
+
+print(list(d1.keys()))  # [111, 222, 333]
+print(list(d1.values()))  # ['nishant', 'pune', 'mumbai']
+print(list(d1.items()))  # [(111, 'nishant'), (222, 'pune'), (333, 'mumbai')]
+
+print(tuple(d1.keys()))  # (111, 222, 333)
+print(tuple(d1.values()))  # ('nishant', 'pune', 'mumbai')
+print(tuple(d1.items()))  # ((111, 'nishant'), (222, 'pune'), (333, 'mumbai'))
+
+print(set(d1.keys()))  # {333, 222, 111}
+print(set(d1.values()))  # {'nishant', 'pune', 'mumbai'}
+print(set(d1.items()))  # {(111, 'nishant'), (333, 'mumbai'), (222, 'pune')}
+
+ex 3:by using itrator in keys and value dict
+
+d1 = {111: "nishant", 222: "pune", 333: "mumbai"}
+
+for x in d1:
+    print(x)     #111 222 333
+
+for x in d1:
+    print(x,d1[x])
+"111 nishant"
+"222 pune  "
+"333 mumbai"
+
+for x,y in d1.items():
+    print(x,y)
+    
+"111 nishant"
+"222 pune   "
+"333 mumbai "
+
+##########################
+mydict = {'StuName': 'Steve', 'StuAge': 4, 'StuCity': 'Agra'}
+for e in mydict:
+  print("Key:",e,"Value:",mydict[e])
+
+######
+C:\Users\nishant.narwade\AppData\Local\Programs\Python\Python38-32\python.exe D:/AutoamtionProject/PythonSelenium_Study/interview/test.py
+Key: StuName Value: Steve
+Key: StuAge Value: 4
+Key: StuCity Value: Agra
+
+Process finished with exit code 0
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video -20 class concept <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+class :logical entity object :physical entity represent memory
+
+blue print it decide
+based on single blue print :multiple obj class
+
+python 2.7 :our class is not child class of object
+
+class Myclass:
+  pass
+class Myclass(object):
+  pass
+
+
+python 3.x :our class is child class of object
+
+class Myclass:
+  pass
+class Myclass(object):
+  pass
+
+
+
+ex 1:Check the class is child class of object
+class Myclass1:
+    pass
+
+
+class Myclass2:
+    pass
+
+
+class Myclass3(object):
+    pass
+
+
+print(issubclass(Myclass1, object))  # True
+print(issubclass(Myclass2, object))  # True
+print(issubclass(Myclass3, object))  # True
+
+The self parameter is a reference to the current instance of the class, 
+and is used to access variables that belongs to the class.
+
+ex 2: create function /object and method:declare function inside the class
+class MyClass:
+    def disp(self):  # disp is function name or method name
+        print("good morning")
+
+    def disp2(self, name):  # self is presenting this method is belong to class ,name is argument
+        print("good evening", name)
+
+
+c = MyClass()  # create the object reference
+c.disp()
+c.disp2("Nishant")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+good morning
+good evening Nishant
+
+Process finished with exit code 0
+
+ex 3:instance method and static method
+
+
+class Myclass:
+    def m1(self):  # instance self argument is mandatory
+        print("instance method")
+
+    @staticmethod
+    def m2(): # instance self argument is not mandatory
+        print("static method")
+
+
+c = Myclass()  # instance method
+c.m1()
+Myclass.m2()  # static method
+
+
+ex4:
+
+Declaring varible inside the class
+   to represent class variable always use :self
+
+class Myclass:
+    a, b = 10, 20
+
+    def add(self):
+        print(self.a + self.b)
+
+    def mul(self):
+        print(self.a * self.b)
+
+
+c = Myclass()
+c.add()  # 30
+c.mul()  # 200
+
+ex 5: Local var ,class var ,global var
+
+i, j = 100, 200  # Global variable
+
+
+class Myclass:
+    a, b = 100, 200  # class var
+
+    def add(self, x, y):  # local var
+        print(x + y)  #4
+        print(self.a + self.b) #300
+        print(i + j)  #300
+
+    def mul(self,x,y):
+        print(x * y)
+        print(self.a * self.b)
+        print(i * j)
+
+
+c = Myclass()
+c.add(2,2)
+c.mul(3,3)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+4
+300
+300
+9
+20000
+20000
+
+Process finished with exit code 0
+
+
+ex6: same name with all varible
+
+a, b = 100, 200  # Global variable
+
+
+class Myclass:
+    a, b = 100, 200  # class var
+
+    def add(self, a, b):  # local var
+        print(a + b)
+        print(self.a + self.b)
+        print(globals()['a'] + globals()['b'])
+
+    def mul(self, a, b):
+        print(a * b)
+        print(self.a * self.b)
+        print(globals()['a'] * globals()['b'])
+
+
+c = Myclass()
+c.add(2, 2)
+c.mul(3, 3)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+4
+300
+300
+9
+20000
+20000
+
+Process finished with exit code 0
+
+ex 7:Can created my object of same class.
+class Myclass:
+    def disp(self):
+        print("Good morning")
+
+
+c1 = Myclass()
+c1.disp()
+
+c2 = Myclass()
+c2.disp()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good morning
+Good morning
+
+Process finished with exit code 0
+
+ex 8:
+named object                     : c2 = Myclass() :object with referance
+name less object                 :Myclass() :object without referance
+
+class Myclass:
+    def disp(self):
+        print("Good morning")
+
+
+c1 = Myclass()
+c1.disp()
+
+Myclass().disp()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good morning
+Good morning
+
+Process finished with exit code 0
+
+
+ex 9: id(): want memory address of object.
+      is ,is not for memory comparision.
+
+class MyClass:
+    pass
+
+
+c1=MyClass()
+c2=MyClass()
+c3=c1
+
+print(id(c1))
+print(id(c2))
+print(id(c3))
+
+print(c1 is c3)
+print(c1 is c2)
+print(c3 is not c2)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+52425032
+52424912
+52425032
+True
+False
+True
+
+Process finished with exit code 0
+
+ex 10:reassignment object with same referance name
+class MyClass:
+    name = "ratan"
+
+
+c1 = MyClass()
+print(c1.name)
+c1.name = "anu"
+print(c1.name)
+
+c2 = MyClass()
+print(c2.name)
+
+output>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+ratan
+anu
+ratan
+
+Process finished with exit code 0
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video class -21 class concept part 2<<<<<<<<<<<<<<<<<<<
+
+ex 1: declaring constructor inside the class:__init__()
+
+
+class MyClass():
+    def m1(self):
+        print("Good Morning")
+
+    def __init__(self):
+        print("Good Evening ::::: 0 arg constructor")
+
+
+c = MyClass()
+c.m1()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good Evening ::::: 0 arg constructor
+Good Morning
+
+Process finished with exit code 0
+
+ex2: method example to declare local var to class var
+class Myclass():
+    def values(self, val1, val2):
+        print(val1)
+        print(val2)
+
+        # conversion of local var to class variables
+        self.val1=val1
+        self.val2=val2
+
+    def add(self):
+        print(self.val1 + self.val2)
+
+    def mul(self):
+        print(self.val1 * self.val2)
+
+
+c = Myclass()
+c.values(3, 3)
+c.add()
+c.mul()
+
+D:\PyAll_Framework\venv\Scripts\python.exe D:/PyAll_Framework/python_BrushUP/azx.py
+3
+3
+6
+9
+
+Process finished with exit code 0
+
+
+ex 3: calling to current class method
+
+class Myclass():
+    def m1(self):
+        print("m1 method")
+        self.m2(10)  # calling current class method
+
+    def m2(self, a):
+        print("m2 method", a)
+
+
+c = Myclass()
+c.m1()
+
+output >>
+
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+m1 method
+m2 method 10
+
+Process finished with exit code 0
+
+
+ex 4: constructor calling using var pass parameter
+class Myclass():
+    name = "Nishant"
+
+    def __init__(self, name):
+        print("Good mornings", name)
+        print("Good durga", self.name)
+
+
+c = Myclass("kkc")
+
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good mornings kkc
+Good durga Nishant
+
+Process finished with exit code 0
+
+
+ex5:Local to class variable
+
+class Operations:
+    def __init__(self, val1, val2):
+        print(val1)
+        print(val2)
+
+        # conversion local var to class var
+        self.val1 = val1
+        self.val2 = val2
+
+    def add(self):
+        print(self.val1 + self.val2)
+
+    def mul(self):
+        print(self.val1 + self.val2)
+
+
+o = Operations(4, 4)
+o.add()
+o.mul()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+4
+4
+8
+8
+
+Process finished with exit code 0
+
+ex 6: 
+Emp :cons eid,ename esal
+def disp() :print the data
+
+class Emp:
+
+    def __init__(self, eid, ename, esal):
+        self.eid = eid
+        self.ename = ename
+        self.esal = esal
+
+    def disp(self):
+        print("emp eid:%d Emp name:%s Emp esal:%g"%(self.eid,self.ename,self.esal))
+
+
+e = Emp(111, "Nishant", 2234.344)
+e.disp()
+
+e2 = Emp(222, "kkc", 8734.344)
+e2.disp()
+output>>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+emp eid:111 Emp name:Nishant Emp esal:2234.34
+emp eid:222 Emp name:kkc Emp esal:8734.34
+
+Process finished with exit code 0
+
+
+ex 7: __str___ it will executed whenever for reference variable
+
+case1:
+
+class MyClass:
+    pass
+
+
+c = MyClass()
+print(c)
+
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+<__main__.MyClass object at 0x015BF0D0>
+
+Process finished with exit code 0
+
+
+case2: Rerun function used below
+class MyClass:
+    def __str__(self):
+        return "ratan"
+
+
+c = MyClass()
+print(c)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+ratan
+
+Process finished with exit code 0
+
+case3:it return only string data
+
+class MyClass:
+    def __str__(self):
+        return 10
+
+
+c = MyClass()
+print(c)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 7, in <module>
+    print(c)
+TypeError: __str__ returned non-string (type int)
+
+Process finished with exit code 1
+
+case4 :non data type return when you write print in function :its not alloewd
+class MyClass:
+    def __str__(self):
+        print("hello nishant")
+
+
+c = MyClass()
+print(c)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 7, in <module>
+    print(c)
+TypeError: __str__ returned non-string (type NoneType)
+hello nishant
+
+Process finished with exit code 1
+
+ex 8:return statement use at result point and print it after object
+class Emp:
+
+    def __init__(self, eid, ename, esal):
+        self.eid = eid
+        self.ename = ename
+        self.esal = esal
+
+    def __str__(self):
+        return "emp eid:%d Emp name:%s Emp esal:%g" % (self.eid, self.ename, self.esal)
+
+
+e = Emp(111, "Nishant", 2234.344)
+print(e)
+
+e2 = Emp(222, "kkc", 8734.344)
+print(e2)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+emp eid:111 Emp name:Nishant Emp esal:2234.34
+emp eid:222 Emp name:kkc Emp esal:8734.34
+
+Process finished with exit code 0
+
+ex 9: __del__
+it used for del operation.or destroy object in del
+
+class MyClass():
+    def __del__(self):
+        print("object destroy....................")
+
+
+c1 = MyClass()
+c2 = MyClass()
+
+del c1
+del c2
+
+output>>
+
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+object destroy....................
+object destroy....................
+
+Process finished with exit code 0
+
+ex 10:
+
+case1 :del function used
+class MyClass():
+    def __del__(self):
+        print("object destroy....................")
+       # print(10/0)
+
+
+c1 = MyClass()
+c2 = c1
+c3 = c1
+
+del c1
+del c2
+del c3
+
+# if referance varible count will be zero after that del function is work
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+object destroy....................
+
+Process finished with exit code 0
+
+case2: whenever execution occur after delete function that function is ignored
+class MyClass():
+    def __del__(self):
+        print("object destroy....................")
+        print(10/0)
+
+
+c1 = MyClass()
+c2 = c1
+c3 = c1
+
+del c1
+del c2
+del c3
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+object destroy....................
+Exception ignored in: <function MyClass.__del__ at 0x00F8B8E0>
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 4, in __del__
+    print(10/0)
+ZeroDivisionError: division by zero
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>python video class no -22 (inheritance)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+class vs object
+1.logical entity vs physical entity 
+2.blue print
+3.one class possible to create multipe object (memory)
+4.declare class with class keyword
+
+class MyClass:
+ pass
+
+class MyClass():
+ pass
+
+class MyClass(object)
+ pass
+
+
+ex1:class is inheritance with object:our class is child class of object
+class MyClass1:
+    pass
+
+
+class MyClass2():
+    pass
+
+
+class MyClass3(object):
+    pass
+
+
+print(issubclass(MyClass1, object))
+print(issubclass(MyClass2, object))
+print(issubclass(MyClass3, object))
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+True
+True
+True
+
+Process finished with exit code 0
+
+main building block of oops
+1.inheritance
+2.polymorphism
+3.encapsulation
+4.abstraction
+
+
+1.inheritance:process of occurring property,behaviour/(one class to another class) from parent class to child class.
+
+
+ex2: parent to child access the method
+class Parent():
+    def m1(self):
+        print("parent m1() method")
+
+
+class Child(Parent):
+    def m2(self):
+        print("m2 -child method")
+
+
+p = Parent()
+p.m1()
+
+c = Child()
+c.m1()
+c.m2()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+parent m1() method
+parent m1() method
+m2 -child method
+
+Process finished with exit code 0
+
+ex3:calling super class method by using super() functions>
+class Parent():
+    def m1(self):
+        print("parent m1() method")
+
+
+class Child(Parent):
+    def m2(self):
+        super().m1()
+        print("m2 -child method")
+
+
+c = Child()
+
+c.m2()
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+parent m1() method
+m2 -child method
+
+Process finished with exit code 0
+
+
+ex4:super class variable:variable declare in child and parent classes use self.a and self.b
+class Parent():
+    a, b = 10, 20
+
+
+class Child(Parent):
+    x, y = 100, 200
+
+    def add(self, i, j):
+        print(i + j)
+        print(self.x + self.y)
+        print(self.a + self.b)  # always check child class variable after that call to parent class variable
+
+
+c = Child()
+c.add(1000,2000)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+3000
+300
+30
+
+Process finished with exit code 0
+
+ex 5: all variable having same name
+a, b = 1, 2
+
+
+class Parent():
+    a, b = 10, 20
+
+
+class Child(Parent):
+    a, b = 100, 200
+
+    def add(self, a, b):
+        print(a + b)
+        print(self.a + self.b)
+        print(super().a + super().b)  # always check child class variable after that call to parent class variable
+        print(globals()['a'] + globals()['b']) # global function used
+
+
+c = Child()
+c.add(1000, 2000)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+3000
+300
+30
+3
+
+Process finished with exit code 0
+
+ex6:
+case1:
+1.constructor used in inheritance(Parent class constructor inheritance in child class).
+2.create the obejct of child class 
+3.first it will check the constructor of child class if not present then it call parent.
+class Parent:
+
+    def __init__(self):
+        print("time pass checked")
+
+
+class Child(Parent):
+    pass
+
+
+p = Child()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo2.py
+time pass checked
+
+Process finished with exit code 0
+
+case2: child class craete constructor :in this case it call child class constructor
+
+class Parent:
+
+    def __init__(self):
+        print("time pass checked")
+
+
+class Child(Parent):
+
+     def __init__(self):
+        print("Child class constructor")
+
+
+p = Child()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo2.py
+Child class constructor
+
+Process finished with exit code 0
+
+case3: How to call parent class constructor while executing child class constructor using super() functions
+class Parent:
+
+    def __init__(self, name):
+        print("time pass checked:::", name)
+
+
+class Child(Parent):
+
+    def __init__(self):
+        super().__init__("Nishant")
+        print("Child class constructor")
+
+
+p = Child()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo2.py
+time pass checked::: Nishant
+Child class constructor
+
+Process finished with exit code 0
+
+case3: any where write super keyword wrote.note madotray to write first line in any class is not madotary.
+class Parent:
+
+    def __init__(self, name):
+        print("time pass checked:::", name)
+
+
+class Child(Parent):
+
+    def __init__(self):
+
+        print("Child class constructor")
+        super().__init__("Nishant")
+
+
+p = Child()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo2.py
+Child class constructor
+time pass checked::: Nishant
+
+Process finished with exit code 0
+
+case 4:using Parent class name call the parent class constructor.
+class Parent:
+
+    def __init__(self, name):
+        print("time pass checked:::", name)
+
+
+class Child(Parent):
+
+    def __init__(self):
+        super().__init__("Nishant")
+        Parent.__init__(self,"kkc")
+        print("Child class constructor")
+
+
+p = Child()
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo2.py
+time pass checked::: Nishant
+time pass checked::: kkc
+Child class constructor
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video no -23<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+1.single inheritance
+class Parent:
+   pass
+class Child(Parent):
+  pass
+
+
+2.multilevel inheritance
+class A:         GF
+  pass
+class B(A):      father
+  pass
+class C(B):      child
+  pass
+
+
+3.multiple inheritance :one child class :with multiple parent classes
+
+class A:
+  pass
+
+class B:
+   pass
+
+class c(A,B):
+   pass
+
+4.Hierarchical inheritance :one father with multiple children
+class A:
+  pass
+class B(A):
+
+class C(A):
+   pass
+
+5.Hybrid inheritance:multiple+Hierarchical
+
+
+
+ex 7: multilevel inheritance:
+class A:
+    def m1(self):
+        print("M1 method")
+
+
+class B(A):
+    def m2(self):
+        print("M2 method")
+
+
+class C(B):
+    def m3(self):
+        print("M3 method")
+
+
+c = C()
+c.m1()
+c.m2()
+c.m3()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+M1 method
+M2 method
+M3 method
+
+Process finished with exit code 0
+
+ex 8: Hirechr inheritance
+class Vechile:
+    def disp1(self):
+        print("Vechile Info")
+
+
+class Car(Vechile):
+    def disp2(self):
+        print("car information")
+
+
+class Plane(Vechile):
+    def disp3(self):
+        print("Plane informations")
+
+
+v = Vechile()
+v.disp1()
+
+c = Car()
+c.disp2()
+
+p = Plane()
+p.disp3()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Vechile Info
+car information
+Plane informations
+
+Process finished with exit code 0
+
+
+ex 9:multiple inheritance
+
+
+class Parent1:
+    def disp1(self):
+        print("Parent -Disp1 method")
+
+
+class Parent2():
+    def disp2(self):
+        print("Parent -Disp2 method")
+
+
+class Child(Parent1,Parent2):
+    def disp3(self):
+        print("Child -Disp3 method")
+
+
+c = Child()
+c.disp1()
+c.disp2()
+c.disp3()
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Parent -Disp1 method
+Parent -Disp2 method
+Child - Disp3 method
+
+Process finished with exit code 0
+
+Same method of two parent then what happen
+class Parent1:
+    def disp(self):
+        print("Parent1 -Disp1 method")
+
+
+class Parent2:
+    def disp(self):
+        print("Parent2 -Disp2 method")
+
+
+class Child(Parent2,Parent1):
+    def disp2(self):
+        print("Child -Disp3 method")
+
+
+c = Child()
+c.disp()
+c.disp2()
+
+-----------
+C:\Python39\python.exe D:/PythonHBF-NOV29/simple_Script/interview_Progran.py
+Parent2 -Disp2 method
+Child -Disp3 method
+
+Process finished with exit code 0
+---------------------------------
+
+
+ex 10: two constructor use with different format
+class Person:
+    def __int__(self, first, last):  # local variable
+        self.first = first
+        self.last = last
+
+
+class Emp(Person):
+    def __init__(self, first, last, id):  # local variable
+        #  self.first = first
+        # self.last = last
+        # instance of this use super keyword or class name to cal parent class constructor
+        # Person.__int__(first,last)
+        super().__int__(first, last)
+        self.id = id
+
+    def disp(self):
+        print("Emp id = {} Emp firstName = {} Emp lastName ={} ".format(self.id, self.first, self.last))
+
+
+e1 = Emp("KKC", "Nishant", 111)
+e1.disp()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Emp id = 111 Emp firstName = KKC Emp lastName =Nishant 
+
+Process finished with exit code 0
+
+
+ex 11:to check the instance by using isIntance function used
+class Parent:
+    pass
+
+
+class Child(Parent):
+    pass
+
+
+p = Parent()
+c = Child()
+
+print(isinstance(p, Parent))
+print(isinstance(c, Child))
+print(isinstance(c, object))
+print(isinstance(p, object))
+
+print(isinstance(p, Child))
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+True
+True
+True
+True
+False
+
+Process finished with exit code 0
+
+
+
+ex 11:
+
+class Person:
+    def __int__(self, first, last):  # local variable
+        self.first = first
+        self.last = last
+
+
+class Emp(Person):
+    def __init__(self, first, last, id):  # local variable
+        #  self.first = first
+        # self.last = last
+        # instance of this use super keyword or class name to cal parent class constructor
+        # Person.__int__(first,last)
+        super().__int__(first, last)
+        self.id = id
+
+    def __str__(self):
+       return "Emp id = {} Emp firstName = {} Emp lastName ={} ".format(self.id, self.first, self.last)
+
+
+e1 = Emp("KKC", "Nishant", 111)
+print(e1)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Emp id = 111 Emp firstName = KKC Emp lastName =Nishant 
+
+Process finished with exit code 0
+
+
+
+ex 10:check the instance /hirech work or not properly
+
+class Parent:
+    pass
+
+
+class Child(Parent):
+    pass
+
+
+p = Parent()
+c = Child()
+
+print(isinstance(p, Parent))
+print(isinstance(c, Child))
+print(isinstance(c, object))
+print(isinstance(p, object))
+
+print(isinstance(p, Child))
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+True
+True
+True
+True
+False
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>>>python video No-24<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+poly:one function with different behaviours is know as poly polymorphism.
+
+
+sleep(1000)
+sleep(1000,2000)
+
+sum(int a)
+sum(int a,int b)
+
+
+overriding
+
+class Parent
+      def mrg: black
+class Child(Parent):
+      def mrg:Red
+
+
+ex1:overriding on variable 
+
+case1:if your overriding the class in this cases child class variable executed only.
+
+class Parent:
+    name = "Nishant"
+
+
+class Child(Parent):
+    name = "kkc"
+
+
+c = Child()
+print(c.name)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+kkc
+
+Process finished with exit code 0
+
+
+case2:if your not overriding then parent class varible executed
+class Parent:
+    name = "Nishant"
+
+
+class Child():
+    name = "kkc"
+
+
+p=Parent
+print(p.name)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Nishant
+
+Process finished with exit code 0
+
+
+ex2:overriding with method/functions
+
+
+class Parent():
+    def mrg(self):
+        print("Black girls")
+
+
+class Child(Parent):
+    def mrg(self):
+        print("Red girls")
+
+
+c = Child()
+c.mrg()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Red girls
+
+Process finished with exit code 0
+
+case2:im not override the we can write pass keyword>>my father implementation or parent class method is executed.
+
+class Parent():
+    def mrg(self):
+        print("Black girls")
+
+
+class Child(Parent):
+    pass
+
+
+c = Child()
+c.mrg()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Black girls
+
+Process finished with exit code 0
+
+ex 3:common interface and using polymorphisms
+class Parrot():
+    def fly(self):
+        print("parrot can fly")
+
+    def swim(self):
+        print("Parrot can't swim")
+
+
+class Penguin:
+    def fly(self):
+        print("penguin can't fly")
+
+    def swim(self):
+        print("pengim can swim")
+
+
+# common interface
+
+def flying_test(bird):
+    bird.fly()
+
+
+def swim_test(fish):
+    fish.swim()
+
+
+# create the object
+pa = Parrot()
+pen = Penguin()
+
+# passing the object
+
+flying_test(pa)
+flying_test(pen)
+swim_test(pa)
+swim_test(pen)
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+parrot can fly
+penguin can't fly
+Parrot can't swim
+pengim can swim
+
+Process finished with exit code 0
+
+ex 5:same example with speed
+class Unicorn():
+    def speed(self):
+        print("unocorn speed 150 kmps")
+
+
+class Splender():
+    def speed(self):
+        print("Splender speed 100 kmps")
+
+
+# common data
+def speed_Test(sp):
+    sp.speed()
+
+
+# create the object
+u = Unicorn()
+s = Splender()
+
+# pass the object
+speed_Test(u)
+speed_Test(s)
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+unocorn speed 150 kmps
+Splender speed 100 kmps
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>>>python video 25 -Encapsulations<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+binding the data
+private :__ that variable used in that class only .
+         __ underscore underscore
+
+private method ,private varible unable to access out side the class ,it tight binding
+
+ex1:private variable declare with __ that can access in inside the class
+class A:
+    __a = 10       #private variable by underscore underscore
+
+    def disp(self):
+        print(self.__a)
+
+
+obj = A()
+obj.disp()  
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+10
+
+Process finished with exit code 0
+
+
+ex 2:private method
+
+class MyClass():
+    def __disp1(self):
+        print("private method")
+
+    def disp2(self):
+        print("this is disp2 calling disp1")
+        self.__disp1()
+
+
+c = MyClass()
+c.disp2()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+this is disp2 calling disp1
+private method
+
+Process finished with exit code 0
+
+ex 3:getter and setter used in encapsulation
+private variable can't access directly but use can explicit apply getter and setter method to achive that varible
+class Emp:
+    __eid = 111
+
+    def setEid(self, eid):
+        self.__eid = eid
+
+    def getEid(self):
+        return self.__eid
+
+
+e = Emp()
+print(e.getEid())
+e.setEid(222)
+print(e.getEid())
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+111
+222
+
+Process finished with exit code 0
+ex 4:project level part:every method is create the object so its proble in project level
+class A():
+    num1, num2 = 100, 200
+
+
+class B():
+    def add(self):
+        a =A()
+        print(a.num1+a.num2)
+
+    def mul(self):
+        a = A()
+        print(a.num1 * a.num2)
+
+
+
+b =B()
+b.add()
+b.mul()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+300
+20000
+
+Process finished with exit code 0
+
+ex 5: one time create the obejct use multiple time:declare the object at class level
+class A():
+    num1, num2 = 100, 200
+
+
+class B():
+    a = A()
+
+    def add(self):
+        print(self.a.num1 + self.a.num2)
+
+    def mul(self):
+        print(self.a.num1 * self.a.num2)
+
+
+b = B()
+b.add()
+b.mul()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+300
+20000
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>python video class- 26 -abstract class <<<<<<<<<<<<<<<<<<<<<<<<
+
+ABC: predefine class present in abc module
+
+ex1:abstract class object create is not possible
+from abc import ABC, abstractmethod
+
+
+class A(ABC):
+    @abstractmethod
+    def disp(self):
+        pass
+
+
+class B(A):
+    def disp(self):
+        print("Good morning")
+
+
+#a = A() 
+# TypeError: Can't instantiate abstract class A with abstract methods disp
+# Abstract class object create not possible 
+b = B()
+b.disp()
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good morning
+
+Process finished with exit code 0
+
+
+ex 2:define abstract class and any one can implements as per our need
+from abc import ABC, abstractmethod
+
+
+class Person(ABC):
+    @abstractmethod
+    def disp(self):
+        pass
+
+
+class Ratan(Person):
+    def disp(self):
+        print("Good morning -ratan")
+
+
+class Durga(Person):
+    def disp(self):
+        print("Good class Durga")
+
+
+r = Ratan()
+r.disp()
+
+d = Durga()
+d.disp()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good morning -ratan
+Good class Durga
+
+Process finished with exit code 0
+
+
+ex 3:unable to complete implement then getting error how to achieve this in example 5
+from abc import ABC, abstractmethod
+
+
+class Person(ABC):
+    @abstractmethod
+    def disp1(self):
+        pass
+
+    @abstractmethod
+    def disp2(self):
+        pass
+
+
+class Ratan(Person):
+    def disp1(self):
+        print("Good morning -ratan")
+
+
+r = Ratan()
+r.disp()  # TypeError: Can't instantiate abstract class Ratan with abstract methods disp2
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 19, in <module>
+    r = Ratan()
+TypeError: Can't instantiate abstract class Ratan with abstract methods disp2
+
+Process finished with exit code 1
+
+ex 4:complete the all abstract implementaion in child class
+
+from abc import ABC, abstractmethod
+
+
+class Person(ABC):
+    @abstractmethod
+    def disp1(self):
+        pass
+
+    @abstractmethod
+    def disp2(self):
+        pass
+
+
+class Ratan(Person):
+    def disp1(self):
+        print("Good morning -ratan")
+
+
+class Anu(Ratan):
+    def disp2(self):
+        print("Good morning -Anu")
+
+
+# r = Ratan() #TypeError: Can't instantiate abstract class Ratan with abstract methods disp2
+# r.disp()
+
+a = Anu()
+a.disp1()
+a.disp2()
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Good morning -ratan
+Good morning -Anu
+
+Process finished with exit code 0
+ex 5: constructor used in abstract class
+from abc import ABC, abstractmethod
+
+
+class A(ABC):
+    def __init__(self, value):
+        self.value = value
+
+    @abstractmethod
+    def disp(self):
+        pass
+
+
+class B(A):
+    def disp(self):
+        print("my choice my rule",self.value)
+
+    def disp2(self):
+        print("my choice my rule2",self.value)
+
+
+b = B("nishant")
+b.disp()
+b.disp2()
+
+output
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+my choice my rule nishant
+my choice my rule2 nishant
+
+Process finished with exit code 0
+>>>>>>>>>>>>>>>>>>>>>>>>python video -31 exception handling-Part -1<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ everything in error format in python :error only one word is called is know error
+1.syntax error
+2.executions:run time error
+
+
+       ArithmeticError
+           IndexError
+
+
+syntax :
+try exceptions
+
+try: try block having problem
+
+exception :handle in try
+
+rest of application work fine.
+
+
+
+
+st1
+st2
+st3: exception 
+st4
+
+1. program terminal abnormally
+2.rest of application not executed is know exception
+
+try-except block to handle the exception
+1.program terminally nomally.
+2.rest of application executed properly.
+
+
+ex-1 :application without try except.this is problem with exceptions.
+print("Nishant")
+print(10 / 0)  # ZeroDivisionError: division by zero
+print("kkc")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 3, in <module>
+    print(10/0) #ZeroDivisionError: division by zero
+ZeroDivisionError: division by zero
+Nishant
+
+Process finished with exit code 1
+
+ex 2: try with executions
+try:
+    print(10 / 0)
+except ZeroDivisionError as e:
+    print(10 / 5)
+
+print("kkc")
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+2.0
+kkc
+
+Process finished with exit code 0
+
+
+ex3:if except block not matched program terminated abnormally
+try:
+     print(10/0)
+except TypeError as e:
+    print(10/5)
+
+
+
+print("kkc")
+
+output>>
+
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+Traceback (most recent call last):
+  File "D:/PythonStudy/pythonBasic/demo.py", line 2, in <module>
+    print(10/0)
+ZeroDivisionError: division by zero
+
+Process finished with exit code 1
+
+
+ex4: only try block are not allowed
+
+try:
+     print(10/0)
+     print("kkc")
+
+output>>
+ex5:in between two block no other syntax write between
+try:
+     print(10/0)
+print("inbetween any two block")
+except ZeroDivisionError as e:
+    print(10/5)
+    
+print("kkc")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+  File "D:/PythonStudy/pythonBasic/demo.py", line 3
+    print("inbetween any two block")
+    ^
+SyntaxError: invalid syntax
+
+Process finished with exit code 1
+
+ex5:in between two block no other syntax write between
+try:
+     print(10/0)
+print("inbetween any two block")
+except ZeroDivisionError as e:
+    print(10/5)
+    
+print("kkc")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+  File "D:/PythonStudy/pythonBasic/demo.py", line 3
+    print("inbetween any two block")
+    ^
+SyntaxError: invalid syntax
+
+Process finished with exit code 1
+
+
+ex6:exception raised in try block line the remain block is not executed
+try:
+     print("nishant" + 24)
+     print("nishant")
+     print("nishant"+12)
+except TypeError as e:
+    print(10/5,e)
+
+print("kkc")
+
+
+output>>
+D:\PythonSelenium_Study\venv\Scripts\python.exe D:/PythonSelenium_Study/testcases2/tp5.py
+2.0 can only concatenate str (not "int") to str
+kkc
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>python video -32 exception handling-Part -2<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+else block executed
+ex1:
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+except ZeroDivisionError as e:
+    print(10/5,e)
+else:
+    print("kkc")
+print("rest of applications")
+
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:0
+2.0 division by zero
+rest of applications
+
+Process finished with exit code 0
+
+ex2:else block always executed when not problem in try block
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     for x in range(10):
+         if x==2:
+             break
+except ZeroDivisionError as e:
+    print(10/5,e)
+else:
+    print("kkc")
+print("rest of applications")
+
+
+ex3:defult execpted block execpt  without exceptions
+
+try:
+    num = int(input("enter the number:"))
+    print(20 / num)
+    for x in range(10):
+        if x == 2:
+            break
+except ZeroDivisionError as e:
+    print(10 / 5, e)
+except:
+    print("just check excepted output")
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:2
+10.0
+kkc
+rest of applications
+
+Process finished with exit code 0
+
+ex 4:defult except block at last 
+try:
+    num = int(input("enter the number:"))
+    print(20 / num)
+    for x in range(10):
+        if x == 2:
+            break
+
+except:
+    print("just check excepted output")
+except ZeroDivisionError as e:
+    print(10 / 5, e)
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+  File "D:/PythonStudy/pythonBasic/demo.py", line 6
+    break
+    ^
+SyntaxError: default 'except:' must be last
+
+Process finished with exit code 1
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>python video -33 exception handling-Part -3<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+ex5:try with multiple except block
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     for x in range(10):
+         if x==2:
+             break
+except ZeroDivisionError as e:
+    print(10/5,e)
+
+except ValueError as b:
+    print("Value error",b)
+
+except TypeError as c :
+     print("type error is executed")
+
+except:     
+     print("always executed")
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:2
+10.0
+kkc
+rest of applications
+
+Process finished with exit code 0
+
+ex 6:Type error
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     print("nishant"+num)
+
+except ZeroDivisionError as e:
+    print(10/5,e)
+
+except ValueError as b:
+    print("Value error",b)
+
+except TypeError as c :
+     print("type error is executed")
+
+except:
+     print("always executed")
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+
+
+ex6: value error
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     print("nishant"+num)
+
+except ZeroDivisionError as e:
+    print(10/5,e)
+
+except ValueError as b:
+    print("Value error",b)
+
+except TypeError as c :
+     print("type error is executed")
+
+except:
+     print("always executed")
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:3
+6.666666666666667
+type error is executed
+rest of applications
+
+Process finished with exit code 0
+
+ex 7: base class execption any exception are handle in this execptions.
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     print("nishant"+num)
+
+except BaseException as e:
+    print("Nishant number is :",e)
+
+except :
+    print("default block ")
+
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:nishant
+Nishant number is : invalid literal for int() with base 10: 'nishant'
+rest of applications
+
+Process finished with exit code 0
+
+ex 8: Exception used: example 6 same example 7 but just cahnges name also used Exception
+try:
+     num=int(input("enter the number:"))
+     print(20/num)
+     print("nishant"+num)
+
+except Exception as e:
+    print("Nishant number is :",e)
+
+except :
+    print("default block ")
+
+else:
+    print("kkc")
+print("rest of applications")
+
+output>>
+D:\PythonStudy\venv\Scripts\python.exe D:/PythonStudy/pythonBasic/demo.py
+enter the number:nisha
+Nishant number is : invalid literal for int() with base 10: 'nisha'
+rest of applications
+
+Process finished with exit code 0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>multithread video<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+video -37,Multithreading ,part1:
+Thread:small process ,small task
+process:operating system :kernel heavy weight : multiple weight
+
+creation threads:
+   a.threading module
+   b.thread(deprecated)-2.7 process
+
+t1,t2,t3
+
+ex1:use two thread
+import threading
+
+
+def print_square(num):
+    print(num * num)
+
+
+def print_cube(num):
+    print(num * num * num)
+
+
+t1 = threading.Thread(target=print_square, args=(10,))
+t2 = threading.Thread(target=print_cube, args=(5,))
+
+# start the thread
+t1.start()
+t2.start()
+##################
+ex2: from import use
+from threading import Thread
+
+
+def print_square(num):
+    print(num * num)
+
+
+def print_cube(num):
+    print(num * num * num)
+
+
+t1 = Thread(target=print_square, args=(10,))
+t2 = Thread(target=print_cube, args=(5,))
+
+# start the thread
+t1.start()
+t2.start()
+#####################
+ex3:
+from threading import Thread
+
+
+def disp1():
+    for x in range(10):
+        print("Nishant use threading in logic")
+
+
+def disp2():
+    for x in range(10):
+        print("kkc use thread in logic")
+
+
+t1 = Thread(target=disp1())
+t2 = Thread(target=disp2())
+
+# start the thread
+t1.start()
+t2.start()
+##############################
+ex4:main thread,customized thread
+import threading
+print(threading.main_thread())
+
+t1= threading.Thread()
+print(t1)
+t1.start()
+print(t1)
+****************
+<_MainThread(MainThread, started 9368)>
+<Thread(Thread-1, initial)>
+<Thread(Thread-1, stopped 2540)>
+###########################
+ex5:same thread executed at one time 
+import threading
+
+print(threading.main_thread())
+
+t1 = threading.Thread()
+print(t1)
+t1.start()
+t1.start()  # RuntimeError: threads can only be started once
+print(t1)
+#################################
+video class -38 multiple threading
+ex6: thread start after 3 sec
+
+import threading
+
+
+def disp():
+    print("thread start after 3 sec")
+
+
+t1 = threading.Timer(3, disp)
+t1.start()
+###################################
+ex7:
+thread names :main
+user thread names start :thread 1
+how to print default thread and how to give thread name also 
+import threading
+
+def f1():
+    print("Thread-name",threading.currentThread().getName())
+
+def f2():
+    print("Thread-name",threading.currentThread().getName())
+
+
+# create threading
+t1= threading.Thread(target=f1,name="nishant")
+t2= threading.Thread(target=f2,name="kkc")
+
+# start the thread
+t1.start()
+t2.start()
+###############################
+ex8:stop the executions for 2 sec
+import threading
+import time
+
+
+def disp():
+    print("good morning..............")
+    time.sleep(2)
+    print("good evening..............")
+
+
+# to create thread    
+t1 = threading.Thread(target=disp)
+
+# to start the thread
+t1.start()
+################################
+ex9 : creating multiple thread
+import threading
+import time
+
+
+def disp():
+    print("good morning..............")
+    time.sleep(2)
+    print("good evening..............")
+
+
+# create thread and # to start the thread
+for x in range(5):
+    t1 = threading.Thread(target=disp)
+    t1.start()
+
+
+**********
+good morning..............
+good morning..............
+good morning..............
+good morning..............
+good morning..............
+good evening..............good evening..............good evening..............
+good evening..............
+
+
+good evening..............
+###########################
+ex10: list of thread
+import threading
+import time
+
+
+def disp():
+    print("good morning..............")
+    time.sleep(2)
+    print("good evening..............")
+
+
+# create thread and # to start the thread
+threads=[]
+
+for x in range(5):
+    t1 = threading.Thread(target=disp)
+    threads.append(t1)
+    t1.start()
+
+time.sleep(3)
+print(threads)
+
+##########################
+video class -39 Multithreading part -3
+ex11:join used in thread
+case1:stop thread ,needed to executed as per requirement
+
+join- to stop execution of thread until complite to target thread.
+import threading
+import time
+
+
+def disp1():
+    for x in range(10):
+        print("thread running 1 ..........")
+        time.sleep(1)
+
+
+def disp2():
+    for x in range(10):
+        print("thread running 2 ...........")
+        time.sleep(1)
+
+
+# create thread
+t1 = threading.Thread(target=disp1)
+t2 = threading.Thread(target=disp2)
+
+# start the thread
+t1.start()
+t1.join()
+t2.start()
+t2.join()
+print("rest of applications")  # in this line main thread is executed
+
+
+***************
+case3:
+t1.start()
+t1.join(2) # after 2 sec remaining thread executed parallel
+t2.start()
+
+D:\tp\venv\Scripts\python.exe D:/tp/multithrading/test1.py
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 1 ..........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+thread running 2 ...........
+rest of applications
+##################################
+ex12:how to check thread is running in applications.
+    1.enumerator : how many thread in running mode
+note:main thread is responsible to execute all thread
+
+import threading
+import time
+
+
+def disp1():
+    for x in range(10):
+        print("thread running 1 ...")
+        time.sleep(3)
+
+
+def disp2():
+    for x in range(10):
+        print("thread running 2 ....")
+        time.sleep(5)
+
+
+# create thread
+t1 = threading.Thread(target=disp1)
+t2 = threading.Thread(target=disp2)
+
+# start the thread
+t1.start()
+t2.start()
+
+print(threading.active_count()) #
+
+for x in threading.enumerate():
+    print("running thread",x.getName())
+print("rest of applications")  # in this line main thread is executed
+
+
+****************
+D:\tp\venv\Scripts\python.exe D:/tp/multithreading/test1.py
+thread running 1 ...
+thread running 2 ....3
+running thread MainThread
+
+running thread Thread-1
+running thread Thread-2
+rest of applications
+thread running 1 ...
+thread running 2 ....
+thread running 1 ...
+thread running 1 ...
+thread running 2 ....
+thread running 1 ...
+thread running 2 ....
+thread running 1 ...
+thread running 1 ...
+thread running 2 ....
+thread running 1 ...
+thread running 1 ...
+thread running 2 ....
+thread running 1 ...
+thread running 2 ....
+thread running 2 ....
+thread running 2 ....
+thread running 2 ....
+###################################
+video no -40 Multiple threading part4
+ex13:
+import threading
+
+
+class MyThread(threading.Thread):
+    def run(self):
+        for x in range(5):
+            print("good morning .........")
+
+
+t = MyThread()
+t.start()
+
+*********
+D:\tp\venv\Scripts\python.exe D:/tp/multithrading/test1.py
+good morning .........
+good morning .........
+good morning .........
+good morning .........
+good morning .........
+
+>>>>>>>>>>>>End<<<<<<<<<<<<<<,
+
+#Python Tutorial || Video Class- 19 || Lambda,Filter, Map , Reduce || By Ratan sir
+
+def m1(x):
+    print(2 * x)
+
+
+m1(10)
+
+# same code right with by using lambda
+
+a = lambda x: x * 2
+print("this is lambda expression output :",a(10))
+
+# lambda x: x * 2 | first x is input , this is 1 argument expression
+
+
+
+
+--------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+20
+this is lambda expression output : 20
+
+Process finished with exit code 0
+
+---------------------------------
+ex:2--> 2 argument in lambda expression
+def m1(x, y):
+    print(x * y)
+
+
+m1(10, 20)
+
+a = lambda x, y: x * y   # lambda x,y----------> input , :x*y ----------->Actions part ,logical data
+print("this is lambda expression output :", a(10, 20))
+
+---------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+200
+200
+
+Process finished with exit code 0
+------------
+Q .lambda expression with ternary operator or login in right side
+def m1(x, y):
+    print("this is normal expression :", x * y)
+
+
+m1(10, 20)
+
+a = lambda x, y: x * y
+print("this is lambda expression output :", a(10, 20))
+
+b = lambda x, y: x if x > y else y
+print("this is lambda expression output with actions :", b(3, 4))
+
+----------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+this is normal expression : 200
+this is lambda expression output : 200
+this is lambda expression output with actions : 4
+
+Process finished with exit code 0
+-------------------------------------------
+ex3: filter the data, filter is expected 2 argument and input data
+
+# filter --> first part is login and 2 part is for input
+
+l1 = [10, 50, 30, 40, 8, 12, 7]
+
+
+def m1(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
+
+
+print(list(filter(m1, l1))) # m1-->logical action and l1-->user input data
+
+------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+[10, 50, 30, 40, 8, 12]
+
+Process finished with exit code 0
+
+-------------------------------------
+Q. filter with lambda expression:
+# filter --> first part is login and 2 part is for input
+
+l1 = [10, 50, 30, 40, 8, 12, 7]
+
+
+def m1(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
+
+
+print(list(filter(m1, l1)))  # m1-->logical action and l1-->user input data
+print(list(filter(lambda x: x % 2 == 0, l1)))  # m1 instate of lambda expression
+print(tuple(filter(lambda x: x % 2 == 0, l1)))  # m1 instate of lambda expression
+-------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+[10, 50, 30, 40, 8, 12]
+[10, 50, 30, 40, 8, 12]
+(10, 50, 30, 40, 8, 12)
+
+Process finished with exit code 0
+
+--------------------------------------------
+QA--> How to create lamba with filter
+# filter --> first part is login and 2 part is for input
+
+l1 = ["kbc", "nishant", "timepass", "nishant"]
+
+
+def m1(x):
+    if x == "kbc":
+        return True
+    else:
+        return False
+
+
+print(list(filter(m1, l1)))  # m1-->logical action and l1-->user input data
+print(list(filter(lambda x: x == "kbc", l1)))  # m1 instate of lambda expression
+print(tuple(filter(lambda x: x == "kbc", l1)))  # m1 instate of lambda expression
+
+--------------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+['kbc']
+['kbc']
+('kbc',)
+
+Process finished with exit code 0
+----------------------------------------------
+ex:map : perform operation on all elements
+
+# filter --> first part is login and 2 part is for input
+
+l1 = [2, 4, 10, 20, 25, 45, 15, 90, 100]
+
+
+def m1(x):
+    return x * 5
+
+
+print(list(map(m1, l1)))
+
+print((list(map(lambda x: x * 5, l1))))
+
+
+-------------
+D:\PythonOCT-12\venv\Scripts\python.exe D:/PythonOCT-12/Xpython-Program/test2.py
+[10, 20, 50, 100, 125, 225, 75, 450, 500]
+[10, 20, 50, 100, 125, 225, 75, 450, 500]
+[2, 4, 10, 20, 25, 45, 15, 90, 100]
+[]
+()
+
+Process finished with exit code 0
+
+---------------------------------
+ex7:
+# filter --> first part is login and 2 part is for input
+
+l1 = [2, 4, 10, 20, 25, 45, 15, 90, 100]
+
+
+def m1(x):
+    return x * 5
+
+
+print(list(map(m1, l1)))
+
+print((list(map(lambda x: x * 5, l1))))
+
+--------------
+Lambda expression example:
+res = lambda a: a + 5
+print(res(5))
+
+-------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/OCT27/test.py
+10
+
+Process finished with exit code 0
+-------------------
+
+Compression contains very compact code usually a single code state that perform a task.
+
+list comp
+set comp
+dict comp
+
+list comp: list comp represent create of new list from an iterable object that satisfy given condition.
+
+syntax: 
+new_list=[expression for item in iterable object if statement]
+
+lst1=[i+1 for i in range(20)]
+lst1=[i+1 for i in range(20) if i%2]
+lst1=[i+1 for i in range(20) if i%2 if i%3]
+
+# list comp
+new_lst = []
+for i in range(20):
+    new_lst.append(i + 1)
+print(new_lst)
+
+print("-------------------------------------")
+
+# with list comp
+
+new_list2 = [i + 1 for i in range(10)]
+print(new_list2)
+print("-------------------------------------")
+# with if conditions
+new_list3 = [i for i in range(20) if i % 2 == 0]
+print(new_list3)
+
+print("-------------------------------------")
+# with 2 times if conditions
+new_list4 = [i for i in range(20) if i % 2 == 0 if i % 3 == 0]
+print(new_list4)
+
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/list_comp.py
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+-------------------------------------
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+-------------------------------------
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+-------------------------------------
+[0, 6, 12, 18]
+
+Process finished with exit code 0
+----------------------------------
+
+list comp with if else statement
+
+new_lst=[expression if statement else expression for item in iterable_object]
+
+new_list=[i if i%2==0 else 'invalid' for i in range(10)]
+------
+code:
+# with 2 times if conditions
+new_list4 = [i if i % 2 == 0 else 'invalid' for i in range(20)]
+print(new_list4)
+--------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/list_comp.py
+[0, 'invalid', 2, 'invalid', 4, 'invalid', 6, 'invalid', 8, 'invalid', 10, 'invalid', 12, 'invalid', 14, 'invalid', 16, 'invalid', 18, 'invalid']
+
+Process finished with exit code 0
+---------------------------------
+Nested List Comprehension in Python
+-----------
+# Normal for loop
+lst1 = []
+count = 0
+for i in range(6, 8):
+    count = count + 1
+    for j in range(4, 7):
+        lst1.append(i * j)
+
+print(lst1)
+print("---------------------------------------------------")
+lst2 = [[i * j for j in range(4, 7)] for i in range(6, 8)]
+#       inner loop                   outer loop
+print(lst2)
+
+--------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Nested_List.py
+[24, 30, 36, 28, 35, 42]
+[[24, 30, 36], [28, 35, 42]]
+
+Process finished with exit code 0
+---------------------------------
+SET comprehension
+set comp represents creation of new set from iterable object that satisfy a given syntax
+
+new_set={expression for item in item in iterable_object if_statement}
+there can be zero or more if statement
+there can be one or multiplr for loop
+
+ex:
+set = {i+1 for i in range(20)}
+set2 ={i for i in range(20) if i%2==0}
+set3 ={i for i in range(20) if i%2==0 if i%3==0}
+---------
+code:
+# Normal set create with new update value
+set1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+new_set = set()
+
+for i in set1:
+    new_set.add(i * 2)
+print(new_set)
+print(type(new_set))
+
+print("-------------------------------------")
+# set compression
+set2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+new_set2={i*2 for i in set2}
+print(new_set2)
+print(type(new_set2))
+
+
+---------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/set_Comp.py
+{0, 2, 4, 6, 8, 10, 12, 14, 16, 18}
+<class 'set'>
+-------------------------------------
+{0, 2, 4, 6, 8, 10, 12, 14, 16, 18}
+<class 'set'>
+
+Process finished with exit code 0
+---------------------------------
+# Normal set create with new update value
+set1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+new_set = set()
+
+for i in set1:
+    new_set.add(i * 2)
+print(new_set)
+print(type(new_set))
+
+print("-------------------------------------")
+# set compression
+set2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+new_set2 = {i * 2 for i in set2}
+print(new_set2)
+print(type(new_set2))
+
+# set with if conditions
+print("-------------------------------------")
+set3 = set()
+for i in range(10):
+    if i % 2 == 0:
+        set3.add(i)
+print(set3)
+print(type(set3))
+
+print("-------------------------------------")
+# set comp with if conditions
+
+set4 = {i for i in range(10) if i % 2 == 0}
+print(set4)
+print(type(set4))
+
+# set comp with 2 times if conditions
+print("-------------------------------------")
+set5 = {i for i in range(20) if i % 2 == 0 if i % 3 == 0}
+print(set5)
+print(type(set5))
+
+# set comp with if else
+set_ifelse = {i if i % 2 == 0 else i*10000 for i in range(20)}
+print("if else output :",set_ifelse)
+print(type(set_ifelse))
+-----------------------
+Nested Set Comprehension in Python:
+set is unorder:
+st = {(i, j) for j in range(4, 7) for i in range(6, 8)}
+print(st)
+print(type(st))
+----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/nested_Set.py
+{(7, 4), (6, 5), (6, 4), (7, 6), (6, 6), (7, 5)}
+<class 'set'>
+
+Process finished with exit code 0
+
+---------------------------------
+Anonymous Function or Lambda Expression in Python
+A function without a name is called anonymous function.it is also know as lambda function
+
+anonymous function are not defined using def keyword they are define using with lambda keyword.
+
+syntax:
+lambda argunents:expression
+
+lambda x:print(x)
+lambda x,y :x+y
+
+calling lambda function: it's return the function and store any suitable class
+
+please keep in mind
+1.lambada function doesn't have any name
+2.lambda function return function
+3.lambda function can take zero or any number of argument but contains only one expression
+4.lambda function there is no need to write return statement
+5.it can only contain expression and can't include statement in it's body
+6.you can use all type of actual arguments
+--------
+data = lambda x: print(x)
+data(10)
+
+---
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/lambda_Functions.py
+10
+
+Process finished with exit code 0
+---------------------------------
+data = lambda x,y: print(x+y)
+data(10,20)
+
+data2 = lambda x,y: print(x*y)
+data2(10,20)
+
+------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/lambda_Functions.py
+30
+200
+
+Process finished with exit code 0
+---------------------------------
+data2 = lambda x,y:(x*y,x+y)
+a, b = data2(10, 20)
+
+print(a)
+print(b)
+
+--------------------------------
+data2 = lambda x,y=5:(x*y)
+print(data2(5))
+
+-----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/lambda_Functions.py
+25
+
+Process finished with exit code 0
+----------------
+data1 = lambda x,y:(x*y,x+y)
+a, b = data1(10, 20)
+
+print(a)
+print(b)
+
+print("--------------------------------")
+
+data2 = lambda x,y=5:(x*y)
+print(data2(5))
+
+
+-----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/lambda_Functions.py
+200
+30
+--------------------------------
+25
+
+Process finished with exit code 0
+----------------------------------
+Nested Lambda Function in Python
+
+When we write a lambda function inside another function that is called nested lambda functions
+--------------
+add = lambda x=10: (lambda y: x + y)
+
+a = add()
+print(a(20))
+----------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Nested_lambda.py
+30
+
+Process finished with exit code 0
+---------------------------------
+# Passing Lambda Function to another Function in Python
+def show(a):
+    print(a(8))
+
+
+show(lambda x: x*x)
+--------
+64
+
+Process finished with exit code 0
+---------------------------------
+#Returning Lambda Function from a Function in Python
+def add():
+    y = 20
+    return lambda x: x + y
+
+
+a = add()
+print(a(10))
+-----------------
+----------------------------
+30
+
+Process finished with exit code 0
+---------------------------------
+Function Decorator in Python:
+A decorator function is function that accepts a function as parameter and return function.
+
+A decorator takes the result of function,modifies the result and return it.
+
+in decorator ,function are taken as the argument into another function and then called inside the wrapper function
+
+We use @function_name to specify a decorator to be applied on another function.
+--------------------------
+def decor(fun):
+    def inner():
+        print("If : Before enhancing function")
+        fun()
+        print("If : After enhancing function")
+
+    return inner()
+
+
+def num():
+    print("This is 1")
+    print("This is 2")
+
+
+decor(num)
+------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/decorator_example.py
+If : Before enhancing function
+This is 1
+This is 2
+If : After enhancing function
+
+Process finished with exit code 0
+---------------------------------
+def decor(fun):
+    def inner():
+        print("If : Before enhancing function")
+        fun()
+        print("If : After enhancing function")
+
+    return inner()
+
+
+def num():
+    print("This is 1")
+    print("This is 2")
+
+
+decor(num)
+print("---------------------------------")
+
+
+# by using @
+
+def decor2(fun2):
+    def inner2():
+        print("If : Before enhancing function")
+        fun2()
+        print("If : After enhancing function")
+
+    return inner2()
+
+
+@decor2
+def num2():
+    print("This is 1")
+    print("This is 2")
+
+
+num2
+
+print("---------------------------------")
+
+
+# another example:
+def decor3(num):
+    def inner():
+        a = num()
+        add = a + 5
+        return add
+
+    return inner
+
+
+@decor3
+def num():
+    return 10
+
+
+print(num())
+-----------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/decorator_example.py
+If : Before enhancing function
+This is 1
+This is 2
+If : After enhancing function
+---------------------------------
+If : Before enhancing function
+This is 1
+This is 2
+If : After enhancing function
+---------------------------------
+15
+
+Process finished with exit code 0
+------------------------------------
+
+
+
+Nested decorator:
+def decor1(num):
+    def inner():
+        b = num()
+        multi = b * 5
+        return multi
+
+    return inner
+
+
+def decor(num):
+    def inner():
+        a = num()
+        add = a + 5
+        return add
+
+    return inner
+
+
+def num():
+    return 10
+
+
+num = decor(decor1(num))
+print(num())
+--------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Nested_Decorator.py
+55
+
+Process finished with exit code 0
+----------------------------------
+simple arrays:
+from array import *
+
+arr = array('i', [2, 4, 5, 6])
+print(arr)
+print(type(arr))
+for i in arr:
+    print(i,end=" ")
+-------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Array_Example.py
+array('i', [2, 4, 5, 6])
+<class 'array.array'>
+2 4 5 6 
+Process finished with exit code 0
+---------------------------------
+return array function cal one by one:
+from array import *
+
+arr = array('i', [2, 4, 5, 6])
+print(arr)
+print(type(arr))
+for i in arr:
+    print(i, end=" ")
+
+print("----------------------------")
+
+
+def show(ar):
+    for i in ar:
+        print(i)
+    return ar
+
+
+y = show(arr)
+print("getting arrays values in below/code:", y)
+for x in y:
+    print(x,end=" ")
+
+
+
+Returning Array from Function in Python
+--------------------------------------------
+Copying and Cloning List in Python
+copy(): method is used to copy all the element of list to another list.
+when we copy a list a separate copy of ll the elements is sorted in another list.both the list are independent
+
+a=[10,20,30]
+b=a.copy()
+
+modification in a will not affect and vice versa
+clone concept same but syntax is different
+---------------------
+a = [10, 20, 30]
+b = a.copy()
+print("A:", a)
+print("B:", b)
+
+print("modifying a ")
+a[1] = 50
+print("A:", a)
+print("B:", b)
+
+print("modifying b ")
+b[1] = 77
+print("A:", a)
+print("B:", b)
+
+print("clone concept---------------")
+
+a = [10, 20, 30]
+b = a[:]
+print("A:", a)
+print("B:", b)
+
+print("modifying a ")
+a[1] = 50
+print("A:", a)
+print("B:", b)
+
+print("modifying b ")
+b[1] = 77
+print("A:", a)
+print("B:", b)
+-----------------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Copy_example.py
+A: [10, 20, 30]
+B: [10, 20, 30]
+modifying a 
+A: [10, 50, 30]
+B: [10, 20, 30]
+modifying b 
+A: [10, 50, 30]
+B: [10, 77, 30]
+clone concept---------------
+A: [10, 20, 30]
+B: [10, 20, 30]
+modifying a 
+A: [10, 50, 30]
+B: [10, 20, 30]
+modifying b 
+A: [10, 50, 30]
+B: [10, 77, 30]
+
+Process finished with exit code 0
+-----------------------------------
+filter Function in Python
+High order function:
+
+filter function()- The filter function is used to filter out the elements of an iterable(sequence) depending on a function that tests each element in the sequence to be true not
+
+syntax:
+filter(function_name,iterable)
+
+function_name--->it's name of function which tests each element in the sequence return true or False
+if funtion in None,return the elements that are true
+
+
+iterable: Iterable may be either a sequenc ,list ,string ,tuple a container which supports iteration or an iterator
+
+-----------
+mark_list = [1, 2, 4, 5, 6, 78, 22, 34, 54, 65, 77]
+
+
+def grade_mark(n):
+    if n >= 60:
+        return True
+    else:
+        return False
+
+
+result = list(filter(grade_mark, mark_list))
+for i in result:
+    print(i)
+-------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Filter_Example.py
+78
+65
+77
+
+Process finished with exit code 0
+----------------
+mark_list = [1, 2, 4, 5, 6, 78, 22, 34, 54, 65, 77]
+
+result = list(filter(lambda x: x >= 60, mark_list))
+for a in result:
+    print(a)
+--------------
+C:\Python39\python.exe D:/pythonProject/API-Backend-Automation/PythonBasic/Filter_Example.py
+78
+65
+77
+
+Process finished with exit code 0
+---------------------------------
+
+import threading
+
+
+def print_hello(n):
+    print("Hello, how old are you? ", n)
+
+
+T1 = threading.Thread(target=print_hello, args=(20,))
+T1.start()
+T1.join()
+print("Thank you")
+----------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Study-Notes\tp.py
+Hello, how old are you?  20
+Thank you
+
+Process finished with exit code 0
+-------------------------------
+
+def creator():
+    i=1
+    while i<200:
+        yield i
+        i=i+1
+    print(creator())
+x= creator()
+print(next(x))
+print(next(x))
+print(next(x))
+
+
+----------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Python-SDET\Study-Notes\tp.py
+1
+2
+3
+
+Process finished with exit code 0
+-----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

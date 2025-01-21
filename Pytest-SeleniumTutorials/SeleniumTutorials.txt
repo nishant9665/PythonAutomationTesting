@@ -1,0 +1,818 @@
+open the all the browser with url code:
+from selenium import webdriver
+def test_allBrowser():
+    browserName = input("enter the name :")
+    if browserName=="chrome":
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print(driver.title)
+        driver.quit()
+    elif browserName=="firefox":
+        driver = webdriver.Firefox()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print(driver.title)
+        driver.quit()
+    else:
+        driver = webdriver.Ie()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print(driver.title)
+        driver.quit()
+-----------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_AllBrowser.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_AllBrowser.py enter the name :chrome
+
+DevTools listening on ws://127.0.0.1:50077/devtools/browser/c6cbec4f-b6e2-4f6c-bd5d-7c41e8e31815
+Practice Page
+.
+
+=============================================================================== 1 passed in 10.09s ================================================================================
+Basic command in selenium -----------
+from selenium import webdriver
+def test_basicCommand():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print("This is title :",driver.title)
+        print("This is current URL",driver.current_url)
+        print("This is driver name :",driver.name)
+        print("This is windows handle :",driver.current_window_handle)
+        print("This is driver log type :",driver.log_types)
+        print("This is dialog: ",driver.dialog)
+        #print("This is page source: ",driver.page_source)
+        print("this is cookies : ",driver.get_cookies())
+        #print("this is network conditions : ",driver.get_network_conditions())
+        print("this is windows size conditions : ", driver.get_window_size())
+        driver.quit()
+------------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_basicCommand.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_basicCommand.py
+DevTools listening on ws://127.0.0.1:50376/devtools/browser/493d2570-54c3-4648-948a-bc5fa5a72e0b
+This is title : Practice Page
+This is current URL https://rahulshettyacademy.com/AutomationPractice/
+This is driver name : chrome
+This is windows handle : F8C212591360993B74BB98D427C041B0
+This is driver log type : ['browser', 'driver']
+This is dialog:  <selenium.webdriver.common.fedcm.dialog.Dialog object at 0x0000026D723EE5A0>
+this is cookies :  [{'domain': '.rahulshettyacademy.com', 'expiry': 1770447970, 'httpOnly': False, 'name': '_ga', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'GA1.1.2
+98858504.1735887970'}, {'domain': '.rahulshettyacademy.com', 'expiry': 1770447970, 'httpOnly': False, 'name': '_ga_90KKQVGL8N', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'va
+lue': 'GS1.1.1735887970.1.0.1735887970.0.0.0'}, {'domain': 'rahulshettyacademy.com', 'expiry': 1735895169, 'httpOnly': True, 'name': 'rahulshettyacademy_session', 'path': '/', 'sam
+eSite': 'Lax', 'secure': False, 'value': 'eyJpdiI6IjhpR01ZTXNQSmpPVFJ4Mk9aWGMybFE9PSIsInZhbHVlIjoicnEwN2dvOG1LRCtvelc0SjhPT2dSc2haS0tQYnRYRy9uTkFXMjQwUy90ZmZFUmtlaS9yMjFZb0JZUkh3T3
+MxZ2dJZ0Z3ZEQ5K3N4bU5PamM2S2RsVCtPS1RMclk2RlQ2RWdhWHp4blo4WTA3M1FQRTVEbld5SUlGeTg2ajgrdmUiLCJtYWMiOiIxZGNkNGI3MzEwYTdkZTFiMDcwMmYwMTAxYzZlMmYwZTJjNDZlMGZjODZiYTE0YWE5MGJlMzE2MWE0Y2
+FiZjQyIiwidGFnIjoiIn0%3D'}, {'domain': 'rahulshettyacademy.com', 'expiry': 1735895169, 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'va
+lue': 'eyJpdiI6Im1rL1FleFc2b2FQUFo1Rm9wZ0dVTEE9PSIsInZhbHVlIjoieUx0b0F6aVdjSVFoekVwY1drMU56eVdrR2syVmNPNGVPWXgvcmZpVU1UeG1hTE5DVGlOUmpsbVovYkFuU1BrcGM2bVB5c0V3TjN1dEk4aVlGaEF3ZTg4OXZEbmJZaTNSbnFPQ1A3VXJJbTVrb3FoRzZPMm1rdjV4bUU2WDRpeG4iLCJtYWMiOiIwYmI0MTM5NmYwNWM0MTQwZmIzYzFhNDMxMDM5MjRlMWViZjliNjdjNjdlZjA2Yzk4MTM0NGZlZDBjZDllNmY5IiwidGFnIjoiIn0%3D'}]
+this is windows size conditions :  {'width': 1552, 'height': 840}
+.
+
+================================================================================ 1 passed in 7.26s ================================================================================
+selenium navigation code and output :
+from selenium import webdriver
+def test_basicCommand():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        print("This is first url title :",driver.title)
+        driver.get("https://admin-demo.nopcommerce.com/admin/")
+        print("This is 2nd url title :", driver.title)
+        driver.back()
+        print("This is first url title :", driver.title)
+        driver.forward()
+        print("This is 2nd url title :", driver.title)
+        driver.refresh()
+        print("This is 2nd url title :", driver.title)
+----------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_navigationKeys.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_navigationKeys.py
+DevTools listening on ws://127.0.0.1:50475/devtools/browser/846d51a0-acbf-4993-85e3-d715e09b04e6
+This is first url title : Practice Page
+This is 2nd url title : Your store. Login
+This is first url title : Practice Page
+This is 2nd url title : Your store. Login
+This is 2nd url title : Your store. Login
+.
+
+=============================================================================== 1 passed in 15.85s ================================================================================
+conditional command
+
+isDisplay()
+isenable()
+isSelected()
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+def test_basicControlCommand():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        ele_display = driver.find_element(By.ID,"name").is_displayed()
+        print("Text box is display and return true :",ele_display)
+
+        ele_enable = driver.find_element(By.ID, "name").is_enabled()
+        print("Text box is enable and return true :", ele_enable)
+
+        driver.find_element(By.ID,"checkBoxOption1").click()
+        eleSelect = driver.find_element(By.ID, "checkBoxOption1").is_selected()
+        print("This is element is selected :",eleSelect)
+
+----------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_condtionalCommand.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_condtionalCommand.py
+DevTools listening on ws://127.0.0.1:52143/devtools/browser/3c04441c-4356-4a39-b512-c7ae7e5779e0
+Text box is display and return true : True
+Text box is enable and return true : True
+This is element is selected : True
+.
+
+================================================================================ 1 passed in 5.49s ================================================================================
+Selenium with Python Tutorial 6-WebDriver Implicit wait
+synchronization means balancing of code with respective response of applications.
+some time , excessive load and server , server response is low.
+
+implicit wait -facing the issue like -
+NoSuchElementException
+TimeoutException
+ElementNotVisibleException
+ElementNotSelectableException
+Wait for the URL... : No, ImplicitWait have no effect on page loading.
+...For finding the element... : Yes, ImplicitWait will define the coarse of time the WebDriver instance will wait looking out for the element or elements.
+...Implicit wait once... : Yes, you need to configure ImplicitWait only once and it is applicable throughout the lifetime of the WebDriver instance.
+...Every element search... : Yes, applicable when ever findElement() or findElements() is invoked.
+
+--------------------
+Explicit Waits : An explicit waits is code you define to wait for a certain condition to occur before proceeding further in the code.
+
+Implicit Waits : An implicit wait is to tell WebDriver to poll the DOM for a certain amount of time when trying to find an element or elements if they are not immediately available.
+
+Thread.sleep : In sleep code It will always wait for mentioned seconds, even in case the page is ready to interact after 1 sec. So this can slow the tests.
+---------------
+When to Use Explicit Wait
+Explicit Wait is ideal for scenarios where fine-grained control over waiting on a particular element or condition is necessary, and you can even adjust the polling interval for checking conditions. In particular, it is very useful when:
+Dynamic Content: Pages which load elements dynamically, usually driven by technologies like AJAX.
+Specialized Conditions: When you have to wait for specific states of elements, for instance, visibility, clickability, and text presence.
+Unpredictable Load Times: In applications where the load times of elements can’t be predicted or vary a lot.
+
+Visibility of Element: Waits until an element is visible using ExpectedConditions.visibilityOf(element).
+Element Clickable: Waits until an element is visible and enabled with ExpectedConditions.elementToBeClickable(element).
+Presence of Element: Waits until an element is present in the DOM using ExpectedConditions.presenceOfElementLocated(by).
+Text in Element: Waits until specific text appears in an element with ExpectedConditions.textToBePresentInElement(element, text).
+Alert is Present: Waits until an alert is displayed using ExpectedConditions.alertIsPresent().
+Element Selection State: Waits until an element’s selection state matches the condition with ExpectedConditions.elementToBeSelected(element).
+Frame Available: Waits until a frame is available, then switches to it using ExpectedConditions.frameToBeAvailableAndSwitchToIt(by).
+Element Invisibility: Waits until an element is no longer visible with ExpectedConditions.invisibilityOf(element).
+URL Contains: Waits until the URL contains a specific substring using ExpectedConditions.urlContains(substring).
+Title is: Waits until the page title matches a specific value with ExpectedConditions.titleIs(title).
+
+-------------------------------------
+
+Explicit wait script :
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+#@pytest.mark.parametrize('numberOfTime',range(5)) , same test case executed 5 time
+def test_waitExplicitWait():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        wait = WebDriverWait(driver, timeout=10)
+        #revealed = driver.find_element(By.ID, "revealed")
+        driver.find_element(By.XPATH, "//li/a[contains(text(),'Dynamic Loading')]").click()
+        driver.find_element(By.XPATH,"//div/a[contains(text(),'Example 1: Element on page that is hidden')]").click()
+        driver.find_element(By.XPATH,"//div//button[contains(text(),'Start')]").click()
+        loadingText = driver.find_element(By.ID,"loading").text
+        print("This is line for loading :",loadingText)
+        wait = WebDriverWait(driver, timeout=10)
+        rr=  wait.until(ec.text_to_be_present_in_element((By.XPATH,"//div[@id='finish']//h4"),'Hello World!')) # true
+        #rr=  wait.until(ec.text_to_be_present_in_element((By.XPATH,"//div[@id='finish']//h4"),'Hello World!XXX'))# return value does not evaluate to ``False``.
+        rr=  wait.until(ec.visibility_of_element_located((By.ID,"finish")))# true
+        print("This is output : ",rr.text) #This is output :  Hello World!
+        rr=  wait.until(ec.presence_of_element_located((By.ID,"finish")))# true
+        print("This is output : ",rr) #This is output :  This is output :  <selenium.webdriver.remote.webelement.WebElement
+-----------------------------------------------------------------------------------------------------------------------------
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_waitSyncExplicit.py
+DevTools listening on ws://127.0.0.1:60136/devtools/browser/fe880f65-b12b-49f8-b225-4ddd145f564d
+This is line for loading : Loading...
+This is output :  Hello World!
+This is output :  <selenium.webdriver.remote.webelement.WebElement (session="9b76128c3bef62cd739d908b2b1bffec", element="f.11252E91F6BAE556CCA8388F2A4F9A01.d.F715E9556A7B5CEBCC817721CD3E8C6F.e.21")>
+.
+
+=============================================================================== 1 passed in 12.62s ================================================================================
+Check box work :
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+def test_Checkboxes():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.find_element(By.XPATH,"//li//a[contains(text(),'Checkboxes')]").click()
+        ele1_selected = driver.find_element(By.XPATH,"//input[@type='checkbox'][2]").is_selected()
+        print("This is selected :",ele1_selected)
+
+        ele2_enable = driver.find_element(By.XPATH, "//input[@type='checkbox'][2]").is_enabled()
+        print("This is selected :", ele2_enable)
+
+        ele3_display = driver.find_element(By.XPATH, "//input[@type='checkbox'][2]").is_displayed()
+        print("This is selected :", ele3_display)
+--------------------------------------------------------
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_RadioButton.py
+DevTools listening on ws://127.0.0.1:60518/devtools/browser/ed2e684e-fd9d-4a0d-b48c-b97d468eed03
+This is selected : True
+This is selected : True
+This is selected : True
+.
+
+================================================================================ 1 passed in 6.39s ================================================================================
+Dropdown select by using 3 method --------------
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+def test_dropdown():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.find_element(By.XPATH,"//li//a[contains(text(),'Dropdown')]").click()
+        driver.find_element(By.ID,"dropdown").click()
+        ele = Select(driver.find_element(By.ID,"dropdown"))
+        ele.select_by_visible_text("Option 1")
+        print("select_by_visible_text- done")
+        ele.select_by_index(2)
+        print("select_by_index- done")
+        ele.select_by_value("1")
+        print("select_by_value- done")
+
+--------------------------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_dropDown.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_dropDown.py
+DevTools listening on ws://127.0.0.1:60885/devtools/browser/d0b03be5-daf5-4907-8e06-67e6a9445aed
+select_by_visible_text- done
+select_by_index- done
+select_by_value- done
+.
+
+================================================================================ 1 passed in 6.46s ================================================================================
+link , how many link is present on page:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+def test_link():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+
+        l1 = driver.find_elements(By.TAG_NAME,"a")
+        for link in range(len(l1)):
+            print(l1[link].text)
+------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_allLink.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_allLink.py
+DevTools listening on ws://127.0.0.1:61259/devtools/browser/ea28db6d-54bc-4b4e-8ea5-873a4f59866e
+
+A/B Testing
+Add/Remove Elements
+Basic Auth
+Broken Images
+Challenging DOM
+Checkboxes
+Context Menu
+Digest Authentication
+Disappearing Elements
+Drag and Drop
+Dropdown
+Dynamic Content
+Dynamic Controls
+Dynamic Loading
+Entry Ad
+Exit Intent
+File Download
+File Upload
+Floating Menu
+Forgot Password
+Form Authentication
+Frames
+Geolocation
+Horizontal Slider
+Hovers
+Infinite Scroll
+Inputs
+JQuery UI Menus
+JavaScript Alerts
+JavaScript onload event error
+Key Presses
+Large & Deep DOM
+Multiple Windows
+Nested Frames
+Notification Messages
+Redirect Link
+Secure File Download
+Shadow DOM
+Shifting Content
+Slow Resources
+Sortable Data Tables
+Status Codes
+Typos
+WYSIWYG Editor
+Elemental Selenium
+.
+
+================================================================================ 1 passed in 7.44s ================================================================================
+Iframe work-
+Switches focus to the specified frame, by index, name, or web element.
+
+example -
+
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+def test_dropdown():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/') #Frames
+        driver.find_element(By.XPATH,"//li//a[contains(text(),'Frames')]").click()
+        driver.find_element(By.XPATH,"//a[contains(text(),'iFrame')]").click()
+        #driver.switch_to.frame("mce_0_ifr") # by using id ,working
+        #driver.switch_to.frame("Rich Text Area") # TagName is not working , Switches focus to the specified frame, by index, name, or web element.
+        #driver.switch_to.frame("tox-edit-area__iframe") # class name is not working
+        #driver.switch_to.frame(0) # Working
+        iframeWeb_element = driver.find_element(By.XPATH,"//iframe[@id='mce_0_ifr']")
+        driver.switch_to.frame(iframeWeb_element)  # Working
+        print("switched successfully")
+------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_Iframe.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_Iframe.py
+DevTools listening on ws://127.0.0.1:64422/devtools/browser/82165cd4-3c2e-46c0-a01d-7904d5e860e2
+switched successfully
+.
+
+=============================================================================== 1 passed in 10.64s ================================================================================
+  :Usage:
+            ::
+
+                driver.switch_to.frame('frame_name')
+                driver.switch_to.frame(1)
+                driver.switch_to.frame(driver.find_elements(By.TAG_NAME, "iframe")[0])
+--------------------------------------------------------------------------------------------------
+Nested iframework work flow
+example
+------------------
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+def test_dropdown():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/') #Frames
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'Frames')]").click()
+        driver.find_element(By.XPATH, "//a[contains(text(),'Nested Frames')]").click()
+        driver.switch_to.frame("frame-top")
+        print("This is switched to top frame")
+        driver.switch_to.default_content() # return to default page
+        print("This is switched to default page ")
+        driver.switch_to.frame("frame-bottom")
+        print("This is switched to bottom page ")
+        print("Again start from begin so cant jump near or preceding or sibling framework directly------------------------------------")
+        driver.switch_to.default_content()  # return to default page
+        print("This is switched to default page ")
+        driver.switch_to.frame("frame-top")
+        print("This is switched to top frame")
+        driver.switch_to.frame("frame-left")
+        print("This is switched to left frame") #frame-middle
+        print("Again start from begin so cant jump near or preceding or sibling framework directly------------------------------------")
+        driver.switch_to.default_content()  # return to default page
+        print("This is switched to default page ")
+        driver.switch_to.frame("frame-top")
+        print("This is switched to top frame")
+        driver.switch_to.frame("frame-middle")
+        print("This is switched to frame-middle frame")
+        print("Again start from begin so cant jump near or preceding or sibling framework directly ------------------------------------")
+        driver.switch_to.default_content()  # return to default page
+        print("This is switched to default page ")
+        driver.switch_to.frame("frame-top")
+        print("This is switched to top frame")
+        driver.switch_to.frame("frame-right")
+        print("This is switched to frame-middle frame")
+--------------------------
+output --
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_nestediframe.py
+DevTools listening on ws://127.0.0.1:49190/devtools/browser/76d68eea-f9f2-4581-904c-3e495c19ccf6
+This is switched to top frame
+This is switched to default page
+Created TensorFlow Lite XNNPACK delegate for CPU.
+This is switched to bottom page
+Again start from begin ------------------------------------
+This is switched to default page
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+This is switched to top frame
+This is switched to left frame
+Again start from begin ------------------------------------
+This is switched to default page
+This is switched to top frame
+This is switched to frame-middle frame
+Again start from begin ------------------------------------
+This is switched to default page
+This is switched to top frame
+This is switched to frame-middle frame
+.
+
+========================================================================== 1 passed in 90.81s (0:01:30) ===========================================================================
+Selenium with Python Tutorial 14-How to handle Browser Windows | Switch between the Windows
+Example:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+def test_windowsHandle():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')  # Frames
+        st=driver.current_window_handle
+        print("This is current windows :",st ,"And title is ",driver.title)
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'Multiple Windows')]").click()
+        driver.find_element(By.XPATH,"//div[@class='example']/a").click()
+        l1 = driver.window_handles
+        print("This is type of title :",type(l1))
+        for i in range(len(l1)): #Returns the handles of all windows within the current session.
+            #print(l1[i],driver.title)
+            if st!=l1[i]:
+                    driver.switch_to.window(l1[i])
+                    eleText=driver.find_element(By.XPATH,"//div[@class='example']/h3").text
+                    print("This is child windows text : ",eleText)
+                    driver.switch_to.window(st)
+                    print("This is parent windows",driver.title)
+                    print("This is parent windows :",driver.find_element(By.XPATH,"//div[@class='example']/h3").text)
+                    break
+            else:
+                    print("1st time match")
+
+------------------------------------------------------------------------------
+output-
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_windowHandle_Multiple.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_windowHandle_Multiple.py
+DevTools listening on ws://127.0.0.1:52513/devtools/browser/39d20f8c-0c63-43ff-8663-be163441deed
+This is current windows : 20C3CC60835496DA5E6A370EE3108E50 And title is  The Internet
+This is type of title : <class 'list'>
+1st time match
+This is child windows text :  New Window
+This is parent windows The Internet
+This is parent windows : Opening a new window
+.
+
+================================================================================ 1 passed in 8.78s ================================================================================
+web table handle :
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+def test_dataTable():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.implicitly_wait(10)
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'Sortable Data Tables')]").click()
+        row_element = driver.find_elements(By.XPATH,"//table[@id='table1']//tbody//tr")
+        col_element = driver.find_elements(By.XPATH, "//table[@id='table1']//tbody//tr[1]//td")
+        print("last Name","firstName", "       email","             Due","           website","                  action")
+        for row in range(1,len(row_element)+1):
+            for col in range(1,len(col_element)+1):
+                print(driver.find_element(By.XPATH,"//table[@id='table1']//tbody//tr["+str(row)+"]//td["+str(col)+"]").text,end="       ")
+            print()
+
+
+-----------------------------------------------
+output -
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_dataTable.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_dataTable.py
+DevTools listening on ws://127.0.0.1:61677/devtools/browser/407fdf7f-7673-4185-9a17-26fe6d0cb2f2
+last Name firstName        email              Due            website                   action
+Smith       John       jsmith@gmail.com       $50.00       http://www.jsmith.com       edit delete
+Bach       Frank       fbach@yahoo.com       $51.00       http://www.frank.com       edit delete
+Doe       Jason       jdoe@hotmail.com       $100.00       http://www.jdoe.com       edit delete
+Conway       Tim       tconway@earthlink.net       $50.00       http://www.timconway.com       edit delete
+.
+
+================================================================================ 1 passed in 7.79s ================================================================================
+scroll the element ---
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+def test_dataTable():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.implicitly_wait(10)
+        # scroll down page by pixel-Approach 1
+        #driver.execute_script("window.scrollBy(0,1000)","")
+        #driver.execute_script("window.scrollBy(0,1000)", "")
+        #driver.execute_script("window.scrollBy(0,1000)", "")
+        #print("scroll down at the end .....................")
+
+        # scroll down page still the element is visible
+        #ele_scroll = driver.find_element(By.XPATH, "//li//a[contains(text(),'Forgot Password')]")
+        #driver.execute_script("arguments[0].scrollIntoView();",ele_scroll)
+        #print("scroll upto element is visible...................")
+
+        # scroll down till end of the page
+        driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
+        print("scroll upto element end...................")
+
+--------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest -s .\test_scrollDown.py
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_scrollDown.py
+DevTools listening on ws://127.0.0.1:62340/devtools/browser/5fc44f86-d680-442e-93af-269b1b489b81
+scroll upto element end...................
+.
+
+================================================================================ 1 passed in 5.87s ================================================================================
+Mouse Action
+Mouse Hover
+double click
+right click
+drag and drop
+
+------------
+Mouse hover code:
+import pytest
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
+
+def test_mouseOver():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.implicitly_wait(10)
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.implicitly_wait(10)
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'JQuery UI Menus')]").click()
+        wait = WebDriverWait(driver, 10)
+        src1 = driver.find_element(By.XPATH,"//li[@id='ui-id-3']")  #ui-id-4
+        src2 = driver.find_element(By.ID, "ui-id-4")
+        src1.click()
+        wait.until(ec.element_to_be_clickable(src2))
+        src2.click()
+        #des1 =driver.find_element(By.ID,"ui-id-5")
+        des1 = driver.find_element(By.XPATH,"//a[contains(text(),'PDF')]")
+        wait.until(ec.element_to_be_clickable(des1))
+        actChain = ActionChains(driver)
+        actChain.move_to_element(src1).move_to_element(src2).move_to_element(des1).click().perform()
+---------------------------------------------------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_mouseHovers.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_mouseHovers.py
+DevTools listening on ws://127.0.0.1:62916/devtools/browser/cf5bfdde-1799-4925-ad99-5ae66d740ec9
+.
+
+=============================================================================== 1 passed in 13.87s ================================================================================
+Double Click :
+import pytest
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
+
+def test_doubleClick():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.delete_all_cookies()
+        driver.get('https://testautomationpractice.blogspot.com/')
+        driver.implicitly_wait(10)
+        #driver.find_element(By.ID, "item-4").click()
+        ele_doubel= driver.find_element(By.XPATH,"//button[contains(text(),'Copy Text')]")
+        driver.execute_script("arguments[0].scrollIntoView();",ele_doubel)
+        act_Chain = ActionChains(driver)
+        wait = WebDriverWait(driver,10)
+        wait.until(ec.visibility_of_element_located((By.XPATH,"//button[contains(text(),'Copy Text')]")))
+        act_Chain.double_click(ele_doubel)
+        print("This is double click on text ")
+        ele_double_text = driver.find_element(By.ID, "field2")
+        wait.until(ec.visibility_of_element_located((By.ID, "field2")))
+        textis = ele_double_text.text
+        print("This is text :",textis)
+--------------------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_doubleClick.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_doubleClick.py
+DevTools listening on ws://127.0.0.1:49469/devtools/browser/38f3ab06-a5f9-4f86-8a30-f384c8251ee8
+This is double click on text
+This is text :
+.
+
+================================================================================ 1 passed in 6.67s ================================================================================
+Keys element ---
+import pytest
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver import Keys
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
+
+def test_keyPress():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.implicitly_wait(10)
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'Key Presses')]").click()
+        act = ActionChains(driver)
+        act.send_keys(Keys.TAB).perform()
+        result = driver.find_element(By.ID, "result")
+        wait = WebDriverWait(driver,10)
+        wait.until(ec.visibility_of_element_located((By.ID,"result")))
+        assert result.text == "You entered: TAB"
+--------------------------------------------------------------------------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_KeysPress.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_KeysPress.py
+DevTools listening on ws://127.0.0.1:51717/devtools/browser/c949586f-533d-4da5-bdf1-19569bc2c96f
+.
+
+================================================================================ 1 passed in 7.16s ================================================================================
+File upload in selenium:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+def test_keyPress():
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.delete_all_cookies()
+        driver.get('https://admin:admin@the-internet.herokuapp.com/')
+        driver.find_element(By.XPATH, "//li//a[contains(text(),'File Upload')]").click()
+        driver.find_element(By.ID,"file-upload").send_keys("C://Users//user//Downloads//menu.pdf")
+        driver.find_element(By.ID,"file-submit").click()
+        ele_text = driver.find_element(By.XPATH,"//div[@class='example']/h3")
+        assert ele_text.text=="File Uploaded!"
+        print("This is testcase pass message :",ele_text.text)
+-----------------------------------------------
+(.venv) PS C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials> pytest .\test_fileUpload.py -s
+=============================================================================== test session starts ===============================================================================
+platform win32 -- Python 3.12.3, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Pytest-SeleniumTutorials
+plugins: html-4.1.1, metadata-3.1.1, xdist-3.6.1
+collected 1 item
+
+test_fileUpload.py
+DevTools listening on ws://127.0.0.1:52077/devtools/browser/387db0c4-8c9b-4cf7-b76c-7564546fa824
+This is testcase pass message : File Uploaded!
+.
+
+=============================================================================== 1 passed in 14.97s ================================================================================
+Identifying SVG elements from DOM to use in our Xpath should be treated differently, and we do have a set of methods to cover.
+
+name(), and local-name() are the methods that should be used while creating Xpath for the SVG elements. And there are some steps for that which are to be followed.
+
+We have to use ‘*’ along with the double slash, i.e. //*
+name() method should be used for locating the ‘svg’ tag, i.e. //*[name()='svg']
+local-name() should be used for locating the subtags like ‘g’ or ‘path’
+We can use ‘and’ & ‘@’ for grouping the attributes.
+
+Example: //*[name()='svg']//*[local-name()='g' and @fill-rule='evenodd']
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

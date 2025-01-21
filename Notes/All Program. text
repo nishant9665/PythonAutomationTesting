@@ -1,0 +1,185 @@
+#Q. Write a program to display *'s in Right angled triangle form
+
+n = int(input("Enter number of rows:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+
+    print()
+
+print("-------------------------------------------")
+n = int(input("Enter number of rows:"))
+for i in range(1,n+1):
+    print("* " * i)
+
+cart=[10,20,600,60,70]
+for item in cart:
+    if item>500:
+        print("To place this order insurance must be required")
+        break
+    print(item)
+------------------------------------------------------------
+
+
+for i in range(10):
+     if i%2==0:
+       continue
+     print(i)
+
+
+--------------------------------
+Method overriding-
+Having 2 method with same name but work is different is called as overriding
+To achieve this overriding , need a 2 class.
+
+class UPI:
+    def phonePay(self,money):
+        print("This is payment through phonepay",money)
+
+    def gpay(self,money):
+        print("This is payment from gapy :",money)
+class Insurance(UPI):
+    def amazonPay(self, money):
+        print("Payment completed by amazon",)
+    def paytm(self, money1 ,money2):
+        print("this is ",money1,"this is money",money2)
+pp =Insurance()
+pp.phonePay(223)
+pp.gpay(234)
+pp.amazonPay(987)
+pp.paytm(8744,456)
+
+-----------------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Selenium-Python-TutorialsCode\Selenium-Python-TutorialsCode-master\python_Durga\constructorStudy.py
+This is payment through phonepay 223
+This is payment from gapy : 234
+Payment completed by amazon
+this is  8744 this is money 456
+
+Process finished with exit code 0
+
+--------------------------------------------
+
+
+Method overloading -
+
+In python you can define a method in such a way that there are multiple way to call it.
+Given a single method or function , we can specify the number of parameters our self.
+
+
+class Bird:
+    def fly(self,name=None):
+        if name == 'parrot':
+            print("Flying on AIR")
+        if name == 'fish':
+            print("Not Flying on AIR")
+        if name is None:
+            print("No input passed")
+
+bi = Bird()
+bi.fly() #No input passed
+
+bi.fly('fish') #Not Flying on AIR
+
+bi.fly("parrot") #Flying on AIR
+
+-----------------------------
+
+What is encapsulation ?
+
+in an object oriented python programming , you can restrict access to method and variable.
+
+This can prevent data from being modified by accident and is know as encapsulation.
+
+Encapsulation - can be achieved using private variable and private method.
+
+using __
+public - accessible from anywhere
+private method - access only in their own class , start with two underscores
+private variable - accessible only in their own class or by a method if defined
+public variable -accessible from anywhere
+-----------------------------------------
+Private variable:
+class myClass:
+    __money = 20
+
+    def bankLoad(self, moneyRate):
+        print("This is interstate rate", moneyRate)
+        self.__money = moneyRate
+        print("This is current interstate ", self.__money)
+
+
+obj = myClass() #Parameter 'moneyRate' unfilled
+obj.bankLoad(23)
+-------------------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Selenium-Python-TutorialsCode\Selenium-Python-TutorialsCode-master\python_Durga\constructorStudy.py
+This is interstate rate 23
+This is current interstate  23
+
+Process finished with exit code 0
+------------------------------------------------------------
+Private Method :
+class myClass:
+   def __bankload(self, monthly_Interstate):
+       print("This is monthly interest rate ",monthly_Interstate)
+
+   def rbiBank(self,money):
+       print("This is type pass method","rbiBank")
+       self.__bankload(money)
+
+
+
+obj = myClass() #Parameter 'moneyRate' unfilled
+obj.rbiBank(4567)
+
+# method name is not found so how to use this above method
+# first create the fresh method and try to access in other method , so it's working fine.
+
+
+----------------------------------------------------------
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Selenium-Python-TutorialsCode\Selenium-Python-TutorialsCode-master\python_Durga\constructorStudy.py
+This is type pass method rbiBank
+This is monthly interest rate  4567
+
+Process finished with exit code 0
+---------------------------------------------------------
+Abstact class :
+from abc import ABC,abstractmethod
+class Animal(ABC):
+
+    @abstractmethod
+    def eat(self):
+        pass
+
+class Tiger(Animal):
+    def eat(self):
+        print("eat the non veg")
+
+class Cow(Animal):
+    def eat(self):
+        print("Eat the veg")
+
+t= Tiger()
+t.eat() #eat the non veg
+
+c = Cow()
+c.eat() #Eat the veg
+--------------------
+output :
+C:\Users\user\Desktop\Rajratan\python.exe C:\Nishant_Study\PythonStudy\Selenium-Python-TutorialsCode\Selenium-Python-TutorialsCode-master\python_Durga\constructorStudy.py
+eat the non veg
+Eat the veg
+
+Process finished with exit code 0
+---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

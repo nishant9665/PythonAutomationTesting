@@ -1,0 +1,189 @@
+st ="nishant"
+l1 = list(st)
+print(l1)
+
+d1={'h': 1}
+for c in l1:
+    count=1
+    if c in d1:
+        d1[c]=count+1
+    else:
+        d1[c]=count
+
+print(d1)
+---------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+['n', 'i', 's', 'h', 'a', 'n', 't']
+{'h': 2, 'n': 2, 'i': 1, 's': 1, 'a': 1, 't': 1}
+
+Process finished with exit code 0
+---------------------------------
+from collections import Counter
+st ="nishant"
+
+freq = Counter(st)
+
+print(dict(freq))
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+{'n': 2, 'i': 1, 's': 1, 'h': 1, 'a': 1, 't': 1}
+
+Process finished with exit code 0
+----------------------------------
+s1="7A3BC5D9"
+
+s2=""
+s3=""
+l1 = list(s1)
+for i in l1:
+    if i.isdigit():
+        s2=s2+''.join(i)
+    else:
+        s3=s3+''.join(i)
+s4=sorted(s3)+sorted(s2)
+s5=""
+for c in s4:
+    s5=s5+''.join(c)
+
+print(s5)
+--------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+ABCD3579
+
+Process finished with exit code 0
+----------------------------------------
+print the amstrong number from 1 to 1000
+for i in range(1,1000):
+    num1=i
+    sum1=0
+    i=str(i)
+    n=len(i)
+
+    for x in i:
+        sum1=sum1+int(x)**n
+
+    if num1==sum1:
+        print(num1)
+----------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+370
+371
+407
+
+Process finished with exit code 0
+----------------------------------------
+st="aaaaabbbbcccdde"
+l1=list(st)
+
+char = l1[0]
+count=0
+output=""
+for i in l1:
+    if char==i:
+        count=count+1
+    else:
+        output=output+str(count)+char
+        count=1
+        char=i
+
+output=output+str(count)+char
+print(output)
+----------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+5a4b3c2d1e
+
+Process finished with exit code 0
+---------------------------------
+# print the number from given list without using iterator or slicing or loop
+
+l1 = eval(input("Enter the number :"))
+start = eval(input("Enter the starting index :"))
+end = eval(input("Enter the ending index :"))
+
+def itr(l1,start,end):
+    if start<0 or start>=end:
+        return
+    print(l1[start])
+    itr(l1,start+1,end)
+
+itr(l1,start,end)
+------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+Enter the number :[10,20,30,40]
+Enter the starting index :1
+Enter the ending index :4
+20
+30
+40
+
+Process finished with exit code 0
+--------------------------------------------
+f = open("C://Nishant_Study/nopcommerce//nopcommerceAdmin//TestData//Data.txt",mode='r')
+#print(f.read())
+
+number_0f_line=0
+number_of_char=0
+number_of_word=0
+for line in f:
+    number_0f_line=number_0f_line+1
+    line = line.strip("\n")
+    number_of_char=number_of_char+len(line)
+    list1=line.split()
+    number_of_word=number_of_word+len(list1)
+f.close()
+print("This is number of line :",number_0f_line)
+print("This is number of word :",number_of_word)
+print("This is number of char :",number_of_char)
+------------------------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is number of line : 3
+This is number of word : 9
+This is number of char : 46
+
+Process finished with exit code 0
+----------------------------------------
+st1 = "my23name45is"
+print("This is input string :",st1)
+# output = "si23eman45ym"
+
+output=""
+output2=""
+#print(st2)
+for i in range(len(st1)-1,-1,-1):
+    output=output+''.join(st1[i])
+for i in range(len(st1)):
+    if st1[i].isalpha():
+        output2=output2+''.join(str(output[i]))
+    else:
+        output2 = output2+''.join(st1[i])
+
+print("This is output string :",output2)
+
+
+---------------------------------------
+C:\Nishant_Study\nopcommerce\nopcommerceAdmin\.venv\Scripts\python.exe C:\Nishant_Study\nopcommerce\nopcommerceAdmin\Python_Program\test.py
+This is input string : my23name45is
+This is output string : si23eman45ym
+
+Process finished with exit code 0
+-----------------------------------
+
+
+
+
+
+
+
+
+
+
+
