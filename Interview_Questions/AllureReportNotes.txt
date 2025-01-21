@@ -8,3 +8,13 @@
 Generating report to temp directory...
 8.Report will be generated.
 9. Please check this url - https://www.youtube.com/watch?v=zOP018xz0Jc
+
+--------------------------
+Jenkins configuration passing the browser through cmd :
+Run the code by passing the browser name through cmd :
+# This is code for cmd line argument i.e --cmdopt='chrome'
+#cmd  pytest -v -s .\test_AllBrowserByCommandLine.py --cmdopt=chrome
+#jenkins cmd -pytest Pytest-SeleniumTutorials\test_AllBrowserByCommandLine.py -v -s  --cmdopt=chrome --alluredir=allure-results
+
+parallel execution in selenium cmd -
+ pytest -v -s .\test_AllBrowserByCommandLine.py --cmdopt=firefox -n 3
